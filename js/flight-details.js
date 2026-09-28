@@ -26,7 +26,12 @@ const formatRupiah = amount =>
 const route = `${airportNames[fromCode] || fromCode} → ${airportNames[toCode] || toCode}`;
 
 document.querySelector("#flight-route").textContent = route;
+document.querySelector("#flight-departure").textContent =
+  `08.00 — Berangkat dari ${airportNames[fromCode] || fromCode}`;
 
+document.querySelector("#flight-arrival").textContent =
+  `10.50 — Tiba di ${airportNames[toCode] || toCode}`;
+  
 if (airline && flightNumber) {
   document.querySelector("#flight-name").textContent =
     `${airline} · ${flightNumber}`;
