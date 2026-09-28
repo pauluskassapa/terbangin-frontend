@@ -1,25 +1,24 @@
-/* Pengaturan dasar */
+:root {
+  --teal: #087f8c;
+  --teal-dark: #066b75;
+  --navy: #18324b;
+  --muted: #6b7f8f;
+  --page: #f5f8fc;
+  --line: #e1e9ef;
+  --white: #fff;
+  --shadow: 0 12px 32px rgb(24 50 75 / 8%);
+}
+
 * {
   box-sizing: border-box;
 }
 
-:root {
-  --color-primary: #087f8c;
-  --color-primary-dark: #066a75;
-  --color-text: #18324b;
-  --color-muted: #607586;
-  --color-background: #f5f8fc;
-  --color-white: #ffffff;
-  --color-border: #dce5eb;
-  --color-highlight: #dff4f1;
-}
-
 body {
   margin: 0;
-  background: var(--color-background);
-  color: var(--color-text);
+  background: var(--page);
+  color: var(--navy);
   font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 a {
@@ -27,99 +26,174 @@ a {
   text-decoration: none;
 }
 
-/* Header dan navigasi */
+button,
+input,
+select {
+  font: inherit;
+}
+
+button,
+select,
+input[type="date"],
+input[type="checkbox"] {
+  cursor: pointer;
+}
+
+/* Header */
 header {
-  width: min(1120px, 90%);
+  width: min(1240px, calc(100% - 64px));
   min-height: 82px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 28px;
 }
 
 header > a:first-child {
-  color: var(--color-primary);
-  font-size: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--navy);
+  font-size: 21px;
   font-weight: 800;
   letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+header > a:first-child::before {
+  content: "✈";
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: var(--teal);
+  color: var(--white);
+  font-size: 20px;
+  transform: rotate(-8deg);
 }
 
 nav {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 30px;
+  color: #52697a;
   font-size: 14px;
+  font-weight: 600;
 }
 
-nav a:hover {
-  color: var(--color-primary);
+nav a {
+  transition: color 160ms ease;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+  color: var(--teal);
 }
 
 header > a:last-child {
-  padding: 9px 17px;
-  border: 1px solid var(--color-primary);
-  border-radius: 10px;
-  color: var(--color-primary);
+  padding: 10px 18px;
+  border: 1px solid var(--teal);
+  border-radius: 11px;
+  color: var(--teal);
+  font-size: 14px;
   font-weight: 700;
+  transition: background 160ms ease, color 160ms ease;
 }
 
-/* Konten utama */
+header > a:last-child:hover {
+  background: var(--teal);
+  color: var(--white);
+}
+
+/* Main container */
 main {
-  width: min(1120px, 90%);
+  width: min(1120px, calc(100% - 64px));
   margin: 0 auto;
 }
 
-main > section:first-child {
+/* Hero Home dan halaman detail */
+main > section:first-child:not(.search-hero) {
+  position: relative;
   min-height: 350px;
-  padding: 48px;
+  padding: 50px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  overflow: hidden;
   border-radius: 26px;
-  background: var(--color-highlight);
+  background:
+    radial-gradient(circle at 84% 20%, rgb(255 255 255 / 72%) 0 7%, transparent 7.5%),
+    linear-gradient(120deg, #dff4f1, #e8f1ff);
 }
 
-main > section:first-child > p:first-child {
+main > section:first-child:not(.search-hero)::after {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  right: 5%;
+  bottom: -170px;
+  border: 36px solid rgb(8 127 140 / 10%);
+  border-radius: 50%;
+}
+
+main > section:first-child:not(.search-hero) > p:first-child {
   margin: 0 0 10px;
-  color: var(--color-primary);
+  color: var(--teal);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 h1 {
-  max-width: 620px;
+  max-width: 650px;
   margin: 0;
-  font-size: clamp(38px, 6vw, 62px);
+  font-size: clamp(38px, 5vw, 60px);
   line-height: 1.08;
+  letter-spacing: -1.5px;
 }
 
-main > section:first-child > p:nth-of-type(2) {
-  max-width: 560px;
-  color: var(--color-muted);
+main > section:first-child:not(.search-hero) > p:nth-of-type(2) {
+  max-width: 540px;
+  margin: 16px 0 0;
+  color: var(--muted);
 }
 
 main > section:first-child > span {
   position: absolute;
-  margin-left: min(68%, 700px);
-  font-size: 100px;
+  z-index: 1;
+  top: 50%;
+  right: 12%;
+  width: 145px;
+  height: 145px;
+  display: grid;
+  place-items: center;
+  border-radius: 38px;
+  background: rgb(255 255 255 / 78%);
+  box-shadow: var(--shadow);
+  font-size: 78px;
+  transform: translateY(-50%) rotate(8deg);
 }
 
-/* Form pencarian */
-main > section:nth-child(2) {
+/* Form pencarian di Home */
+main > section:nth-child(2):not(.search-panel) {
   position: relative;
-  margin: -28px 24px 48px;
+  z-index: 2;
+  margin: -28px 24px 54px;
   padding: 24px;
+  border: 1px solid var(--line);
   border-radius: 18px;
-  background: var(--color-white);
-  box-shadow: 0 12px 35px rgb(24 50 75 / 9%);
+  background: var(--white);
+  box-shadow: var(--shadow);
 }
 
-h2 {
-  margin-top: 0;
+main > section:nth-child(2):not(.search-panel) h2 {
+  margin: 0 0 16px;
+  font-size: 20px;
 }
 
 form {
@@ -129,24 +203,30 @@ form {
   gap: 14px;
 }
 
-label {
+form label {
   display: block;
-  color: var(--color-muted);
+  color: var(--muted);
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 select,
-input {
+input[type="date"] {
   width: 100%;
   min-height: 46px;
   margin-top: 6px;
   padding: 10px 12px;
-  border: 1px solid var(--color-border);
+  border: 1px solid var(--line);
   border-radius: 10px;
-  background: var(--color-white);
-  color: var(--color-text);
-  font: inherit;
+  outline: none;
+  background: var(--white);
+  color: var(--navy);
+}
+
+select:focus,
+input[type="date"]:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgb(8 127 140 / 12%);
 }
 
 button {
@@ -154,143 +234,558 @@ button {
   padding: 0 20px;
   border: 0;
   border-radius: 10px;
-  background: var(--color-primary);
-  color: var(--color-white);
-  cursor: pointer;
-  font: inherit;
+  background: var(--teal);
+  color: var(--white);
   font-weight: 700;
+  transition: background 160ms ease, transform 160ms ease;
 }
 
 button:hover {
-  background: var(--color-primary-dark);
+  background: var(--teal-dark);
+  transform: translateY(-1px);
 }
 
-/* Kartu destinasi */
-main > section:last-child {
-  margin-bottom: 56px;
+/* Destinasi pilihan di Home */
+main > section:has(> .destination-card) {
+  margin-bottom: 58px;
 }
 
-main > section:last-child > article {
-  width: calc((100% - 36px) / 3);
-  min-height: 150px;
-  margin-right: 14px;
-  padding: 20px;
-  display: inline-block;
+main > section:has(> .destination-card) > h2 {
+  margin: 0 0 18px;
+  font-size: 25px;
+}
+
+.destination-card {
+  position: relative;
+  width: calc((100% - 32px) / 3) !important;
+  min-height: 190px !important;
+  margin: 0 12px 12px 0 !important;
+  padding: 20px !important;
+  display: inline-flex !important;
+  flex-direction: column;
+  justify-content: flex-end;
   vertical-align: top;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 70%);
   border-radius: 18px;
-  background: linear-gradient(145deg, #c4e9e4, #e7f2f8);
+  box-shadow: 0 10px 26px rgb(24 50 75 / 8%);
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
-main > section:last-child > article:last-child {
-  margin-right: 0;
+.destination-card:nth-of-type(1) {
+  background: linear-gradient(145deg, #b8e9df, #f8dda9) !important;
 }
 
-main > section:last-child h3 {
-  margin-bottom: 4px;
+.destination-card:nth-of-type(2) {
+  background: linear-gradient(145deg, #c4d8fa, #f3d9c8) !important;
 }
 
-main > section:last-child article p {
+.destination-card:nth-of-type(3) {
+  background: linear-gradient(145deg, #b8e4eb, #d9d5fb) !important;
+}
+
+.destination-card::before {
+  content: "✦";
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  color: rgb(255 255 255 / 85%);
+  font-size: 58px;
+}
+
+.destination-card h3,
+.destination-card p {
+  position: relative;
+  z-index: 1;
+}
+
+.destination-card h3 {
+  margin: 0 0 4px;
+  font-size: 21px;
+}
+
+.destination-card p {
+  margin: 0;
+  color: #52697a;
+  font-size: 14px;
+}
+
+.destination-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgb(24 50 75 / 13%);
+}
+
+/* Search Flight: judul dan panel pencarian */
+.search-page {
+  width: min(1280px, calc(100% - 64px));
+  padding-bottom: 56px;
+}
+
+.search-hero {
+  position: relative;
+  min-height: 220px !important;
+  padding: 34px 38px !important;
+  border-radius: 24px;
+  background: linear-gradient(120deg, #dff4f1, #e8f1ff);
+}
+
+.search-hero .eyebrow {
+  margin: 0 0 8px;
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.search-hero h1 {
+  font-size: clamp(34px, 4vw, 48px);
+}
+
+.search-hero #search-summary {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.search-panel {
+  position: relative;
+  z-index: 2;
+  margin: -22px 24px 30px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.search-panel form {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+}
+
+.search-panel form label {
+  display: block;
+}
+
+/* Hasil pencarian: filter kiri, kartu penerbangan kanan */
+.results-layout {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  align-items: start;
+  gap: 22px;
+}
+
+.filter-panel {
+  position: sticky;
+  top: 18px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: 0 6px 20px rgb(24 50 75 / 4%);
+}
+
+.filter-panel h2 {
+  margin: 0 0 18px;
+  font-size: 19px;
+}
+
+.filter-panel fieldset {
+  display: block;
+  width: 100%;
+  margin: 0 0 20px;
+  padding: 0;
+  border: 0;
+}
+
+.filter-panel legend {
+  margin-bottom: 10px;
+  color: var(--navy);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.filter-panel label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 11px 0;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.filter-panel input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  min-height: 0;
+  flex: 0 0 16px;
+  margin: 0;
+  accent-color: var(--teal);
+}
+
+.flight-results {
+  min-width: 0;
+}
+
+.results-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 14px;
+}
+
+.results-heading h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.results-heading p {
+  margin: 3px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.sort-control {
+  min-width: 170px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.sort-control select {
+  min-height: 40px;
+  margin-top: 4px;
+}
+
+/* Kartu maskapai dan jadwal */
+.flight-card {
+  width: 100% !important;
+  margin: 0 0 14px !important;
+  padding: 20px !important;
+  display: grid;
+  grid-template-columns: minmax(155px, 1fr) minmax(230px, 1.4fr) minmax(150px, .9fr);
+  align-items: center;
+  gap: 16px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: 0 7px 22px rgb(24 50 75 / 5%);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.flight-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgb(24 50 75 / 10%);
+}
+
+.airline-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.airline-info h3,
+.airline-info p {
+  margin: 0;
+}
+
+.airline-info h3 {
+  font-size: 14px;
+}
+
+.airline-info p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.airline-mark {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.garuda-mark { background: #e7efff; color: #164e9b; }
+.citilink-mark { background: #e0f5dc; color: #338c37; }
+.batik-mark { background: #fff0d8; color: #a76416; }
+.lion-mark { background: #ffe4e3; color: #c53c35; }
+.super-mark { background: #e8e3ff; color: #5d48b6; }
+
+.flight-schedule {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr 1fr;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.flight-schedule div > strong,
+.flight-schedule div > span {
+  display: block;
+}
+
+.flight-schedule div > strong {
+  font-size: 18px;
+}
+
+.flight-schedule div > span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.flight-duration hr {
+  width: 76%;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+.flight-price {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.flight-price strong {
+  color: var(--teal);
+  font-size: 17px;
+  white-space: nowrap;
+}
+
+.flight-price > span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.flight-price a {
+  margin-top: 10px;
+  padding: 9px 13px;
+  border-radius: 9px;
+  background: var(--teal);
+  color: var(--white);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  transition: background 160ms ease;
+}
+
+.flight-price a:hover {
+  background: var(--teal-dark);
+}
+
+.flight-perks {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding-top: 12px;
+  border-top: 1px solid #edf1f4;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.flight-perks span {
+  margin-left: 14px;
+}
+
+/* Detail penerbangan */
+.detail-card {
+  width: 100% !important;
+  margin: 0 0 14px !important;
+  padding: 22px !important;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: 0 7px 22px rgb(24 50 75 / 5%);
+}
+
+.detail-card h3 {
   margin-top: 0;
-  color: var(--color-muted);
+}
+
+.detail-card ul {
+  padding-left: 22px;
+}
+
+.detail-card li {
+  margin: 8px 0;
+  color: var(--muted);
+}
+
+main > section:last-child > a {
+  display: inline-block;
+  margin: 8px 10px 0 0;
+  padding: 11px 16px;
+  border: 1px solid var(--teal);
+  border-radius: 10px;
+  color: var(--teal);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+main > section:last-child > a:last-child {
+  background: var(--teal);
+  color: var(--white);
 }
 
 /* Footer */
 footer {
-  padding: 20px 5%;
-  border-top: 1px solid var(--color-border);
-  color: var(--color-muted);
+  padding: 22px 24px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
   font-size: 13px;
   text-align: center;
 }
 
-/* Tampilan layar kecil */
-@media (max-width: 760px) {
+/* Tablet */
+@media (max-width: 900px) {
   header {
+    width: min(100% - 40px, 720px);
     flex-wrap: wrap;
-    padding: 16px 0;
+    padding: 14px 0;
   }
 
   nav {
     order: 3;
     width: 100%;
     justify-content: space-between;
-    gap: 10px;
+    gap: 12px;
   }
 
-  main > section:first-child {
-    min-height: 320px;
-    padding: 30px;
+  main,
+  .search-page {
+    width: min(100% - 40px, 720px);
+  }
+
+  .results-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-panel {
+    position: static;
+  }
+
+  .filter-panel fieldset {
+    display: inline-block;
+    width: 48%;
+    vertical-align: top;
+  }
+
+  .flight-card {
+    grid-template-columns: minmax(140px, 1fr) minmax(210px, 1.3fr) minmax(135px, .8fr);
+    gap: 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 620px) {
+  header {
+    width: calc(100% - 32px);
+    gap: 12px;
+  }
+
+  header > a:first-child {
+    font-size: 18px;
+  }
+
+  header > a:first-child::before {
+    width: 35px;
+    height: 35px;
+  }
+
+  nav {
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 20px;
+    white-space: nowrap;
+  }
+
+  main,
+  .search-page {
+    width: calc(100% - 32px);
+  }
+
+  main > section:first-child:not(.search-hero) {
+    min-height: 300px;
+    padding: 28px;
   }
 
   main > section:first-child > span {
     position: static;
-    margin: 12px 0 0;
-    font-size: 64px;
+    width: 86px;
+    height: 86px;
+    margin-top: 20px;
+    font-size: 48px;
+    transform: rotate(8deg);
   }
 
-  main > section:nth-child(2) {
-    margin: 20px 0 40px;
+  main > section:nth-child(2):not(.search-panel) {
+    margin: 18px 0 38px;
+    padding: 20px;
   }
 
-  form {
+  form,
+  .search-panel form {
     grid-template-columns: 1fr;
   }
 
-  main > section:last-child > article {
+  .destination-card {
+    width: 100% !important;
+    min-height: 145px !important;
+    margin: 0 0 12px !important;
+  }
+
+  .search-hero {
+    min-height: 190px !important;
+    padding: 26px !important;
+  }
+
+  .search-panel {
+    margin: 16px 0 24px;
+    padding: 18px;
+  }
+
+  .filter-panel fieldset {
+    display: block;
     width: 100%;
-    min-height: auto;
-    margin: 0 0 12px;
   }
 
-  /* Kartu hasil penerbangan dan detail */
-main > section:nth-child(2) form {
-  grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
-}
-
-main > section:nth-child(2) form label {
-  display: block;
-}
-
-main > section:nth-child(3) article,
-main > section:nth-child(2) article {
-  width: 100%;
-  margin: 0 0 14px;
-  padding: 20px;
-  border: 1px solid var(--color-border);
-  border-radius: 14px;
-  background: var(--color-white);
-}
-
-main > section:nth-child(3) article h3,
-main > section:nth-child(2) article h3 {
-  margin-top: 0;
-}
-
-main > section:nth-child(3) article a {
-  display: inline-block;
-  margin-top: 8px;
-  color: var(--color-primary);
-  font-weight: 700;
-}
-
-main > section:nth-child(3) > a {
-  display: inline-block;
-  margin: 14px 14px 0 0;
-  padding: 11px 16px;
-  border: 1px solid var(--color-primary);
-  border-radius: 10px;
-  color: var(--color-primary);
-  font-weight: 700;
-}
-
-main > section:nth-child(3) > a:last-child {
-  background: var(--color-primary);
-  color: var(--color-white);
-}
-
-@media (max-width: 760px) {
-  main > section:nth-child(2) form {
-    grid-template-columns: 1fr;
+  .results-heading {
+    align-items: stretch;
+    flex-direction: column;
   }
-}
+
+  .sort-control {
+    width: 100%;
+  }
+
+  .flight-card {
+    grid-template-columns: 1fr auto;
+    gap: 14px;
+    padding: 16px !important;
+  }
+
+  .flight-schedule {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .flight-price {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .flight-perks {
+    grid-row: 3;
+  }
+
+  .flight-price strong {
+    font-size: 14px;
+  }
+
+  .flight-price a {
+    padding: 8px 10px;
+  }
 }
