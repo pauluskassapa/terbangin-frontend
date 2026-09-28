@@ -97,3 +97,62 @@ function updateTotal() {
 }
 
 passengerCount.addEventListener("change", createPassengerForms);
+
+const bookingForm = document.querySelector("#booking-form");
+const confirmation = document.querySelector("#booking-confirmation");
+const confirmationDetails = document.querySelector("#confirmation-details");
+
+bookingForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    if (!bookingForm.reportValidity()) {
+        return;
+    }
+
+    const count = Number(passengerCount.value);
+    const total = price * count;
+
+    confirmationDetails.innerHTML = "";
+
+    function addConfirmationRow(label, value) {
+        const row = document.createElement("div");
+        row.className = "confirmation-row";
+
+        const labelElement = document.createElement("span");
+        labelElement.textContent = label;
+
+        const valueElement = document.createElement("strong");
+        valueElement.textContent = value;
+
+        row.appendChild(labelElement);
+        row.appendChild(valueElement);
+
+        confirmationDetails.appendChild(row);
+    }
+
+    addConfirmationRow("Maskapai", airline);
+    addConfirmationRow("Nomor penerbangan", flightNumber);
+    addConfirmationRow("Rute", `${airportNames[fromCode] || fromCode} → ${airportNames[toCode] || toCode}`);
+    addConfirmationRow("Tanggal", formatDate(travelDate));
+    addConfirmationRow("Jumlah penumpang", `${count} orang`);
+
+    for (let i = 1; i <= count; i++) {
+        const name = document.querySelector(`#passenger-name-${i}`).value;
+        const email = document.querySelector(`#passenger-email-${i}`).value;
+        const phone = document.querySelector(`#passenger-phone-${i}`).value;
+
+        addConfirmationRow(`Nama penumpang ${i}`, name);
+        addConfirmationRow(`Email penumpang ${i}`, email);
+        addConfirmationRow(`Telepon penumpang ${i}`, phone);
+    }
+
+    addConfirmationRow("Total pembayaran", formatRupiah(total));
+
+    confirmation.hidden = false;
+    confirmation.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+});
+
+createPassengerForms();
