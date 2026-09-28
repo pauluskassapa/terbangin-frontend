@@ -86,3 +86,14 @@ function createPassengerForms() {
 
     updateTotal();
 }
+
+function updateTotal() {
+    const count = Number(passengerCount.value);
+    const total = price * count;
+
+    document.querySelector("#price-passengers").textContent = `${count} orang`;
+    document.querySelector("#ticket-total").textContent = formatRupiah(total);
+    document.querySelector("#booking-total").textContent = formatRupiah(total);
+}
+
+passengerCount.addEventListener("change", createPassengerForms);
