@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cari Penerbangan — TERBANGIN</title>
+  <link rel="stylesheet" href="../../css/flight.css">
+</head>
+<body>
+  <header>
+    <p id="search-summary">Pilih rute dan tanggal untuk melihat penerbangan.</p>
+    <a href="home.html">TERBANGIN</a>
+
+    <nav aria-label="Navigasi utama">
+      <a href="home.html">Home</a>
+      <a href="search-flight.html" aria-current="page">Cari Penerbangan</a>
+      <a href="flight-details.html">Detail Penerbangan</a>
+    </nav>
+
+    <a href="../account-joan/login.html">Masuk</a>
+  </header>
+
+  <main class="search-page">
+  <section class="search-hero">
+    <p class="eyebrow">Penerbangan untukmu</p>
+    <h1>Cari penerbangan yang pas.</h1>
+    <p id="search-summary">Pilih rute dan tanggal untuk melihat penerbangan.</p>
+  </section>
+
+  <section class="search-panel">
+    <form action="search-flight.html" method="get">
+      <label for="from">
+        Dari
+        <select id="from" name="from">
+          <option value="CGK">Jakarta (CGK)</option>
+          <option value="BDO">Bandung (BDO)</option>
+          <option value="SUB">Surabaya (SUB)</option>
+        </select>
+      </label>
+
+      <label for="to">
+        Ke
+        <select id="to" name="to">
+          <option value="DPS">Bali (DPS)</option>
+          <option value="YIA">Yogyakarta (YIA)</option>
+          <option value="KNO">Medan (KNO)</option>
+        </select>
+      </label>
+
+      <label for="departure-date">
+        Tanggal pergi
+        <input id="departure-date" type="date" name="date" required>
+      </label>
+
+      <button type="submit">Cari Penerbangan</button>
+    </form>
+  </section>
+
+  <div class="results-layout">
+    <aside class="filter-panel">
+      <h2>Filter</h2>
+
+      <fieldset>
+        <legend>Maskapai</legend>
+        <label><input type="checkbox" name="airline-filter" value="garuda"> Garuda Indonesia</label>
+        <label><input type="checkbox" name="airline-filter" value="citilink"> Citilink</label>
+        <label><input type="checkbox" name="airline-filter" value="batik"> Batik Air</label>
+        <label><input type="checkbox" name="airline-filter" value="lion"> Lion Air</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Waktu berangkat</legend>
+        <label><input type="checkbox" name="time-filter" value="morning"> Pagi, 05.00–11.00</label>
+        <label><input type="checkbox" name="time-filter" value="afternoon"> Siang, 11.00–17.00</label>
+        <label><input type="checkbox" name="time-filter" value="evening"> Malam, 17.00–23.00</label>
+      </fieldset>
+    </aside>
+
+    <section class="flight-results">
+      <div class="results-heading">
+        <div>
+          <h2>Penerbangan tersedia</h2>
+          <p>Harga contoh untuk keperluan tampilan.</p>
+        </div>
+        <label class="sort-control">
+          Urutkan
+          <select name="sort">
+            <option value="recommended">Rekomendasi</option>
+            <option value="cheapest">Harga terendah</option>
+            <option value="earliest">Waktu berangkat</option>
+          </select>
+        </label>
+      </div>
+
+      <article class="flight-card">
+        <div class="airline-info">
+          <span class="airline-mark garuda-mark" aria-hidden="true">GA</span>
+          <div><h3>Garuda Indonesia</h3><p>GA 402 · Ekonomi</p></div>
+        </div>
+        <div class="flight-schedule">
+          <div><strong>08.00</strong><span>CGK · Jakarta</span></div>
+          <div class="flight-duration"><span>Langsung</span><hr><span>1j 50m</span></div>
+          <div><strong>10.50</strong><span>DPS · Bali</span></div>
+        </div>
+        <div class="flight-price">
+          <strong>Rp1.250.000</strong><span>per penumpang</span>
+          <a href="flight-details.html?airline=Garuda%20Indonesia&flight=GA402&price=1250000">Lihat Detail</a>
+        </div>
+        <p class="flight-perks">✓ Bagasi 20 kg <span>✓ Makanan</span></p>
+      </article>
+
+      <article class="flight-card">
+        <div class="airline-info">
+          <span class="airline-mark citilink-mark" aria-hidden="true">QG</span>
+          <div><h3>Citilink</h3><p>QG 680 · Ekonomi</p></div>
+        </div>
+        <div class="flight-schedule">
+          <div><strong>10.30</strong><span>CGK · Jakarta</span></div>
+          <div class="flight-duration"><span>Langsung</span><hr><span>1j 55m</span></div>
+          <div><strong>13.25</strong><span>DPS · Bali</span></div>
+        </div>
+        <div class="flight-price">
+          <strong>Rp890.000</strong><span>per penumpang</span>
+          <a href="flight-details.html?airline=Citilink&flight=QG680&price=890000">Lihat Detail</a>
+        </div>
+        <p class="flight-perks">✓ Bagasi 15 kg <span>✓ Pilih kursi</span></p>
+      </article>
+
+      <article class="flight-card">
+        <div class="airline-info">
+          <span class="airline-mark batik-mark" aria-hidden="true">ID</span>
+          <div><h3>Batik Air</h3><p>ID 6512 · Ekonomi</p></div>
+        </div>
+        <div class="flight-schedule">
+          <div><strong>12.15</strong><span>CGK · Jakarta</span></div>
+          <div class="flight-duration"><span>Langsung</span><hr><span>1j 55m</span></div>
+          <div><strong>15.10</strong><span>DPS · Bali</span></div>
+        </div>
+        <div class="flight-price">
+          <strong>Rp1.050.000</strong><span>per penumpang</span>
+          <a href="flight-details.html?airline=Batik%20Air&flight=ID6512&price=1050000">Lihat Detail</a>
+        </div>
+        <p class="flight-perks">✓ Bagasi 20 kg <span>✓ Hiburan</span></p>
+      </article>
+
+      <article class="flight-card">
+        <div class="airline-info">
+          <span class="airline-mark lion-mark" aria-hidden="true">JT</span>
+          <div><h3>Lion Air</h3><p>JT 804 · Ekonomi</p></div>
+        </div>
+        <div class="flight-schedule">
+          <div><strong>14.20</strong><span>CGK · Jakarta</span></div>
+          <div class="flight-duration"><span>Langsung</span><hr><span>1j 55m</span></div>
+          <div><strong>17.15</strong><span>DPS · Bali</span></div>
+        </div>
+        <div class="flight-price">
+          <strong>Rp760.000</strong><span>per penumpang</span>
+          <a href="flight-details.html?airline=Lion%20Air&flight=JT804&price=760000">Lihat Detail</a>
+        </div>
+        <p class="flight-perks">✓ Bagasi kabin <span>Bagasi tambahan berbayar</span></p>
+      </article>
+
+      <article class="flight-card">
+        <div class="airline-info">
+          <span class="airline-mark super-mark" aria-hidden="true">IU</span>
+          <div><h3>Super Air Jet</h3><p>IU 750 · Ekonomi</p></div>
+        </div>
+        <div class="flight-schedule">
+          <div><strong>16.00</strong><span>CGK · Jakarta</span></div>
+          <div class="flight-duration"><span>Langsung</span><hr><span>1j 55m</span></div>
+          <div><strong>18.55</strong><span>DPS · Bali</span></div>
+        </div>
+        <div class="flight-price">
+          <strong>Rp820.000</strong><span>per penumpang</span>
+          <a href="flight-details.html?airline=Super%20Air%20Jet&flight=IU750&price=820000">Lihat Detail</a>
+        </div>
+        <p class="flight-perks">✓ Bagasi kabin <span>✓ Hiburan di aplikasi</span></p>
+      </article>
+    </section>
+  </div>
+</main>
+
+  <footer>
+    <p>© 2026 TERBANGIN. Mau ke mana? TERBANGIN aja.</p>
+  </footer>
+  <script src="../../js/flight.js"></script>
+</body>
+</html>
