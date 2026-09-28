@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cari Penerbangan — TERBANGIN</title>
+  <link rel="stylesheet" href="../../css/flight.css">
+</head>
+<body>
+  <header>
+    <a href="home.html">TERBANGIN</a>
+
+    <nav aria-label="Navigasi utama">
+      <a href="home.html">Home</a>
+      <a href="search-flight.html" aria-current="page">Cari Penerbangan</a>
+      <a href="flight-details.html">Detail Penerbangan</a>
+    </nav>
+
+    <a href="../account-joan/login.html">Masuk</a>
+  </header>
+
+  <main>
+    <section>
+      <p>Temukan perjalananmu</p>
+      <h1>Pilih penerbangan yang cocok.</h1>
+      <p>Bandingkan jadwal dan harga, lalu pilih perjalanan favoritmu.</p>
+    </section>
+
+    <section>
+      <h2>Cari Penerbangan</h2>
+
+      <form action="search-flight.html" method="get">
+        <label for="from">Dari</label>
+        <select id="from" name="from">
+          <option value="CGK">Jakarta (CGK)</option>
+          <option value="BDO">Bandung (BDO)</option>
+          <option value="SUB">Surabaya (SUB)</option>
+        </select>
+
+        <label for="to">Ke</label>
+        <select id="to" name="to">
+          <option value="DPS">Bali (DPS)</option>
+          <option value="YIA">Yogyakarta (YIA)</option>
+          <option value="KNO">Medan (KNO)</option>
+        </select>
+
+        <label for="departure-date">Tanggal Pergi</label>
+        <input id="departure-date" type="date" name="date" required>
+
+        <button type="submit">Cari Lagi</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Rekomendasi Penerbangan</h2>
+
+      <article>
+        <h3>Garuda Indonesia</h3>
+        <p>Jakarta (CGK) → Bali (DPS)</p>
+        <p>08.00 – 10.50 · Langsung · 1 jam 50 menit</p>
+        <p>Bagasi 20 kg</p>
+        <p>Mulai dari <strong>Rp1.250.000</strong></p>
+        <a href="flight-details.html">Lihat Detail</a>
+      </article>
+
+      <article>
+        <h3>Citilink</h3>
+        <p>Jakarta (CGK) → Bali (DPS)</p>
+        <p>10.30 – 13.25 · Langsung · 1 jam 55 menit</p>
+        <p>Bagasi 15 kg</p>
+        <p>Mulai dari <strong>Rp890.000</strong></p>
+        <a href="flight-details.html">Lihat Detail</a>
+      </article>
+
+      <article>
+        <h3>AirAsia</h3>
+        <p>Jakarta (CGK) → Bali (DPS)</p>
+        <p>14.15 – 17.10 · Langsung · 1 jam 55 menit</p>
+        <p>Bagasi kabin</p>
+        <p>Mulai dari <strong>Rp760.000</strong></p>
+        <a href="flight-details.html">Lihat Detail</a>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 TERBANGIN. Mau ke mana? TERBANGIN aja.</p>
+  </footer>
+</body>
+</html>
