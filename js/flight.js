@@ -39,4 +39,24 @@ if (travelDate && summary) {
       route.textContent =
         `${airportNames[fromCode] || fromCode} → ${airportNames[toCode] || toCode}`;
     });
+
+    document.querySelectorAll('main > section:last-child article a').forEach(link => {
+  const params = new URLSearchParams({
+    from: fromCode,
+    to: toCode
+  });
+
+  if (travelDate) {
+    params.set("date", travelDate);
+  }
+
+  const linkUrl = new URL(link.href);
+  const flightParams = new URLSearchParams(linkUrl.search);
+
+  flightParams.forEach((value, key) => {
+    params.set(key, value);
+  });
+
+  link.href = `flight-details.html?${params.toString()}`;
+});
 }
