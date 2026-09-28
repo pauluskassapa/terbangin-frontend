@@ -50,3 +50,39 @@ document.querySelector("#booking-to-name").textContent = airportNames[toCode] ||
 document.querySelector("#booking-date").textContent = formatDate(travelDate);
 
 document.querySelector("#ticket-price").textContent = formatRupiah(price);
+
+const passengerCount = document.querySelector("#passenger-count");
+const passengerList = document.querySelector("#passenger-list");
+
+function createPassengerForms() {
+    const count = Number(passengerCount.value);
+
+    passengerList.innerHTML = "";
+
+    for (let i = 1; i <= count; i++) {
+        const passengerForm = document.createElement("div");
+        passengerForm.className = "passenger-form";
+
+        passengerForm.innerHTML = `<h3>Penumpang ${i}</h3>
+
+        <div class="form-group">
+        <label for="passenger-name-${i}">Nama lengkap</label>
+        <input type="text"id="passenger-name-${i}"name="passenger-name-${i}"placeholder="Masukkan nama lengkap"required>
+        </div>
+
+        <div class="form-group">
+        <label for="passenger-email-${i}">Email</label>
+        <input type="email"id="passenger-email-${i}"name="passenger-email-${i}"placeholder="contoh@email.com"required>
+        </div>
+
+        <div class="form-group">
+        <label for="passenger-phone-${i}">Nomor telepon</label>
+        <input type="tel"id="passenger-phone-${i}"name="passenger-phone-${i}"placeholder="Contoh: 081234567890"pattern="[0-9+() -]{8,20}"required
+        >
+    </div>`;
+
+    passengerList.appendChild(passengerForm);
+    }
+
+    updateTotal();
+}
