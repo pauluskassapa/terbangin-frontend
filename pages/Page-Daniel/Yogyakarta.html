@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destinasi: Yogyakarta - Terbangin</title>
+  
+  <!-- Memanggil CSS Utama & CSS Destinasi -->
+  <link rel="stylesheet" href="../../css/flight.css">
+  <link rel="stylesheet" href="../../css/destinasi.css">
+</head>
+<body>
+
+  <!-- Header & Navbar persis seperti di home.html -->
+  <header class="header">
+    <nav aria-label="Navigasi utama">
+      <a href="../flight-paul/home.html">Home</a>
+      <a href="../flight-paul/search-flight.html">Cari Penerbangan</a>
+      <a href="../flight-paul/flight-details.html">Detail Penerbangan</a>
+    </nav>
+  </header>
+
+  <!-- Container Utama -->
+  <div class="destination-container">
+    
+    <!-- Header Page -->
+    <div class="destination-header">
+      <h1>Pesona Istimewa Yogyakarta</h1>
+      <p>Nikmati kehangatan budaya Istimewa, warisan sejarah kemegahan candi, dan suguhan kuliner legendaris.</p>
+    </div>
+
+    <!-- Destinasi Populer Card Grid -->
+    <section class="destination-section">
+      <h2 class="section-title-blue">Destinasi Populer di Yogyakarta</h2>
+      
+      <div class="destination-grid">
+        <div class="destination-card">
+          <img src="https://images.unsplash.com/photo-1596402184320-417e7178b2cd?auto=format&fit=crop&w=600&q=80" alt="Candi Prambanan">
+          <div class="destination-card-body">
+            <h3>Candi Prambanan</h3>
+            <p>Candi Hindu terbesar dan terindah di Indonesia yang kaya akan kisah legenda Ramayana.</p>
+          </div>
+        </div>
+
+        <div class="destination-card">
+          <img src="https://images.unsplash.com/photo-1584810359583-96fc3448beaa?auto=format&fit=crop&w=600&q=80" alt="Jalan Malioboro">
+          <div class="destination-card-body">
+            <h3>Jalan Malioboro</h3>
+            <p>Jantung kota Jogja yang tak pernah tidur, tempat berburu suvenir, angkringan, dan suasana khas.</p>
+          </div>
+        </div>
+
+        <div class="destination-card">
+          <img src="https://images.unsplash.com/photo-1601058268499-e52658b8bb88?auto=format&fit=crop&w=600&q=80" alt="Keraton Yogyakarta">
+          <div class="destination-card-body">
+            <h3>Keraton Yogyakarta</h3>
+            <p>Istana resmi kesultanan Ngayogyakarta Hadiningrat yang menjadi pusat kebudayaan Jawa.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kuliner & Aktivitas Khas -->
+    <section class="culture-box">
+      <h2>Kuliner & Budaya Khas</h2>
+      <ul>
+        <li><strong>Gudeg Jogja:</strong> Makanan khas berbahan nangka muda yang dimasak dengan santan dan rempah tradisional.</li>
+        <li><strong>Bakpia Pathok:</strong> Oleh-oleh olahan kacang hijau manis yang dibungkus kulit renyah khas Jogja.</li>
+        <li><strong>Kopi Joss:</strong> Pengalaman menikmati kopi unik yang disajikan langsung dengan arang membara.</li>
+      </ul>
+    </section>
+
+    <!-- Form Cek Harga Tiket -->
+    <section class="search-section">
+      <h2 class="form-title-center">Cek Harga Tiket Pesawat ke Yogyakarta (YIA)</h2>
+      
+      <form id="flightForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="origin">Kota Asal</label>
+            <select id="origin" required>
+              <option value="">-- Pilih Kota Asal --</option>
+              <option value="Jakarta (CGK)">Jakarta (CGK)</option>
+              <option value="Surabaya (SUB)">Surabaya (SUB)</option>
+              <option value="Bali (DPS)">Bali (DPS)</option>
+              <option value="Medan (KNO)">Medan (KNO)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="departureDate">Tanggal Keberangkatan</label>
+            <input type="date" id="departureDate" required>
+          </div>
+
+          <div class="form-group">
+            <label for="passengers">Jumlah Penumpang</label>
+            <input type="number" id="passengers" min="1" max="10" value="1" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-search">Cek Harga Tiket</button>
+      </form>
+
+      <div id="flightResult" class="result-container">
+        <h3>Estimasi Harga Tiket ke Yogyakarta</h3>
+        <p id="resultText"></p>
+        <button onclick="goToSearchFlight()" class="btn-search btn-submit-green">Lanjutkan Pemesanan</button>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="../../js/destination.js"></script>
+</body>
+</html>
