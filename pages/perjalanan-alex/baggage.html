@@ -199,5 +199,42 @@
 
   <script src="../../js/journey.js"></script>
 
+  <script>
+    const baggageKg = document.getElementById("baggageKg");
+    const baggageTotal = document.getElementById("baggageTotal");
+    const payBaggage = document.getElementById("payBaggage");
+    const baggageMessage = document.getElementById("baggageMessage");
+
+    baggageKg.addEventListener("input", function () {
+      let kg = parseInt(baggageKg.value);
+
+      if (isNaN(kg) || kg < 1) {
+        kg = 1;
+      }
+
+      let total = kg * 200000;
+
+      baggageTotal.textContent = "Rp" + total.toLocaleString("id-ID");
+    });
+
+    payBaggage.addEventListener("click", function () {
+      let kg = parseInt(baggageKg.value);
+
+      if (isNaN(kg) || kg < 1) {
+        baggageMessage.textContent = "Masukkan jumlah bagasi terlebih dahulu.";
+        return;
+      }
+
+      let total = kg * 200000;
+
+      baggageMessage.textContent =
+        "Pembayaran bagasi " +
+        kg +
+        " kg sebesar Rp" +
+        total.toLocaleString("id-ID") +
+        " berhasil.";
+    });
+  </script>
+
 </body>
 </html>
