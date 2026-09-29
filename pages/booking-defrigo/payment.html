@@ -1,178 +1,146 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment - Terbangin</title>
+    <title>Pembayaran — TERBANGIN</title>
     <link rel="stylesheet" href="../../css/payment.css">
-    <script src="../../js/payment.js" defer></script>
 </head>
 <body>
 
-    <header class="payment-header">
-        <div class="header-container">
-            <a href="../flight-paul/home.html" class="logo">Terbangin</a>
-            <a href="../booking-defrigo/booking.html" class="back-link">
-                Kembali ke Booking
-            </a>
-        </div>
+    <header>
+        <a href="../flight-paul/home.html">TERBANGIN</a>
+        <nav aria-label="Navigasi utama">
+            <a href="../flight-paul/home.html">Home</a>
+            <a href="../flight-paul/search-flight.html">Cari Penerbangan</a>
+            <a href="../booking-defrigo/booking.html">Pemesanan</a>
+            <a href="payment.html" aria-current="page">Pembayaran</a>
+        </nav>
+
+        <a href="../account-joan/login.html">Masuk</a>
     </header>
 
-    <main class="payment-container">
-        <h1>Pembayaran</h1>
-        <p class="page-description">
-            Periksa rincian penerbangan dan pilih metode pembayaran.
-        </p>
-
+    <main>
+        <section class="payment-hero">
+            <p class="eyebrow">Pembayaran tiket</p>
+            <h1>Selesaikan pembayaran</h1>
+            <p>Periksa kembali rincian penerbangan dan pilih metode pembayaranyang tersedia.</p>
+        </section>
         <div class="payment-layout">
-
-            <section class="payment-left">
-
-                <div class="payment-card">
-                    <h2>Rincian Penerbangan</h2>
-
-                    <div class="flight-info">
+            <section class="payment-form-section">
+                <article class="payment-card">
+                    <h2>Informasi Penerbangan</h2>
+                    <div class="flight-summary">
                         <div>
-                            <span class="info-label">Maskapai</span>
-                            <p id="airline">-</p>
+                            <p class="summary-label">Maskapai</p>
+                            <h3 id="payment-airline">Garuda Indonesia</h3>
+                            <p id="payment-flight">GA 402 · Ekonomi</p>
                         </div>
-
-                        <div>
-                            <span class="info-label">Nomor Penerbangan</span>
-                            <p id="flight-number">-</p>
-                        </div>
-
-                        <div>
-                            <span class="info-label">Dari</span>
-                            <p id="flight-from">-</p>
-                        </div>
-
-                        <div>
-                            <span class="info-label">Ke</span>
-                            <p id="flight-to">-</p>
-                        </div>
-
-                        <div>
-                            <span class="info-label">Tanggal</span>
-                            <p id="flight-date">-</p>
-                        </div>
-
-                        <div>
-                            <span class="info-label">Jumlah Penumpang</span>
-                            <p id="passenger-count">-</p>
+                        <div class="route-summary">
+                            <div>
+                                <strong id="payment-from">CGK</strong>
+                                <span id="payment-from-name">Jakarta</span>
+                            </div>
+                            <span class="route-arrow">→</span>
+                            <div>
+                                <strong id="payment-to">DPS</strong>
+                                <span id="payment-to-name">Bali</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="payment-card">
+                    <div class="flight-info">
+                        <p>
+                            <span>Tanggal keberangkatan</span>
+                            <strong id="payment-date">12 Oktober 2026</strong>
+                        </p>
+                        <p>
+                            <span>Jumlah penumpang</span>
+                            <strong id="payment-passengers">1 orang</strong>
+                        </p>
+                    </div>
+                </article>
+                <article class="payment-card">
                     <h2>Metode Pembayaran</h2>
-
+                    <p class="form-description">Pilih salah satu metode pembayaran yang tersedia.</p>
                     <form id="payment-form">
-
-                        <label class="payment-option">
-                            <input
-                                type="radio"
-                                name="payment-method"
-                                value="Transfer Bank"
-                                required
-                            >
-                            <span class="option-content">
-                                <strong>Transfer Bank</strong>
-                                <small>Pembayaran melalui transfer bank</small>
-                            </span>
-                        </label>
-
-                        <label class="payment-option">
-                            <input
-                                type="radio"
-                                name="payment-method"
-                                value="E-Wallet"
-                            >
-                            <span class="option-content">
-                                <strong>E-Wallet</strong>
-                                <small>Pembayaran melalui dompet digital</small>
-                            </span>
-                        </label>
-
-                        <label class="payment-option">
-                            <input
-                                type="radio"
-                                name="payment-method"
-                                value="QRIS"
-                            >
-                            <span class="option-content">
-                                <strong>QRIS</strong>
-                                <small>Pembayaran menggunakan QRIS</small>
-                            </span>
-                        </label>
-
-                        <button type="submit" class="payment-button">
-                            Konfirmasi Pembayaran
-                        </button>
-
+                        <div class="payment-method">
+                            <label class="payment-option">
+                                <input type="radio"name="payment-method"value="Transfer Bank"required>
+                                <span>
+                                    <strong>Transfer Bank</strong>
+                                    <small>Pembayaran melalui transfer bank</small>
+                                </span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio"name="payment-method"value="E-Wallet">
+                                <span>
+                                    <strong>E-Wallet</strong>
+                                    <small>Pembayaran menggunakan dompet digital</small>
+                                </span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio"name="payment-method"value="QRIS">
+                                <span>
+                                    <strong>QRIS</strong>
+                                    <small>Pembayaran menggunakan QRIS</small>
+                                </span>
+                            </label>
+                        </div>
+                        <button type="submit" class="payment-button">Konfirmasi Pembayaran</button>
                     </form>
-                </div>
-
+                </article>
             </section>
-
-            <aside class="payment-card payment-summary">
-                <h2>Ringkasan Pembayaran</h2>
-
-                <div class="summary-row">
-                    <span>Harga per Penumpang</span>
-                    <span id="ticket-price">Rp0</span>
-                </div>
-
-                <div class="summary-row">
-                    <span>Jumlah Penumpang</span>
-                    <span id="summary-count">0</span>
-                </div>
-
-                <div class="summary-row total-row">
-                    <strong>Total Pembayaran</strong>
-                    <strong id="total-price">Rp0</strong>
-                </div>
-
-                <p class="payment-note">
-                    Halaman ini merupakan simulasi pembayaran untuk keperluan proyek.
-                </p>
+            <aside class="price-section">
+                <article class="payment-card price-card">
+                    <h2>Rincian Harga</h2>
+                    <div class="price-row">
+                        <span>Harga per penumpang</span>
+                        <strong id="payment-ticket-price">Rp1.250.000</strong>
+                    </div>
+                    <div class="price-row">
+                        <span>Jumlah penumpang</span>
+                        <strong id="payment-price-passengers">1 orang</strong>
+                    </div>
+                    <div class="price-row">
+                        <span>Total tiket</span>
+                        <strong id="payment-ticket-total">Rp1.250.000</strong>
+                    </div>
+                    <div class="price-total">
+                        <span>Total pembayaran</span>
+                        <strong id="payment-total">Rp1.250.000</strong>
+                    </div>
+                    <p class="price-note">Harga di atas merupakan harga contoh untuk keperluan proyek.</p>
+                </article>
             </aside>
-
         </div>
-
-        <section id="payment-confirmation" class="confirmation-card" hidden>
-            <div class="success-icon">✓</div>
-            <h2>Pembayaran Berhasil (Simulasi)</h2>
-            <p>Konfirmasi pembayaran berhasil ditampilkan.</p>
-
-            <div class="confirmation-details">
-                <div>
-                    <span>Metode Pembayaran</span>
+        <section id="payment-confirmation"class="payment-card confirmation-card"hidden>
+            <h2>Pembayaran Berhasil!</h2>
+            <p>Berikut adalah ringkasan pembayaran tiket kamu.</p>
+            <div id="payment-confirmation-details">
+                <div class="confirmation-row">
+                    <span>Metode pembayaran</span>
                     <strong id="confirmed-method">-</strong>
                 </div>
-
-                <div>
-                    <span>Total Pembayaran</span>
-                    <strong id="confirmed-total">Rp0</strong>
+                <div class="confirmation-row">
+                    <span>Total pembayaran</span>
+                    <strong id="confirmed-total">-</strong>
                 </div>
-
-                <div>
+                <div class="confirmation-row">
                     <span>Status</span>
-                    <strong class="status-success">Berhasil (Simulasi)</strong>
+                    <strong>Berhasil (Simulasi)</strong>
                 </div>
             </div>
 
-            <a href="../flight-paul/home.html" class="home-button">
-                Kembali ke Home
-            </a>
+            <a href="../flight-paul/home.html"class="back-button">Kembali ke Home</a>
+
         </section>
-
     </main>
-
-    <footer class="payment-footer">
+    
+    <footer>
         <p>© 2026 TERBANGIN. Mau ke mana? TERBANGIN aja.</p>
     </footer>
+
+    <script src="../../js/payment.js"></script>
 
 </body>
 </html>
