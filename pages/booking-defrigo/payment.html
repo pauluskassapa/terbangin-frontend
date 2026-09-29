@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Terbangin</title>
+    <link rel="stylesheet" href="../../css/payment.css">
+    <script src="../../js/payment.js" defer></script>
+</head>
+<body>
+
+    <header class="payment-header">
+        <div class="header-container">
+            <a href="../flight-paul/home.html" class="logo">Terbangin</a>
+            <a href="../booking-defrigo/booking.html" class="back-link">
+                Kembali ke Booking
+            </a>
+        </div>
+    </header>
+
+    <main class="payment-container">
+        <h1>Pembayaran</h1>
+        <p class="page-description">
+            Periksa rincian penerbangan dan pilih metode pembayaran.
+        </p>
+
+        <div class="payment-layout">
+
+            <section class="payment-left">
+
+                <div class="payment-card">
+                    <h2>Rincian Penerbangan</h2>
+
+                    <div class="flight-info">
+                        <div>
+                            <span class="info-label">Maskapai</span>
+                            <p id="airline">-</p>
+                        </div>
+
+                        <div>
+                            <span class="info-label">Nomor Penerbangan</span>
+                            <p id="flight-number">-</p>
+                        </div>
+
+                        <div>
+                            <span class="info-label">Dari</span>
+                            <p id="flight-from">-</p>
+                        </div>
+
+                        <div>
+                            <span class="info-label">Ke</span>
+                            <p id="flight-to">-</p>
+                        </div>
+
+                        <div>
+                            <span class="info-label">Tanggal</span>
+                            <p id="flight-date">-</p>
+                        </div>
+
+                        <div>
+                            <span class="info-label">Jumlah Penumpang</span>
+                            <p id="passenger-count">-</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="payment-card">
+                    <h2>Metode Pembayaran</h2>
+
+                    <form id="payment-form">
+
+                        <label class="payment-option">
+                            <input
+                                type="radio"
+                                name="payment-method"
+                                value="Transfer Bank"
+                                required
+                            >
+                            <span class="option-content">
+                                <strong>Transfer Bank</strong>
+                                <small>Pembayaran melalui transfer bank</small>
+                            </span>
+                        </label>
+
+                        <label class="payment-option">
+                            <input
+                                type="radio"
+                                name="payment-method"
+                                value="E-Wallet"
+                            >
+                            <span class="option-content">
+                                <strong>E-Wallet</strong>
+                                <small>Pembayaran melalui dompet digital</small>
+                            </span>
+                        </label>
+
+                        <label class="payment-option">
+                            <input
+                                type="radio"
+                                name="payment-method"
+                                value="QRIS"
+                            >
+                            <span class="option-content">
+                                <strong>QRIS</strong>
+                                <small>Pembayaran menggunakan QRIS</small>
+                            </span>
+                        </label>
+
+                        <button type="submit" class="payment-button">
+                            Konfirmasi Pembayaran
+                        </button>
+
+                    </form>
+                </div>
+
+            </section>
+
+            <aside class="payment-card payment-summary">
+                <h2>Ringkasan Pembayaran</h2>
+
+                <div class="summary-row">
+                    <span>Harga per Penumpang</span>
+                    <span id="ticket-price">Rp0</span>
+                </div>
+
+                <div class="summary-row">
+                    <span>Jumlah Penumpang</span>
+                    <span id="summary-count">0</span>
+                </div>
+
+                <div class="summary-row total-row">
+                    <strong>Total Pembayaran</strong>
+                    <strong id="total-price">Rp0</strong>
+                </div>
+
+                <p class="payment-note">
+                    Halaman ini merupakan simulasi pembayaran untuk keperluan proyek.
+                </p>
+            </aside>
+
+        </div>
+
+        <section id="payment-confirmation" class="confirmation-card" hidden>
+            <div class="success-icon">✓</div>
+            <h2>Pembayaran Berhasil (Simulasi)</h2>
+            <p>Konfirmasi pembayaran berhasil ditampilkan.</p>
+
+            <div class="confirmation-details">
+                <div>
+                    <span>Metode Pembayaran</span>
+                    <strong id="confirmed-method">-</strong>
+                </div>
+
+                <div>
+                    <span>Total Pembayaran</span>
+                    <strong id="confirmed-total">Rp0</strong>
+                </div>
+
+                <div>
+                    <span>Status</span>
+                    <strong class="status-success">Berhasil (Simulasi)</strong>
+                </div>
+            </div>
+
+            <a href="../flight-paul/home.html" class="home-button">
+                Kembali ke Home
+            </a>
+        </section>
+
+    </main>
+
+    <footer class="payment-footer">
+        <p>&copy; 2026 Terbangin. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
