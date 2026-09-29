@@ -29,6 +29,10 @@
   letter-spacing: -1px;
 }
 
+.account-card .account-title-wide {
+  font-size: clamp(28px, 4.5vw, 36px);
+}
+
 .account-intro {
   margin: 10px 0 24px;
   color: var(--muted);
@@ -94,7 +98,9 @@
   font-weight: 700;
 }
 
+.account-form input[type="text"],
 .account-form input[type="email"],
+.account-form input[type="tel"],
 .account-form input[type="password"] {
   width: 100%;
   min-height: 46px;
@@ -107,7 +113,9 @@
   color: var(--navy);
 }
 
+.account-form input[type="text"]:focus,
 .account-form input[type="email"]:focus,
+.account-form input[type="tel"]:focus,
 .account-form input[type="password"]:focus {
   border-color: var(--teal);
   box-shadow: 0 0 0 3px rgb(8 127 140 / 12%);
@@ -146,6 +154,28 @@
 
 .account-form > button {
   width: 100%;
+}
+
+.account-form .terms-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.terms-option input {
+  flex: 0 0 auto;
+  margin: 3px 0 0;
+  accent-color: var(--teal);
+}
+
+.account-status {
+  min-height: 20px;
+  margin: 0;
+  color: var(--teal-dark);
+  font-size: 12px;
 }
 
 .account-signup {
