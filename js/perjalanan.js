@@ -2,6 +2,7 @@ const bookingForm = document.querySelector("#bookingForm");
 const bookingResult = document.querySelector("#bookingResult");
 const bookingMessage = document.querySelector("#bookingMessage");
 
+
 if (bookingForm) {
   bookingForm.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -51,5 +52,44 @@ if (checkinForm) {
       checkinMessage.textContent =
         "Kode booking tidak ditemukan. Silakan periksa kembali data yang dimasukkan.";
     }
+  });
+}
+
+const baggageKg = document.getElementById("baggageKg");
+const baggageTotal = document.getElementById("baggageTotal");
+const payBaggage = document.getElementById("payBaggage");
+const baggageMessage = document.getElementById("baggageMessage");
+
+if (baggageKg) {
+  baggageKg.addEventListener("input", function () {
+    let kg = parseInt(baggageKg.value);
+
+    if (isNaN(kg) || kg < 1) {
+      kg = 1;
+    }
+
+    let total = kg * 200000;
+
+    baggageTotal.textContent = "Rp" + total.toLocaleString("id-ID");
+  });
+}
+
+if (payBaggage) {
+  payBaggage.addEventListener("click", function () {
+    let kg = parseInt(baggageKg.value);
+
+    if (isNaN(kg) || kg < 1) {
+      baggageMessage.textContent = "Masukkan jumlah bagasi terlebih dahulu.";
+      return;
+    }
+
+    let total = kg * 200000;
+
+    baggageMessage.textContent =
+      "Pembayaran bagasi " +
+      kg +
+      " kg sebesar Rp" +
+      total.toLocaleString("id-ID") +
+      " berhasil.";
   });
 }
