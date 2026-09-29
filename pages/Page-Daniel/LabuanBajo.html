@@ -4,82 +4,69 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Destinasi: Labuan Bajo - Terbangin</title>
-  
-  <!-- Memanggil CSS utama project Terbangin -->
+
+  <link rel="stylesheet" href="../../css/destinasi.css">
   <link rel="stylesheet" href="../../css/flight.css">
 </head>
 <body>
 
-  <!-- Navbar sesuai struktur flight.css -->
-  <nav class="navbar">
-    <a href="../flight-paul/home.html" class="logo">Terbangin</a>
-    <ul class="nav-links">
-      <li><a href="../flight-paul/home.html">Home</a></li>
-      <li><a href="../flight-paul/search-flight.html">Cari Penerbangan</a></li>
-    </ul>
-  </nav>
+   <nav aria-label="Navigasi utama">
+      <a href="home.html">Home</a>
+      <a href="search-flight.html">Cari Penerbangan</a>
+      <a href="flight-details.html">Detail Penerbangan</a>
+    </nav>
 
-  <!-- Container Utama -->
-  <div class="container" style="padding-top: 30px; padding-bottom: 50px;">
+  <div class="container destination-container">
     
-    <!-- Header / Banner Destinasi Labuan Bajo -->
-    <div style="text-align: center; margin-bottom: 40px;">
-      <h1 style="color: #1e3c72; font-size: 2.2rem; margin-bottom: 10px;">Pesona Eksotis Labuan Bajo</h1>
-      <p style="color: #666; font-size: 1.1rem;">Gerbang menuju keajaiban Komodo, laut biru jernih, dan pemandangan bukit yang menakjubkan.</p>
+    <div class="destination-header">
+      <h1>Pesona Eksotis Labuan Bajo</h1>
+      <p>Gerbang menuju keajaiban Komodo, laut biru jernih, dan pemandangan bukit yang menakjubkan.</p>
     </div>
 
-    <!-- Informasi Destinasi Populer -->
-    <section style="margin-bottom: 50px;">
-      <h2 style="color: #2a5298; border-bottom: 2px solid #2a5298; padding-bottom: 8px; margin-bottom: 20px;">
-        Destinasi Populer di Labuan Bajo
-      </h2>
+    <section class="destination-section">
+      <h2 class="section-title-blue">Destinasi Populer di Labuan Bajo</h2>
       
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-        
-        <div style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-          <img src="https://images.unsplash.com/photo-1596401057633-531022221757" alt="Pulau Padar" style="width: 100%; height: 180px; object-fit: cover;">
-          <div style="padding: 15px;">
-            <h3 style="color: #1e3c72; margin-bottom: 8px;">Pulau Padar</h3>
-            <p style="color: #555; font-size: 0.95rem;">Ikon Labuan Bajo dengan pemandangan tiga teluk unik dan lanskap perbukitan yang dramatis.</p>
+      <div class="destination-grid">
+        <div class="destination-card">
+          <img src="https://images.unsplash.com/photo-1596401057633-531022221757" alt="Pulau Padar">
+          <div class="destination-card-body">
+            <h3>Pulau Padar</h3>
+            <p>Ikon Labuan Bajo dengan pemandangan tiga teluk unik dan lanskap perbukitan yang dramatis.</p>
           </div>
         </div>
 
-        <div style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-          <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801" alt="Taman Nasional Komodo" style="width: 100%; height: 180px; object-fit: cover;">
-          <div style="padding: 15px;">
-            <h3 style="color: #1e3c72; margin-bottom: 8px;">Taman Nasional Komodo</h3>
-            <p style="color: #555; font-size: 0.95rem;">Habitat asli kadal terbesar di dunia, Komodo, yang diakui sebagai Warisan Dunia UNESCO.</p>
+        <div class="destination-card">
+          <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801" alt="Taman Nasional Komodo">
+          <div class="destination-card-body">
+            <h3>Taman Nasional Komodo</h3>
+            <p>Habitat asli kadal terbesar di dunia, Komodo, yang diakui sebagai Warisan Dunia UNESCO.</p>
           </div>
         </div>
 
-        <div style="background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Pink Beach" style="width: 100%; height: 180px; object-fit: cover;">
-          <div style="padding: 15px;">
-            <h3 style="color: #1e3c72; margin-bottom: 8px;">Pink Beach</h3>
-            <p style="color: #555; font-size: 0.95rem;">Pantai langka berpasir merah muda yang menyajikan pemandangan bawah laut menakjubkan.</p>
+        <div class="destination-card">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Pink Beach">
+          <div class="destination-card-body">
+            <h3>Pink Beach</h3>
+            <p>Pantai langka berpasir merah muda yang menyajikan pemandangan bawah laut menakjubkan.</p>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- Aktivitas & Kuliner Khas -->
-    <section style="margin-bottom: 50px; background: #f8f9fa; padding: 20px; border-radius: 8px;">
-      <h2 style="color: #2a5298; margin-bottom: 15px;">Kuliner & Aktivitas Khas</h2>
-      <ul style="line-height: 1.8; color: #333; padding-left: 20px;">
+    <section class="culture-box">
+      <h2>Kuliner & Aktivitas Khas</h2>
+      <ul>
         <li><strong>Ikan Kuah Asam:</strong> Olahan ikan segar khas Manggarai dengan cita rasa gurih dan segar.</li>
         <li><strong>Liveaboard / Sailing Komodo:</strong> Pengalaman menginap di kapal Phinisi sambil menjelajahi kepulauan.</li>
         <li><strong>Kopi Manggarai:</strong> Kopi lokal berkualitas tinggi dengan cita rasa khas Flores.</li>
       </ul>
     </section>
 
-    <!-- Section Form Cek Harga Tiket -->
     <section class="search-section">
       <h2 style="color: #1e3c72; margin-bottom: 20px; text-align: center;">Cek Harga Tiket Pesawat ke Labuan Bajo (LBJ)</h2>
       
       <form id="flightForm">
         <div class="form-row">
-          
           <div class="form-group">
             <label for="origin">Kota Asal</label>
             <select id="origin" required>
@@ -100,55 +87,20 @@
             <label for="passengers">Jumlah Penumpang</label>
             <input type="number" id="passengers" min="1" max="10" value="1" required>
           </div>
-
         </div>
 
         <button type="submit" class="btn-search">Cek Harga Tiket</button>
       </form>
 
-      <!-- Tempat Hasil Cek Harga -->
-      <div id="flightResult" style="display: none; margin-top: 25px; padding: 20px; background: #eef2f5; border-left: 5px solid #2a5298; border-radius: 4px;">
-        <h3 style="color: #1e3c72; margin-top: 0;">Estimasi Harga Tiket ke Labuan Bajo</h3>
-        <p id="resultText" style="line-height: 1.6; color: #333;"></p>
-        <button onclick="goToSearchFlight()" class="btn-search" style="background: #28a745; margin-top: 10px;">Lanjutkan Pemesanan</button>
+      <div id="flightResult" class="result-container">
+        <h3>Estimasi Harga Tiket ke Labuan Bajo</h3>
+        <p id="resultText"></p>
+        <button onclick="goToSearchFlight()" class="btn-search btn-submit-green">Lanjutkan Pemesanan</button>
       </div>
     </section>
 
   </div>
 
-  <script>
-    // Fitur Cek Harga Tiket Sederhana ke Labuan Bajo
-    document.getElementById('flightForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const origin = document.getElementById('origin').value;
-      const date = document.getElementById('departureDate').value;
-      const passengers = document.getElementById('passengers').value;
-
-      // Estimasi harga dasar penerbangan ke Labuan Bajo (LBJ)
-      let basePrice = 1200000; 
-      if (origin.includes('Jakarta')) basePrice = 1750000;
-      else if (origin.includes('Surabaya')) basePrice = 1400000;
-      else if (origin.includes('Bali')) basePrice = 850000;
-
-      const totalPrice = basePrice * passengers;
-
-      const resultBox = document.getElementById('flightResult');
-      const resultText = document.getElementById('resultText');
-
-      resultText.innerHTML = `
-        <strong>Rute:</strong> ${origin} ➔ Labuan Bajo (LBJ)<br>
-        <strong>Tanggal:</strong> ${date}<br>
-        <strong>Jumlah Penumpang:</strong> ${passengers} Orang<br>
-        <strong>Estimasi Total Harga:</strong> <span style="font-size: 1.2rem; color: #e74c3c; font-weight: bold;">Rp ${totalPrice.toLocaleString('id-ID')}</span>
-      `;
-
-      resultBox.style.display = 'block';
-    });
-
-    function goToSearchFlight() {
-      window.location.href = '../flight-paul/search-flight.html';
-    }
-  </script>
+  <script src="../../js/destinasi.js"></script>
 </body>
 </html>
