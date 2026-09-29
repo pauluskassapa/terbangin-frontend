@@ -88,18 +88,63 @@
 
           <h3>Bagasi Tambahan</h3>
 
-          <strong>Berbayar</strong>
+          <strong>Rp200.000 / kg</strong>
 
           <p>
-            Bagasi tambahan dapat digunakan jika barang melebihi batas.
+            Tambahkan kapasitas bagasi jika barang melebihi batas yang tersedia.
           </p>
 
           <ul>
-            <li>Biaya mengikuti ketentuan penerbangan</li>
-            <li>Dapat berbeda berdasarkan rute</li>
-            <li>Periksa ketersediaan sebelum berangkat</li>
+            <li>Rp200.000 untuk setiap 1 kg</li>
+            <li>Dapat menambah kapasitas sesuai kebutuhan</li>
+            <li>Pembayaran dilakukan sebelum berangkat</li>
           </ul>
         </article>
+
+      </div>
+
+    </section>
+
+    <section class="journey-section">
+
+      <div class="section-heading">
+        <p>Tambah Bagasi</p>
+        <h2>Tambah kapasitas bagasi</h2>
+        <span>
+          Setiap tambahan 1 kg dikenakan biaya Rp200.000.
+        </span>
+      </div>
+
+      <div class="baggage-form">
+
+        <label for="baggageKg">Jumlah bagasi tambahan</label>
+
+        <div class="baggage-input">
+          <input
+            type="number"
+            id="baggageKg"
+            min="1"
+            value="1"
+          >
+
+          <span>kg</span>
+        </div>
+
+        <div class="baggage-payment">
+          <p>Harga per kg</p>
+          <strong>Rp200.000</strong>
+        </div>
+
+        <div class="baggage-payment">
+          <p>Total pembayaran</p>
+          <strong id="baggageTotal">Rp200.000</strong>
+        </div>
+
+        <button type="button" id="payBaggage">
+          Bayar Bagasi
+        </button>
+
+        <p id="baggageMessage"></p>
 
       </div>
 
@@ -151,6 +196,8 @@
   <footer>
     <p>© 2026 TERBANGIN. Mau ke mana? TERBANGIN aja.</p>
   </footer>
+
+  <script src="../../js/journey.js"></script>
 
 </body>
 </html>
