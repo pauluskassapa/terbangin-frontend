@@ -45,7 +45,19 @@ paymentForm.addEventListener("submit", function (event) {
 
     document.getElementById("confirmed-method").textContent = selectedMethod.value;
     document.getElementById("confirmed-total").textContent = formatRupiah(total);
-    
+
+    const paymentParams = new URLSearchParams({
+        airline: airline,
+        flight: flightNumber,
+        from: fromCode,
+        to: toCode,
+        date: travelDate,
+        price: String(price),
+        count: String(count)
+    });
+
+    document.querySelector("#payment-link").href = `../payment-defrigo/payment.html?${paymentParams.toString()}`;
+
     confirmation.hidden = false;
 
     paymentForm.closest(".payment-card").hidden = true;
