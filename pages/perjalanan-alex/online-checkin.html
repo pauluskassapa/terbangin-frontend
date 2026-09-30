@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../css/flight.css">
+  <link rel="stylesheet" href="../../css/journey.css">
+  <title>TERBANGIN — Online Check-in</title>
+</head>
+<body>
+
+  <header>
+    <a href="../flight-paul/home.html">TERBANGIN</a>
+
+    <nav aria-label="Navigasi utama">
+      <a href="../flight-paul/home.html">Home</a>
+      <a href="../flight-paul/search-flight.html">Cari Penerbangan</a>
+      <a href="my-booking.html">My Booking</a>
+      <a href="online-checkin.html" aria-current="page">Online Check-in</a>
+      <a href="baggage.html">Baggage</a>
+    </nav>
+
+    <a href="../account-joan/login.html">Masuk</a>
+  </header>
+
+  <main>
+
+    <section class="journey-hero">
+      <p>Online Check-in</p>
+
+      <h1>Check-in sebelum berangkat.</h1>
+
+      <p>
+        Hemat waktu di bandara dengan melakukan check-in
+        secara online sebelum penerbangan.
+      </p>
+    </section>
+
+    <section class="journey-section">
+
+      <div class="section-heading">
+        <p>Check-in</p>
+        <h2>Masukkan data penerbangan</h2>
+        <span>
+          Gunakan kode booking dan nama belakang penumpang.
+        </span>
+      </div>
+
+      <form id="checkinForm" class="journey-form">
+
+        <label for="checkinCode">
+          Kode Booking
+          <input
+            id="checkinCode"
+            type="text"
+            placeholder="Contoh: TRB123"
+            required
+          >
+        </label>
+
+        <label for="lastName">
+          Nama Belakang
+          <input
+            id="lastName"
+            type="text"
+            placeholder="Contoh: Situmorang"
+            required
+          >
+        </label>
+
+        <button type="submit">Mulai Check-in</button>
+
+      </form>
+
+      <p id="checkinMessage" class="form-message"></p>
+
+      <article id="checkinResult" class="checkin-result hidden">
+
+        <div class="checkin-success">
+          <span>✓</span>
+
+          <div>
+            <h3>Check-in berhasil</h3>
+            <p>
+              Kamu sudah melakukan check-in untuk penerbangan ini.
+            </p>
+          </div>
+        </div>
+
+        <div class="checkin-info">
+
+          <div>
+            <span>Kode Booking</span>
+            <strong id="checkinResultCode">TRB123</strong>
+          </div>
+
+          <div>
+            <span>Penumpang</span>
+            <strong id="checkinResultName">-</strong>
+          </div>
+
+          <div>
+            <span>Rute</span>
+            <strong>Jakarta → Bali</strong>
+          </div>
+
+          <div>
+            <span>Waktu Berangkat</span>
+            <strong>08.00 WIB</strong>
+          </div>
+
+        </div>
+
+        <div class="boarding-note">
+          <strong>Jangan lupa</strong>
+
+          <p>
+            Datang lebih awal ke bandara dan siapkan identitas
+            serta boarding pass saat diperlukan.
+          </p>
+        </div>
+
+      </article>
+
+    </section>
+
+    <section class="journey-section">
+
+      <div class="section-heading">
+        <p>Langkah Check-in</p>
+        <h2>Yang perlu disiapkan</h2>
+      </div>
+
+      <div class="steps-grid">
+
+        <article class="step-card">
+          <span>01</span>
+          <h3>Masukkan data</h3>
+          <p>
+            Isi kode booking dan nama belakang sesuai pemesanan.
+          </p>
+        </article>
+
+        <article class="step-card">
+          <span>02</span>
+          <h3>Konfirmasi</h3>
+          <p>
+            Periksa kembali data penerbangan sebelum melakukan check-in.
+          </p>
+        </article>
+
+        <article class="step-card">
+          <span>03</span>
+          <h3>Siap berangkat</h3>
+          <p>
+            Simpan informasi check-in dan lanjutkan perjalananmu.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 TERBANGIN. Mau ke mana? TERBANGIN aja.</p>
+  </footer>
+
+  <script src="../../js/journey.js"></script>
+</body>
+</html>
