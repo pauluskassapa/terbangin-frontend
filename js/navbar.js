@@ -5,8 +5,8 @@ if (navbarHost) {
     <header class="site-header">
       <div class="site-header-inner">
         <a class="site-brand" href="../flight-paul/home.html">
-          <span class="brand-icon" aria-hidden="true">✈</span>
-          <span>TERBANGIN</span>
+          <img class="brand-symbol" src="../../assets/images/terbangin-symbol.png" alt="">
+          <span class="brand-wordmark">TERBANGIN</span>
         </a>
 
         <nav class="site-nav" aria-label="Navigasi utama">
