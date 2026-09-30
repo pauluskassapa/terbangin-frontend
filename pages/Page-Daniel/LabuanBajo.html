@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Destinasi: Labuan Bajo - Terbangin</title>
+
+  <link rel="stylesheet" href="../../css/destinasi.css">
+  <link rel="stylesheet" href="../../css/flight.css">
+</head>
+<body>
+
+   <nav aria-label="Navigasi utama">
+      <a href="../flight-paul/home.html">Home</a>
+      <a href="../flight-paul/search-flight.html">Cari Penerbangan</a>
+      <a href="../flight-paul/flight-details.html">Detail Penerbangan</a>
+    </nav>
+
+  <div class="container destination-container">
+    
+    <div class="destination-header">
+      <h1>Pesona Eksotis Labuan Bajo</h1>
+      <p>Gerbang menuju keajaiban Komodo, laut biru jernih, dan pemandangan bukit yang menakjubkan.</p>
+    </div>
+
+    <section class="destination-section">
+      <h2 class="section-title-blue">Destinasi Populer di Labuan Bajo</h2>
+      
+      <div class="destination-grid">
+        <div class="destination-card">
+          <img src="https://images.unsplash.com/photo-1596401057633-531022221757" alt="Pulau Padar">
+          <div class="destination-card-body">
+            <h3>Pulau Padar</h3>
+            <p>Ikon Labuan Bajo dengan pemandangan tiga teluk unik dan lanskap perbukitan yang dramatis.</p>
+          </div>
+        </div>
+
+        <div class="destination-card">
+          <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801" alt="Taman Nasional Komodo">
+          <div class="destination-card-body">
+            <h3>Taman Nasional Komodo</h3>
+            <p>Habitat asli kadal terbesar di dunia, Komodo, yang diakui sebagai Warisan Dunia UNESCO.</p>
+          </div>
+        </div>
+
+        <div class="destination-card">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Pink Beach">
+          <div class="destination-card-body">
+            <h3>Pink Beach</h3>
+            <p>Pantai langka berpasir merah muda yang menyajikan pemandangan bawah laut menakjubkan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="culture-box">
+      <h2>Kuliner & Aktivitas Khas</h2>
+      <ul>
+        <li><strong>Ikan Kuah Asam:</strong> Olahan ikan segar khas Manggarai dengan cita rasa gurih dan segar.</li>
+        <li><strong>Liveaboard / Sailing Komodo:</strong> Pengalaman menginap di kapal Phinisi sambil menjelajahi kepulauan.</li>
+        <li><strong>Kopi Manggarai:</strong> Kopi lokal berkualitas tinggi dengan cita rasa khas Flores.</li>
+      </ul>
+    </section>
+
+    <section class="search-section">
+      <h2 style="color: #1e3c72; margin-bottom: 20px; text-align: center;">Cek Harga Tiket Pesawat ke Labuan Bajo (LBJ)</h2>
+      
+      <form id="flightForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="origin">Kota Asal</label>
+            <select id="origin" required>
+              <option value="">-- Pilih Kota Asal --</option>
+              <option value="Jakarta (CGK)">Jakarta (CGK)</option>
+              <option value="Surabaya (SUB)">Surabaya (SUB)</option>
+              <option value="Bali (DPS)">Bali (DPS)</option>
+              <option value="Yogyakarta (YIA)">Yogyakarta (YIA)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="departureDate">Tanggal Keberangkatan</label>
+            <input type="date" id="departureDate" required>
+          </div>
+
+          <div class="form-group">
+            <label for="passengers">Jumlah Penumpang</label>
+            <input type="number" id="passengers" min="1" max="10" value="1" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-search">Cek Harga Tiket</button>
+      </form>
+
+      <div id="flightResult" class="result-container">
+        <h3>Estimasi Harga Tiket ke Labuan Bajo</h3>
+        <p id="resultText"></p>
+        <button onclick="goToSearchFlight()" class="btn-search btn-submit-green">Lanjutkan Pemesanan</button>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="../../js/destinasi.js"></script>
+</body>
+</html>
