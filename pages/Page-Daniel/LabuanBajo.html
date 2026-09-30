@@ -10,28 +10,54 @@
 </head>
 <body>
 
-   <nav aria-label="Navigasi utama">
-      <a href="../flight-paul/home.html">Home</a>
-      <a href="../flight-paul/search-flight.html">Cari Penerbangan</a>
-      <a href="../flight-paul/flight-details.html">Detail Penerbangan</a>
+  <!-- Header Navigation -->
+  <header class="header">
+    <nav class="navbar" aria-label="Navigasi utama">
+      <a href="../flight-paul/home.html" class="logo">Terbangin</a>
+      <ul class="nav-links">
+        <li><a href="../flight-paul/home.html">Home</a></li>
+        <li><a href="../flight-paul/search-flight.html">Cari Penerbangan</a></li>
+        <li><a href="../flight-paul/flight-details.html">Detail Penerbangan</a></li>
+      </ul>
     </nav>
+  </header>
 
-  <div class="container destination-container">
-    
-    <div class="destination-header">
-      <h1>Pesona Eksotis Labuan Bajo</h1>
-      <p>Gerbang menuju keajaiban Komodo, laut biru jernih, dan pemandangan bukit yang menakjubkan.</p>
+  <!-- Container Utama Halaman -->
+  
+
+   <!-- Banner Header Video Full Width -->
+  <div class="video-banner">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="../../Destinasi-foto-video/Labuan.mp4" type="video/mp4">
+      Browser kamu tidak mendukung pemutaran video.
+    </video>
+
+    <div class="video-overlay"></div>
+
+    <div class="header-content">
+      <h1>Labuan Bajo</h1>
+      <p>Jelajahi surga tersembunyi, keindahan pulau komodo, dan bahari Nusa Tenggara Timur.</p>
     </div>
+  </div>
 
-    <section class="destination-section">
-      <h2 class="section-title-blue">Destinasi Populer di Labuan Bajo</h2>
-      
-      <div class="destination-grid">
+  <!-- Container Utama Konten -->
+  <div class="container destination-container">
+
+    <!-- Section Destinasi Populer (Side-by-Side Horizontal Scroll) -->
+    <section class="popular-section">
+      <div class="popular-info">
+        <span class="badge-tag">Destinasi Pilihan</span>
+        <h2>Destinasi Populer</h2>
+        <p>Jelajahi keindahan alam, tempat ikonik, dan pesona wisata terbaik yang wajib kamu kunjungi saat berada di Labuan Bajo.</p>
+        <a href="#search-flight" class="btn-primary">Cek Tiket Pesawat</a>
+      </div>
+
+      <div class="popular-cards-scroll">
         <div class="destination-card">
-          <img src="https://images.unsplash.com/photo-1596401057633-531022221757" alt="Pulau Padar">
+          <img src="https://images.unsplash.com/photo-1596402184320-417e7178b2cd" alt="Pulau Padar">
           <div class="destination-card-body">
             <h3>Pulau Padar</h3>
-            <p>Ikon Labuan Bajo dengan pemandangan tiga teluk unik dan lanskap perbukitan yang dramatis.</p>
+            <p>Ikon Labuan Bajo dengan pemandangan lekukan pantai berpasir beda warna dari puncak bukit.</p>
           </div>
         </div>
 
@@ -53,6 +79,7 @@
       </div>
     </section>
 
+    <!-- Section Kuliner & Aktivitas -->
     <section class="culture-box">
       <h2>Kuliner & Aktivitas Khas</h2>
       <ul>
@@ -62,6 +89,7 @@
       </ul>
     </section>
 
+    <!-- Section Form Cek Tiket -->
     <section class="search-section">
       <h2 style="color: #1e3c72; margin-bottom: 20px; text-align: center;">Cek Harga Tiket Pesawat ke Labuan Bajo (LBJ)</h2>
       
