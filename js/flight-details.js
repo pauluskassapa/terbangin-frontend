@@ -6,7 +6,11 @@ const airportNames = {
   SUB: "Surabaya (SUB)",
   DPS: "Bali (DPS)",
   YIA: "Yogyakarta (YIA)",
-  KNO: "Medan (KNO)"
+  KNO: "Medan (KNO)",
+  LBJ: "Labuan Bajo (LBJ)",
+  LOP: "Lombok (LOP)",
+  SOQ: "Sorong / Raja Ampat (SOQ)",
+  BPN: "Balikpapan (BPN)"
 };
 
 const fromCode = params.get("from") || "CGK";
