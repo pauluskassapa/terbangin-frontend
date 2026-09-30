@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../css/flight.css">
+  <link rel="stylesheet" href="../../css/journey.css">
+  <title>TERBANGIN — My Booking</title>
+</head>
+<body>
+
+  <header>
+    <a href="../flight-paul/home.html">TERBANGIN</a>
+
+    <nav aria-label="Navigasi utama">
+      <a href="../flight-paul/home.html">Home</a>
+      <a href="../flight-paul/search-flight.html">Cari Penerbangan</a>
+      <a href="my-booking.html" aria-current="page">My Booking</a>
+      <a href="online-checkin.html">Online Check-in</a>
+      <a href="baggage.html">Baggage</a>
+    </nav>
+
+    <a href="../account-joan/login.html">Masuk</a>
+  </header>
+
+  <main>
+
+    <section class="journey-hero">
+      <p>Perjalananmu</p>
+
+      <h1>Atur perjalananmu dengan mudah.</h1>
+
+      <p>
+        Lihat detail pemesanan, cek status penerbangan,
+        dan siapkan perjalananmu sebelum berangkat.
+      </p>
+    </section>
+
+    <section class="journey-section">
+
+      <div class="section-heading">
+        <p>My Booking</p>
+        <h2>Cari pemesanan</h2>
+        <span>Masukkan kode booking dan email yang digunakan saat pemesanan.</span>
+      </div>
+
+      <form id="bookingForm" class="journey-form">
+
+        <label for="bookingCode">
+          Kode Booking
+          <input
+            id="bookingCode"
+            type="text"
+            placeholder="Contoh: TRB123"
+            required
+          >
+        </label>
+
+        <label for="bookingEmail">
+          Email
+          <input
+            id="bookingEmail"
+            type="email"
+            placeholder="Masukkan email"
+            required
+          >
+        </label>
+
+        <button type="submit">Lihat Booking</button>
+
+      </form>
+
+      <p id="bookingMessage" class="form-message"></p>
+
+      <article id="bookingResult" class="booking-card hidden">
+
+        <div class="booking-top">
+          <div>
+            <span>Kode Booking</span>
+            <h3 id="resultCode">TRB123</h3>
+          </div>
+
+          <strong class="status-badge">Dikonfirmasi</strong>
+        </div>
+
+        <div class="booking-route">
+
+          <div>
+            <strong id="resultFrom">Jakarta (CGK)</strong>
+            <span>08.00 WIB</span>
+          </div>
+
+          <div class="route-line">
+            <span>✈</span>
+            <hr>
+          </div>
+
+          <div>
+            <strong id="resultTo">Bali (DPS)</strong>
+            <span>10.50 WIB</span>
+          </div>
+
+        </div>
+
+        <div class="booking-info">
+
+          <div>
+            <span>Tanggal</span>
+            <strong id="resultDate">28 September 2026</strong>
+          </div>
+
+          <div>
+            <span>Maskapai</span>
+            <strong id="resultAirline">Garuda Indonesia</strong>
+          </div>
+
+          <div>
+            <span>Penumpang</span>
+            <strong>1 Penumpang</strong>
+          </div>
+
+          <div>
+            <span>Status</span>
+            <strong>Siap Berangkat</strong>
+          </div>
+
+        </div>
+
+        <div class="booking-actions">
+          <a href="online-checkin.html">Online Check-in</a>
+          <a href="baggage.html">Info Bagasi</a>
+        </div>
+
+      </article>
+
+    </section>
+
+    <section class="journey-section">
+
+      <div class="section-heading">
+        <p>Informasi Perjalanan</p>
+        <h2>Siapkan perjalananmu</h2>
+      </div>
+
+      <div class="journey-grid">
+
+        <a href="online-checkin.html" class="journey-card">
+          <span class="journey-icon">✓</span>
+          <h3>Online Check-in</h3>
+          <p>
+            Check-in sebelum berangkat dan siapkan perjalananmu.
+          </p>
+        </a>
+
+        <a href="baggage.html" class="journey-card">
+          <span class="journey-icon">▣</span>
+          <h3>Baggage</h3>
+          <p>
+            Ketahui informasi bagasi sebelum menuju bandara.
+          </p>
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 TERBANGIN. Mau ke mana? TERBANGIN aja.</p>
+  </footer>
+
+  <script src="../../js/journey.js"></script>
+</body>
+</html>
