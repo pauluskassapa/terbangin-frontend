@@ -148,6 +148,18 @@ bookingForm.addEventListener("submit", function (event) {
 
     addConfirmationRow("Total pembayaran", formatRupiah(total));
 
+    const paymentParams = new URLSearchParams({
+        airline: airline,
+        flight: flightNumber,
+        from: fromCode,
+        to: toCode,
+        date: travelDate,
+        price: String(price),
+        count: String(count)
+    });
+
+    document.querySelector("#payment-link").href = `../payment-defrigo/payment.html?${paymentParams.toString()}`;
+
     confirmation.hidden = false;
     confirmation.scrollIntoView({
         behavior: "smooth",
