@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masuk — TERBANGIN</title>
+  <link rel="stylesheet" href="../../css/flight.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../css/navbar.css">
+  <script src="../../js/navbar.js" defer></script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="account-page">
+    <section class="account-card" aria-labelledby="login-title">
+      <p class="account-eyebrow">Selamat datang kembali</p>
+      <h1 id="login-title">Masuk ke akunmu</h1>
+      <p class="account-intro">Simpan detail perjalanan dan lanjutkan rencana terbangmu bersama TERBANGIN.</p>
+
+      <button class="google-button" type="button" disabled aria-describedby="google-status">
+        <span class="google-mark" aria-hidden="true">G</span>
+        Lanjutkan dengan Google
+      </button>
+      <p class="account-note" id="google-status">Masuk dengan Google akan tersedia pada tahap berikutnya.</p>
+
+      <div class="account-divider" aria-hidden="true"><span>atau masuk dengan email</span></div>
+
+      <form class="account-form" action="#" method="post">
+        <label for="email">Alamat email
+          <input id="email" name="email" type="email" placeholder="nama@email.com" autocomplete="email" required>
+        </label>
+
+        <label for="password">Kata sandi
+          <input id="password" name="password" type="password" placeholder="Masukkan kata sandi" autocomplete="current-password" required>
+        </label>
+
+        <div class="account-options">
+          <label class="remember-option" for="remember-me">
+            <input id="remember-me" name="remember-me" type="checkbox">
+            Ingat saya
+          </label>
+          <a href="forgot-password.html">Lupa kata sandi?</a>
+        </div>
+
+        <button type="submit">Masuk</button>
+      </form>
+
+      <p class="account-signup">Belum punya akun? <a href="register.html">Daftar sekarang</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 TERBANGIN. Mau ke mana? TERBANGIN aja.</p>
+  </footer>
+</body>
+</html>
