@@ -18,9 +18,14 @@
       <p class="account-eyebrow">Mulai perjalananmu</p>
       <h1 class="account-title-wide" id="register-title">Buat akun TERBANGIN</h1>
       <p class="account-intro">Isi data berikut untuk menyiapkan akun perjalananmu.</p>
-      <p class="account-note account-storage-note">Prototipe ini menyimpan nama, email, dan nomor telepon di browser ini saja. Kata sandi tidak disimpan dan akun online belum dibuat.</p>
+      <p class="account-note account-storage-note">Prototipe menyimpan username dan data profil di browser ini saja. Kata sandi tidak disimpan, akun online belum dibuat, dan keunikan username belum diperiksa server.</p>
 
       <form class="account-form" id="register-form" novalidate>
+        <label for="username">Username
+          <input id="username" name="username" type="text" placeholder="Contoh: joan_terbang" autocomplete="username" required minlength="3" maxlength="20" pattern="[A-Za-z0-9._-]{3,20}" aria-describedby="username-hint" title="3–20 karakter: huruf, angka, titik, garis bawah, atau tanda hubung.">
+        </label>
+        <p class="account-note" id="username-hint">3–20 karakter; gunakan huruf, angka, titik, garis bawah, atau tanda hubung.</p>
+
         <label for="full-name">Nama lengkap
           <input id="full-name" name="fullName" type="text" placeholder="Nama sesuai identitas" autocomplete="name" required minlength="2">
         </label>

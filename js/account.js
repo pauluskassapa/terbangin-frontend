@@ -13,6 +13,11 @@ function readAccountProfile() {
       return null;
     }
 
+    if (typeof savedProfile.username !== "string" || !/^[A-Za-z0-9._-]{3,20}$/.test(savedProfile.username)) {
+      const emailName = savedProfile.email.split("@")[0].replace(/[^A-Za-z0-9._-]/g, "").slice(0, 16);
+      savedProfile.username = `user${emailName}`.slice(0, 20);
+    }
+
     return savedProfile;
   } catch {
     return null;
@@ -24,9 +29,19 @@ function writeAccountProfile(profile) {
 }
 
 function normalizeAndValidateAccountForm(form) {
+  const username = form.elements.username;
   const fullName = form.elements.fullName;
   const email = form.elements.email;
   const phone = form.elements.phone;
+
+  if (username) {
+    username.value = username.value.trim();
+    username.setCustomValidity(
+      /^[A-Za-z0-9._-]{3,20}$/.test(username.value)
+        ? ""
+        : "Username wajib diisi dengan 3–20 huruf, angka, titik, garis bawah, atau tanda hubung."
+    );
+  }
 
   if (fullName) {
     fullName.value = fullName.value.trim();
@@ -82,6 +97,7 @@ if (registerForm) {
 
     const formData = new FormData(registerForm);
     const profile = {
+      username: String(formData.get("username")).trim(),
       fullName: String(formData.get("fullName")).trim(),
       email: String(formData.get("email")).trim(),
       phone: String(formData.get("phone")).trim(),
@@ -139,6 +155,7 @@ if (profileForm) {
   }
 
   function showProfile(profile) {
+    profileForm.elements.username.value = profile.username;
     profileForm.elements.fullName.value = profile.fullName;
     profileForm.elements.email.value = profile.email;
     profileForm.elements.phone.value = profile.phone;
@@ -177,6 +194,7 @@ if (profileForm) {
     if (!normalizeAndValidateAccountForm(profileForm)) return;
 
     const updatedProfile = {
+      username: profileForm.elements.username.value.trim(),
       fullName: profileForm.elements.fullName.value.trim(),
       email: profileForm.elements.email.value.trim(),
       phone: profileForm.elements.phone.value.trim(),

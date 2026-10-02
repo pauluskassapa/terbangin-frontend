@@ -34,6 +34,9 @@
 
       <form class="account-form" id="profile-form" hidden novalidate>
         <div class="account-profile-fields">
+          <label for="profile-username">Username
+            <input id="profile-username" name="username" type="text" autocomplete="username" required minlength="3" maxlength="20" pattern="[A-Za-z0-9._-]{3,20}" readonly>
+          </label>
           <label for="profile-name">Nama lengkap
             <input id="profile-name" name="fullName" type="text" autocomplete="name" required minlength="2" readonly>
           </label>
