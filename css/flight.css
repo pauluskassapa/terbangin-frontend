@@ -207,24 +207,30 @@ form {
 .home-search-form .airport-label {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  margin-bottom: 2px;
+  gap: 8px;
+  margin-bottom: 4px;
   color: var(--muted);
 }
 
 .airport-icon {
-  width: 18px;
-  height: 18px;
-  flex: 0 0 18px;
-  fill: var(--teal);
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  padding: 7px;
+  overflow: visible;
+  border-radius: 50%;
+  background: #e9ebee;
+  color: #46515a;
+  fill: currentColor;
 }
 
-.airport-icon-takeoff {
-  transform: rotate(-35deg);
+.airport-runway {
+  fill: currentColor;
 }
 
-.airport-icon-landing {
-  transform: rotate(35deg);
+.airport-plane-takeoff,
+.airport-plane-landing {
+  transform-box: view-box;
 }
 
 form label {
