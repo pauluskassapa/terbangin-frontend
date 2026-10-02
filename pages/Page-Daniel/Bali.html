@@ -3,24 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Destinasi: Bali - Terbangin</title>
+  <title>Bali - Terbangin</title>
   
   <link rel="stylesheet" href="../../css/destinasi.css">
   <link rel="stylesheet" href="../../css/flight.css">
+  <link rel="stylesheet" href="../../css/navbar.css">
+  <script src="../../js/navbar.js" defer></script>
 </head>
-<body>
+<body class="destination-page">
 
-  <header class="header">
-    <nav aria-label="Navigasi utama">
-      <a href="../flight-paul/home.html">Home</a>
-      <a href="../flight-paul/search-flight.html">Cari Penerbangan</a>
-      <a href="../flight-paul/flight-details.html">Detail Penerbangan</a>
-    </nav>
-  </header>
+  <div id="site-header"></div>
 
-<div class="video-banner">
+  <div class="video-banner">
     <video autoplay muted loop playsinline class="bg-video">
-      <source src="../../Destinasi-foto-video/Bali-video.mp4" type="video/mp4">
+      <source src="../../assets/images/Destinasi-foto-video/Bali-video.mp4" type="video/mp4">
       Browser kamu tidak mendukung pemutaran video.
     </video>
 
@@ -34,54 +30,94 @@
     </div>
   </div>
       
-      <div class="container destination-container"> 
+  <main class="container destination-container"> 
     
-    <!-- Section Destinasi Populer Side-by-Side dengan Kartu Lama -->
-    <section class="popular-section">
-      <!-- Sisi Kiri: Teks & Informasi -->
-      <div class="popular-info">
+    <!-- Section Destinasi Populer -->
+    <section class="popular-section destination-showcase destination-showcase--split destination-showcase--bali" style="--destination-bg-image: url('../../assets/images/Destinasi-foto-video/Bali.jpg');">
+      <div class="destination-showcase__header">
         <span class="badge-tag">Destinasi Pilihan</span>
-        <h2>Destinasi Populer</h2>
-        <p>Jelajahi keindahan alam, tempat ikonik, dan pesona wisata terbaik yang wajib kamu kunjungi saat berada di Bali.</p>
+        <h2 class="destination-showcase__title">Destinasi Populer</h2>
+        <p class="destination-showcase__description">
+          Jelajahi keindahan alam, tempat ikonik, dan pesona wisata terbaik yang wajib kamu kunjungi saat berada di Bali.
+        </p>
       </div>
-      
-      <div class="popular-cards-scroll">
+
+      <!-- CONTAINER UTAMA KARTU -->
+      <div class="cards-scroll-container destination-showcase__track" aria-label="Daftar destinasi populer Bali">
+        
+        <!-- KARTU 1 -->
         <div class="destination-card">
-          <img src="../../Destinasi-foto-video/PantaiKuta.jpg" alt="Pantai Kuta">
-          <div class="destination-card-body">
-            <h3>Pantai Kuta</h3>
-            <p>Pantai paling terkenal di Bali untuk melihat matahari terbenam dan berselancar bagi pemula.</p>
+          <div class="card-image-wrapper">
+            <img src="../../assets/images/Destinasi-foto-video/PantaiKuta.jpg" alt="Pantai Kuta">
           </div>
+          <h3>Pantai Kuta</h3>
+          <p>Pantai paling terkenal di Bali untuk melihat matahari terbenam dan berselancar bagi pemula.</p>
+        </div>
+
+        <!-- KARTU 2 -->
+        <div class="destination-card">
+          <div class="card-image-wrapper">
+            <img src="../../assets/images/Destinasi-foto-video/PuraTanah.jpg" alt="Pura Tanah Lot">
+          </div>
+          <h3>Pura Tanah Lot</h3>
+          <p>Ikon pariwisata Bali berupa pura karang di tengah laut yang menawarkan pemandangan spektakuler.</p>
+        </div>
+
+        <!-- KARTU 3 -->
+        <div class="destination-card">
+          <div class="card-image-wrapper">
+            <img src="../../assets/images/Destinasi-foto-video/UbudRice.jpg" alt="Ubud Rice Terrace">
+          </div>
+          <h3>Ubud Rice Terrace</h3>
+          <p>Pemandangan sawah berundak yang hijau dan asri, pusat seni dan ketenangan di Bali.</p>
         </div>
 
         <div class="destination-card">
-          <img src="../../Destinasi-foto-video/PuraTanah.jpg" alt="Pura Tanah Lot">
-          <div class="destination-card-body">
-            <h3>Pura Tanah Lot</h3>
-            <p>Ikon pariwisata Bali berupa pura karang di tengah laut yang menawarkan pemandangan spektakuler.</p>
+          <div class="card-image-wrapper">
+            <img src="../../assets/images/Destinasi-foto-video/Bali.jpg" alt="Pemandangan alam di Bali" loading="lazy">
           </div>
+          <h3>Nusa Penida</h3>
+          <p>Pulau dengan tebing pantai yang dramatis, air laut jernih, dan panorama yang memukau.</p>
         </div>
 
-        <div class="destination-card">
-          <img src="../../Destinasi-foto-video/UbudRice.jpg" alt="Ubud Rice Terraces">
-          <div class="destination-card-body">
-            <h3>Ubud Rice Terrace</h3>
-            <p>Pemandangan sawah berundak yang hijau dan asri, pusat seni dan ketenangan di Bali.</p>
-          </div>
-        </div>
       </div>
     </section>
 
-    <section class="culture-box">
-      <h2>Kuliner Khas Bali</h2>
-      <ul>
-        <li><strong>Ayam Betutu:</strong> Ayam olahan bersantan dengan rempah khas Bali yang kaya rasa.</li>
-        <li><strong>Sate Lilit:</strong> Sate dari daging cincang yang dililitkan pada batang serai/bambu.</li>
-        <li><strong>Nasi Campur Bali:</strong> Nasi hangat yang disajikan dengan aneka lauk seperti suwiran ayam, lawar, dan sambal matah.</li>
-      </ul>
+    <section class="culture-box culinary-showcase culinary-showcase--split" style="--culinary-bg-image: url('../../assets/images/Destinasi-foto-video/Bali.jpg');">
+      <div class="culinary-header">
+        <span class="culture-eyebrow">Cita Rasa Pulau Dewata</span>
+        <h2>Kuliner Khas Bali</h2>
+        <p class="culture-description">Kenali rasa Bali lewat hidangan kaya rempah, sajian tradisional, dan racikan lokal yang khas.</p>
+      </div>
+      <div class="culture-grid culinary-track" aria-label="Kuliner khas Bali">
+        <article class="culture-card">
+          <span class="culture-icon" aria-hidden="true">🍲</span>
+          <span class="culture-category">Hidangan tradisional</span>
+          <h3>Ayam Betutu</h3>
+          <p>Ayam berbumbu rempah yang dimasak perlahan hingga meresap dan kaya rasa.</p>
+        </article>
+        <article class="culture-card">
+          <span class="culture-icon" aria-hidden="true">🍢</span>
+          <span class="culture-category">Favorit lokal</span>
+          <h3>Sate Lilit</h3>
+          <p>Daging cincang berbumbu yang dililitkan pada batang serai atau bambu.</p>
+        </article>
+        <article class="culture-card">
+          <span class="culture-icon" aria-hidden="true">🍚</span>
+          <span class="culture-category">Menu lengkap</span>
+          <h3>Nasi Campur Bali</h3>
+          <p>Nasi dengan lauk pilihan, lawar, suwiran ayam, dan sambal matah.</p>
+        </article>
+        <article class="culture-card">
+          <span class="culture-icon" aria-hidden="true">🥬</span>
+          <span class="culture-category">Sayur tradisional</span>
+          <h3>Lawar Bali</h3>
+          <p>Campuran sayuran, kelapa, dan bumbu khas yang melengkapi sajian Bali.</p>
+        </article>
+      </div>
     </section>
 
-    <section class="search-section">
+    <section class="search-section search-section--centered">
       <h2 style="color: #1e3c72; margin-bottom: 20px; text-align: center;">Cek Harga Tiket Pesawat ke Bali (DPS)</h2>
       
       <form id="flightForm">
@@ -118,7 +154,7 @@
       </div>
     </section>
 
-  </div>
+  </main>
 
   <script src="../../js/destinasi.js"></script>
 </body>
