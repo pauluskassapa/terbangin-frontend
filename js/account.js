@@ -27,3 +27,18 @@ if (registerForm) {
     status.textContent = "";
   });
 }
+
+const resetForm = document.querySelector("#reset-form");
+
+if (resetForm) {
+  const status = resetForm.querySelector("#reset-status");
+
+  resetForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    status.textContent = "";
+
+    if (!resetForm.reportValidity()) return;
+
+    status.textContent = "Email valid. Pengiriman instruksi pemulihan akan dihubungkan pada tahap berikutnya.";
+  });
+}
