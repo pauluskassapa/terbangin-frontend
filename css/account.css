@@ -149,6 +149,31 @@
   font-weight: 700;
 }
 
+.account-card > .account-register-link {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 46px;
+  margin-top: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--teal);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.account-card > .account-register-link:hover {
+  background: var(--teal-dark);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
 .account-options .account-future-link {
   font-size: 12px;
 }
