@@ -16,7 +16,7 @@
         <section class="payment-hero">
             <p class="eyebrow">Pembayaran tiket</p>
             <h1>Selesaikan pembayaran</h1>
-            <p>Periksa kembali rincian penerbangan dan pilih metode pembayaranyang tersedia.</p>
+            <p>Periksa kembali rincian penerbangan dan pilih metode pembayaran yang tersedia.</p>
         </section>
         <div class="payment-layout">
             <section class="payment-form-section">
@@ -52,6 +52,18 @@
                     </div>
                 </article>
                 <article class="payment-card">
+                <h2>Bagasi Tambahan</h2>
+                <p class="form-description">Tambahkan bagasi jika barang bawaan melebihi kapasitas yang tersedia.</p>
+                <div class="baggage-payment-option">
+                    <label for="payment-baggage-kg">Jumlah bagasi tambahan</label>
+                    <div class="baggage-input">
+                        <input type="number"id="payment-baggage-kg"min="0"max="20"value="0">
+                        <span>kg</span>
+                    </div>
+                    <p class="baggage-price-info">Harga bagasi tambahan: Rp200.000 / kg</p>
+                    <p class="baggage-total-info">Total bagasi: <strong id="payment-baggage-total">Rp0</strong></p>
+                </div>
+            </article>
                     <h2>Metode Pembayaran</h2>
                     <p class="form-description">Pilih salah satu metode pembayaran yang tersedia.</p>
                     <form id="payment-form">
