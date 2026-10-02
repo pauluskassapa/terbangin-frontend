@@ -24,12 +24,12 @@
         <a class="account-logout" href="login.html" id="logout-link">Keluar</a>
       </div>
 
-      <p class="account-prototype-note">Mode prototipe: informasi profil disimpan di browser ini. Autentikasi dan perubahan kata sandi memerlukan backend.</p>
+      <p class="account-prototype-note">Mode demo lokal: profil dan sesi hanya berlaku di browser/perangkat ini. Jangan gunakan data atau kata sandi asli.</p>
 
       <div class="account-empty-state" id="profile-empty" hidden>
         <h2>Profil belum tersedia</h2>
-        <p>Daftar akun terlebih dahulu untuk mengisi profil prototipe.</p>
-        <a href="register.html">Buat akun</a>
+        <p>Masuk atau daftar terlebih dahulu untuk mengelola profil.</p>
+        <a href="login.html">Masuk</a> · <a href="register.html">Buat akun</a>
       </div>
 
       <form class="account-form" id="profile-form" hidden novalidate>
@@ -56,9 +56,9 @@
         </div>
       </form>
 
-      <section class="account-security" aria-labelledby="security-title">
+      <section class="account-security" id="security-panel" aria-labelledby="security-title" hidden>
         <h2 id="security-title">Keamanan akun</h2>
-        <p>Formulir ini memeriksa isian kata sandi. Penyimpanan dan verifikasi perubahan memerlukan layanan autentikasi.</p>
+        <p>Ubah kata sandi demo lokal. Perubahan hanya berlaku di browser ini.</p>
         <form class="account-form" id="password-form" novalidate>
           <label for="current-password">Kata sandi saat ini
             <input id="current-password" name="currentPassword" type="password" autocomplete="current-password" required>
@@ -71,7 +71,7 @@
             <input id="confirm-new-password" name="confirmNewPassword" type="password" autocomplete="new-password" required minlength="8">
           </label>
           <p class="account-status" id="password-status" role="status" aria-live="polite"></p>
-          <button type="submit">Periksa perubahan</button>
+          <button type="submit">Ubah Kata Sandi</button>
         </form>
       </section>
     </section>
