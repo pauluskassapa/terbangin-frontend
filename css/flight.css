@@ -204,6 +204,29 @@ form {
   gap: 16px;
 }
 
+.home-search-form .airport-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 2px;
+  color: var(--muted);
+}
+
+.airport-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  fill: var(--teal);
+}
+
+.airport-icon-takeoff {
+  transform: rotate(-35deg);
+}
+
+.airport-icon-landing {
+  transform: rotate(35deg);
+}
+
 form label {
   display: block;
   color: var(--muted);

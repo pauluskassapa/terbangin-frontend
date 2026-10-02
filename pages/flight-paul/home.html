@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
   <link rel="stylesheet" href="../../css/flight.css">
   <link rel="stylesheet" href="../../css/navbar.css">
   <script src="../../js/navbar.js" defer></script>
@@ -19,7 +20,7 @@
         Temukan penerbangan yang cocok dengan tujuan, waktu, dan budget
         perjalananmu. Pilih destinasi, kami bantu cari jalannya.
       </p>
-      <img class="hero-logo" src="../../assets/images/terbangin-symbol.png" alt="Logo TERBANGIN">
+      <img class="hero-logo" src="../../assets/brand/terbangin-symbol.png" alt="Logo TERBANGIN">
     </section>
 
     <section>
@@ -27,7 +28,12 @@
 
       <form class="home-search-form" action="search-flight.html" method="get">
         <label for="from">
-          Dari
+          <span class="airport-label">
+            <svg class="airport-icon airport-icon-takeoff" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 2.5c-.83 0-1.5.67-1.5 1.5v6.8L4 14.5v2l6.5-2v4L8 20v1.5l4-1 4 1V20l-2.5-1.5v-4l6.5 2v-2l-6.5-3.7V4c0-.83-.67-1.5-1.5-1.5Z"/>
+            </svg>
+            Dari
+          </span>
           <select id="from" name="from">
             <option value="CGK">Jakarta (CGK)</option>
             <option value="BDO">Bandung (BDO)</option>
@@ -36,7 +42,12 @@
         </label>
 
         <label for="to">
-          Ke
+          <span class="airport-label">
+            <svg class="airport-icon airport-icon-landing" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 2.5c-.83 0-1.5.67-1.5 1.5v6.8L4 14.5v2l6.5-2v4L8 20v1.5l4-1 4 1V20l-2.5-1.5v-4l6.5 2v-2l-6.5-3.7V4c0-.83-.67-1.5-1.5-1.5Z"/>
+            </svg>
+            Ke
+          </span>
           <select id="to" name="to">
             <option value="DPS">Bali (DPS)</option>
             <option value="YIA">Yogyakarta (YIA)</option>
@@ -60,37 +71,37 @@
       <h2>Destinasi Pilihan</h2>
       <div class="destination-grid">
         <article class="destination-card">
-          <img class="destination-image" src="../../assets/images/destination-bali.jpg" alt="Pemandangan pantai di Bali" loading="lazy">
+          <img class="destination-image" src="../../assets/images/flight-paul/destination-bali.jpg" alt="Pemandangan pantai di Bali" loading="lazy">
           <h3><a href="../Page-Daniel/Bali.html">Bali</a></h3>
           <p>Pantai, matahari, dan waktu santai.</p>
         </article>
 
         <article class="destination-card">
-          <img class="destination-image" src="../../assets/images/destination-yogyakarta.jpg" alt="Candi Borobudur di Yogyakarta" loading="lazy">
+          <img class="destination-image" src="../../assets/images/flight-paul/destination-yogyakarta.jpg" alt="Candi Borobudur di Yogyakarta" loading="lazy">
           <h3><a href="../Page-Daniel/Yogyakarta.html">Yogyakarta</a></h3>
           <p>Budaya dan kuliner yang selalu dirindukan.</p>
         </article>
 
         <article class="destination-card">
-          <img class="destination-image" src="../../assets/images/destination-labuan-bajo.jpg" alt="Kepulauan di sekitar Labuan Bajo" loading="lazy">
+          <img class="destination-image" src="../../assets/images/flight-paul/destination-labuan-bajo.jpg" alt="Kepulauan di sekitar Labuan Bajo" loading="lazy">
           <h3><a href="../Page-Daniel/LabuanBajo.html">Labuan Bajo</a></h3>
           <p>Petualangan dan pemandangan yang istimewa.</p>
         </article>
 
         <article class="destination-card">
-          <img class="destination-image" src="../../assets/images/destination-lombok.jpg" alt="Pantai tropis di Lombok" loading="lazy">
+          <img class="destination-image" src="../../assets/images/flight-paul/destination-lombok.jpg" alt="Pantai tropis di Lombok" loading="lazy">
           <h3><a href="search-flight.html?from=CGK&amp;to=LOP">Lombok</a></h3>
           <p>Pantai tenang dan suasana pulau yang nyaman.</p>
         </article>
 
         <article class="destination-card">
-          <img class="destination-image" src="../../assets/images/destination-raja-ampat.jpg" alt="Kepulauan Raja Ampat" loading="lazy">
+          <img class="destination-image" src="../../assets/images/flight-paul/destination-raja-ampat.jpg" alt="Kepulauan Raja Ampat" loading="lazy">
           <h3><a href="search-flight.html?from=CGK&amp;to=SOQ">Raja Ampat</a></h3>
           <p>Air jernih dan keindahan bawah laut.</p>
         </article>
 
         <article class="destination-card">
-          <img class="destination-image" src="../../assets/images/destination-balikpapan.jpg" alt="Pantai di Balikpapan" loading="lazy">
+          <img class="destination-image" src="../../assets/images/flight-paul/destination-balikpapan.jpg" alt="Pantai di Balikpapan" loading="lazy">
           <h3><a href="search-flight.html?from=CGK&amp;to=BPN">Balikpapan</a></h3>
           <p>Gerbang untuk menjelajahi Kalimantan.</p>
         </article>
