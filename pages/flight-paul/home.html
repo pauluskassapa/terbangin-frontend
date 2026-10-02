@@ -19,56 +19,82 @@
         Temukan penerbangan yang cocok dengan tujuan, waktu, dan budget
         perjalananmu. Pilih destinasi, kami bantu cari jalannya.
       </p>
-      <span aria-hidden="true">✈️</span>
+      <img class="hero-logo" src="../../assets/images/terbangin-symbol.png" alt="Logo TERBANGIN">
     </section>
 
     <section>
       <h2>Cari Penerbangan</h2>
 
-      <form action="search-flight.html" method="get">
-        <label for="from">Dari</label>
-        <select id="from" name="from">
-          <option value="CGK">Jakarta (CGK)</option>
-          <option value="BDO">Bandung (BDO)</option>
-          <option value="SUB">Surabaya (SUB)</option>
-        </select>
+      <form class="home-search-form" action="search-flight.html" method="get">
+        <label for="from">
+          Dari
+          <select id="from" name="from">
+            <option value="CGK">Jakarta (CGK)</option>
+            <option value="BDO">Bandung (BDO)</option>
+            <option value="SUB">Surabaya (SUB)</option>
+          </select>
+        </label>
 
-        <label for="to">Ke</label>
-        <select id="to" name="to">
-          <option value="DPS">Bali (DPS)</option>
-          <option value="YIA">Yogyakarta (YIA)</option>
-          <option value="KNO">Medan (KNO)</option>
-        </select>
+        <label for="to">
+          Ke
+          <select id="to" name="to">
+            <option value="DPS">Bali (DPS)</option>
+            <option value="YIA">Yogyakarta (YIA)</option>
+            <option value="LBJ">Labuan Bajo (LBJ)</option>
+            <option value="LOP">Lombok (LOP)</option>
+            <option value="SOQ">Sorong / Raja Ampat (SOQ)</option>
+            <option value="KNO">Medan (KNO)</option>
+          </select>
+        </label>
 
-        <label for="departure-date">Tanggal Pergi</label>
-        <input
-          id="departure-date"
-          type="date"
-          name="date"
-          required
-        >
+        <label for="departure-date">
+          Tanggal Pergi
+          <input id="departure-date" type="date" name="date" required>
+        </label>
 
         <button type="submit">Cari Tiket</button>
       </form>
     </section>
 
-    <section>
+    <section class="destination-section">
       <h2>Destinasi Pilihan</h2>
+      <div class="destination-grid">
+        <article class="destination-card">
+          <img class="destination-image" src="../../assets/images/destination-bali.jpg" alt="Pemandangan pantai di Bali" loading="lazy">
+          <h3><a href="../Page-Daniel/Bali.html">Bali</a></h3>
+          <p>Pantai, matahari, dan waktu santai.</p>
+        </article>
 
-      <article class="destination-card">
-        <h3><a href="../Page-Daniel/Bali.html">Bali</a></h3>
-        <p>Pantai, matahari, dan waktu santai.</p>
-      </article>
+        <article class="destination-card">
+          <img class="destination-image" src="../../assets/images/destination-yogyakarta.jpg" alt="Candi Borobudur di Yogyakarta" loading="lazy">
+          <h3><a href="../Page-Daniel/Yogyakarta.html">Yogyakarta</a></h3>
+          <p>Budaya dan kuliner yang selalu dirindukan.</p>
+        </article>
 
-      <article class="destination-card">
-        <h3><a href="../Page-Daniel/Yogyakarta.html">Yogyakarta</a></h3>
-        <p>Budaya dan kuliner yang selalu dirindukan.</p>
-      </article>
-
-      <article class="destination-card">
+        <article class="destination-card">
+          <img class="destination-image" src="../../assets/images/destination-labuan-bajo.jpg" alt="Kepulauan di sekitar Labuan Bajo" loading="lazy">
           <h3><a href="../Page-Daniel/LabuanBajo.html">Labuan Bajo</a></h3>
-        <p>Petualangan dengan pemandangan istimewa.</p>
-      </article>
+          <p>Petualangan dan pemandangan yang istimewa.</p>
+        </article>
+
+        <article class="destination-card">
+          <img class="destination-image" src="../../assets/images/destination-lombok.jpg" alt="Pantai tropis di Lombok" loading="lazy">
+          <h3><a href="search-flight.html?from=CGK&amp;to=LOP">Lombok</a></h3>
+          <p>Pantai tenang dan suasana pulau yang nyaman.</p>
+        </article>
+
+        <article class="destination-card">
+          <img class="destination-image" src="../../assets/images/destination-raja-ampat.jpg" alt="Kepulauan Raja Ampat" loading="lazy">
+          <h3><a href="search-flight.html?from=CGK&amp;to=SOQ">Raja Ampat</a></h3>
+          <p>Air jernih dan keindahan bawah laut.</p>
+        </article>
+
+        <article class="destination-card">
+          <img class="destination-image" src="../../assets/images/destination-balikpapan.jpg" alt="Pantai di Balikpapan" loading="lazy">
+          <h3><a href="search-flight.html?from=CGK&amp;to=BPN">Balikpapan</a></h3>
+          <p>Gerbang untuk menjelajahi Kalimantan.</p>
+        </article>
+      </div>
     </section>
   </main>
 

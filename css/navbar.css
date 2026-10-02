@@ -1,0 +1,132 @@
+#site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.site-header {
+  width: 100%;
+  min-height: 0;
+  margin: 0;
+  padding: 0 32px;
+  border-bottom: 1px solid rgb(225 233 239 / 85%);
+  background: rgb(255 255 255 / 92%);
+  box-shadow: 0 4px 18px rgb(24 50 75 / 5%);
+  backdrop-filter: blur(14px);
+}
+
+.site-header-inner {
+  width: min(1240px, 100%);
+  min-height: 76px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.site-brand {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 10px;
+  color: #18324b;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.brand-wordmark {
+  color: #18324b;
+  font-family: "Avenir Next", "Gill Sans", "Trebuchet MS", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+}
+
+.brand-symbol {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  object-fit: contain;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+}
+
+.site-nav a {
+  padding: 8px 0;
+  color: #52697a;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: #087f8c;
+}
+
+.site-login {
+  flex: 0 0 auto;
+  padding: 10px 17px;
+  border: 1px solid #087f8c;
+  border-radius: 10px;
+  color: #087f8c;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.site-login:hover {
+  background: #087f8c;
+  color: white;
+}
+
+@media (max-width: 720px) {
+  .site-header {
+    padding: 0 16px;
+  }
+
+  .site-header-inner {
+    min-height: 68px;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    padding: 10px 0;
+  }
+
+  .brand-wordmark {
+    font-size: 17px;
+    letter-spacing: 0.09em;
+  }
+
+  .brand-symbol {
+    width: 40px;
+    height: 40px;
+    flex-basis: 40px;
+  }
+
+  .site-nav {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 22px;
+    overflow-x: auto;
+  }
+
+  .site-nav a {
+    flex: 0 0 auto;
+    font-size: 13px;
+  }
+
+  .site-login {
+    margin-left: auto;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
