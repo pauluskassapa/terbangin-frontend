@@ -31,5 +31,4 @@ if (navbarHost) {
       link.setAttribute("aria-current", "page");
     }
   });
-
 }
