@@ -27,7 +27,7 @@
 
       <div class="account-divider" aria-hidden="true"><span>atau masuk dengan email</span></div>
 
-      <form class="account-form" action="#" method="post">
+      <form class="account-form" id="login-form" novalidate>
         <label for="email">Alamat email
           <input id="email" name="email" type="email" placeholder="nama@email.com" autocomplete="email" required>
         </label>
@@ -45,14 +45,17 @@
         </div>
 
         <button type="submit">Masuk</button>
+        <p class="account-status" id="login-status" role="status" aria-live="polite"></p>
       </form>
 
       <p class="account-signup">Belum punya akun? <a href="register.html">Daftar sekarang</a></p>
+      <p class="account-signup account-profile-shortcut"><a href="profile.html">Lihat profil prototipe</a></p>
     </section>
   </main>
 
   <footer>
     <p>© 2026 TERBANGIN. Mau ke mana? TERBANGIN aja.</p>
   </footer>
+  <script src="../../js/account.js"></script>
 </body>
 </html>
