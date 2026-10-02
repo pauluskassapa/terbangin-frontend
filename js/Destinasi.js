@@ -24,6 +24,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (origin.includes('Jakarta')) basePrice = 1750000;
         else if (origin.includes('Surabaya')) basePrice = 1400000;
         else if (origin.includes('Bali')) basePrice = 850000;
+      } else if (pageTitle.includes('yogyakarta')) {
+        destinationName = 'Yogyakarta (YIA)';
+        basePrice = 650000;
+        if (origin.includes('Jakarta')) basePrice = 550000;
+        else if (origin.includes('Surabaya')) basePrice = 500000;
+        else if (origin.includes('Bali')) basePrice = 900000;
       } else {
         // Default untuk halaman Bali
         if (origin.includes('Jakarta')) basePrice = 950000;

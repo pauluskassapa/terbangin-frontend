@@ -5,7 +5,7 @@ if (navbarHost) {
     <header class="site-header">
       <div class="site-header-inner">
         <a class="site-brand" href="../flight-paul/home.html">
-          <img class="brand-symbol" src="../../assets/images/terbangin-symbol.png" alt="">
+          <img class="brand-symbol" src="../../assets/brand/terbangin-symbol.png" alt="">
           <span class="brand-wordmark">TERBANGIN</span>
         </a>
 
