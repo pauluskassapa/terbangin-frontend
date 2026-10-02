@@ -6,57 +6,62 @@
   <link rel="icon" type="image/x-icon" href="../../favicon.ico">
   <title>Destinasi: Bali - Terbangin</title>
   
-  <!-- Memanggil file CSS yang sudah ada di project -->
+  <link rel="stylesheet" href="../../css/Destinasi.css">
   <link rel="stylesheet" href="../../css/flight.css">
   <link rel="stylesheet" href="../../css/navbar.css">
   <script src="../../js/navbar.js" defer></script>
 </head>
 <body>
+
   <div id="site-header"></div>
 
-  <!-- Container utama -->
-  <div class="container main-content">
-    
-    <!-- Hero Banner Bali -->
-    <section class="hero-section destination-hero">
-      <div class="hero-content">
-        <h1>Jelajahi Keindahan Bali</h1>
-        <p>Nikmati pantai pasir putih, kebudayaan yang kaya, dan pesona alam Pulau Dewata.</p>
-      </div>
-    </section>
+<div class="video-banner">
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="../../Destinasi-foto-video/Bali-video.mp4" type="video/mp4">
+      Browser kamu tidak mendukung pemutaran video.
+    </video>
 
-    <!-- Hal-hal Menarik di Bali -->
-    <section class="destination-info">
-      <h2 class="section-title">Destinasi Populer di Bali</h2>
+    <!-- Overlay Transparan Gelap -->
+    <div class="video-overlay"></div>
+
+    <!-- Teks Konten Header -->
+    <div class="header-content">
+      <h1>Jelajahi Keindahan Bali</h1>
+      <p>Nikmati pantai pasir putih, kebudayaan yang kaya, dan pesona alam Pulau Dewata.</p>
+    </div>
+  </div>
       
-      <!-- Asumsi menggunakan class grid/card dari flight.css -->
-      <div class="card-grid">
-        
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2" alt="Pantai Kuta" class="card-img">
-          <div class="card-body">
+      <div class="container destination-container"> 
+    
+    <!-- Section Destinasi Populer Side-by-Side dengan Kartu Lama -->
+    <section class="popular-section">
+      <!-- Sisi Kiri: Teks & Informasi -->
+      <div class="popular-info">
+        <span class="badge-tag">Destinasi Pilihan</span>
+        <h2>Destinasi Populer</h2>
+        <p>Jelajahi keindahan alam, tempat ikonik, dan pesona wisata terbaik yang wajib kamu kunjungi saat berada di Bali.</p>
+      </div>
+      
+      <div class="popular-cards-scroll">
+        <div class="destination-card">
+          <img src="../../Destinasi-foto-video/PantaiKuta.jpg" alt="Pantai Kuta">
+          <div class="destination-card-body">
             <h3>Pantai Kuta</h3>
             <p>Pantai paling terkenal di Bali untuk melihat matahari terbenam dan berselancar bagi pemula.</p>
           </div>
         </div>
 
         <div class="destination-card">
-          <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47" alt="Pura Tanah Lot">
+          <img src="../../Destinasi-foto-video/PuraTanah.jpg" alt="Pura Tanah Lot">
           <div class="destination-card-body">
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47" alt="Pura Tanah Lot" class="card-img">
-          <div class="card-body">
             <h3>Pura Tanah Lot</h3>
             <p>Ikon pariwisata Bali berupa pura karang di tengah laut yang menawarkan pemandangan spektakuler.</p>
           </div>
         </div>
 
         <div class="destination-card">
-          <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62" alt="Ubud Rice Terraces">
+          <img src="../../Destinasi-foto-video/UbudRice.jpg" alt="Ubud Rice Terraces">
           <div class="destination-card-body">
-        <div class="card">
-          <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62" alt="Ubud Rice Terraces" class="card-img">
-          <div class="card-body">
             <h3>Ubud Rice Terrace</h3>
             <p>Pemandangan sawah berundak yang hijau dan asri, pusat seni dan ketenangan di Bali.</p>
           </div>
@@ -67,14 +72,6 @@
     <section class="culture-box">
       <h2>Kuliner Khas Bali</h2>
       <ul>
-
-      </div>
-    </section>
-
-    <!-- Kuliner & Budaya -->
-    <section class="culture-section">
-      <h2 class="section-title">Kuliner Khas Bali</h2>
-      <ul class="feature-list">
         <li><strong>Ayam Betutu:</strong> Ayam olahan bersantan dengan rempah khas Bali yang kaya rasa.</li>
         <li><strong>Sate Lilit:</strong> Sate dari daging cincang yang dililitkan pada batang serai/bambu.</li>
         <li><strong>Nasi Campur Bali:</strong> Nasi hangat yang disajikan dengan aneka lauk seperti suwiran ayam, lawar, dan sambal matah.</li>
@@ -89,16 +86,6 @@
           <div class="form-group">
             <label for="origin">Kota Asal</label>
             <select id="origin" required>
-    <!-- Form / Widget Cek Harga Tiket Pesawat ke Bali -->
-    <section class="flight-widget box-shadow">
-      <h2 class="section-title">Cek Harga Tiket Pesawat ke Bali (DPS)</h2>
-      
-      <form id="flightForm" class="booking-form">
-        <div class="form-row form-grid">
-          
-          <div class="form-group">
-            <label for="origin">Kota Asal:</label>
-            <select id="origin" class="form-control" required>
               <option value="">-- Pilih Kota Asal --</option>
               <option value="Jakarta (CGK)">Jakarta (CGK)</option>
               <option value="Surabaya (SUB)">Surabaya (SUB)</option>
@@ -125,67 +112,11 @@
         <h3>Estimasi Harga Tiket ke Bali</h3>
         <p id="resultText"></p>
         <button onclick="goToSearchFlight()" class="btn-search btn-submit-green">Lanjutkan Pemesanan</button>
-            <label for="departureDate">Tanggal Keberangkatan:</label>
-            <input type="date" id="departureDate" class="form-control" required>
-          </div>
-
-          <div class="form-group">
-            <label for="passengers">Jumlah Penumpang:</label>
-            <input type="number" id="passengers" class="form-control" min="1" max="10" value="1" required>
-          </div>
-
-        </div>
-
-        <button type="submit" class="btn btn-primary btn-block">Cek Harga Tiket</button>
-      </form>
-
-      <!-- Tempat Menampilkan Hasil Cek Harga -->
-      <div id="flightResult" class="result-box" style="display: none; margin-top: 20px;">
-        <h3>Estimasi Harga Tiket ke Bali</h3>
-        <p id="resultText"></p>
-        <button onclick="goToSearchFlight()" class="btn btn-success">Lanjutkan Pemesanan</button>
       </div>
     </section>
 
   </div>
 
   <script src="../../js/Destinasi.js"></script>
-</body>
-</html>
-  <script>
-    // Fitur Cek Harga Tiket Sederhana
-    document.getElementById('flightForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const origin = document.getElementById('origin').value;
-      const date = document.getElementById('departureDate').value;
-      const passengers = document.getElementById('passengers').value;
-
-  
-      let basePrice = 800000; 
-      if (origin.includes('Jakarta')) basePrice = 950000;
-      else if (origin.includes('Surabaya')) basePrice = 650000;
-      else if (origin.includes('Medan')) basePrice = 1600000;
-
-      const totalPrice = basePrice * passengers;
-
-      const resultBox = document.getElementById('flightResult');
-      const resultText = document.getElementById('resultText');
-
-      resultText.innerHTML = `
-        <strong>Rute:</strong> ${origin} ➔ Bali (DPS)<br>
-        <strong>Tanggal:</strong> ${date}<br>
-        <strong>Jumlah Penumpang:</strong> ${passengers} Orang<br>
-        <strong>Estimasi Total Harga:</strong> <span style="font-size: 18px; color: #d9534f; font-weight: bold;">Rp ${totalPrice.toLocaleString('id-ID')}</span>
-      `;
-
-      resultBox.style.display = 'block';
-    });
-
-
-    function goToSearchFlight() {
-      window.location.href = '../flight-paul/search-flight.html';
-    }
-  </script>
 </body>
 </html>
