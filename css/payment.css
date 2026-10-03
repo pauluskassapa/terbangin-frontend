@@ -554,6 +554,142 @@ footer {
     margin: 0;
 }
 
+.payment-details {
+    margin-top: 20px;
+}
+
+.payment-method-detail {
+    padding: 18px;
+    border: 1px solid #dfe5ec;
+    border-radius: 12px;
+    background: #f8fafc;
+}
+
+.payment-method-detail label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.payment-method-detail select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cfd6df;
+    border-radius: 8px;
+    background: #ffffff;
+    font-size: 14px;
+}
+
+.payment-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.payment-info span {
+    color: #667085;
+}
+
+.payment-info strong {
+    color: #1d2939;
+}
+
+.payment-code {
+    margin-top: 12px;
+    padding: 12px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: #ffffff;
+    border-radius: 8px;
+}
+
+.qris-container {
+    text-align: center;
+}
+
+.qris-container p {
+    margin: 10px 0 0;
+    color: #667085;
+}
+
+.dummy-qris {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 15px;
+    border: 8px solid #111827;
+    background:
+        repeating-conic-gradient(
+            #111827 0 25%,
+            #ffffff 0 50%
+        ) 50% / 14px 14px;
+}
+
+.qris-corner {
+    position: absolute;
+    width: 38px;
+    height: 38px;
+    border: 7px solid #111827;
+    background: #ffffff;
+}
+
+.qris-corner::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 4px;
+    left: 4px;
+    background: #111827;
+}
+
+.qris-corner.top-left {
+    top: 5px;
+    left: 5px;
+}
+
+.qris-corner.top-right {
+    top: 5px;
+    right: 5px;
+}
+
+.qris-corner.bottom-left {
+    bottom: 5px;
+    left: 5px;
+}
+
+.qris-pattern {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    width: 35px;
+    height: 35px;
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #111827 0 5px,
+            #ffffff 5px 10px
+        );
+}
+
+@media (max-width: 600px) {
+    .payment-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dummy-qris {
+        width: 160px;
+        height: 160px;
+    }
+}
+
 @media (max-width: 620px) {
 
     .success-details .confirmation-row {
