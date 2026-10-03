@@ -57,7 +57,7 @@
                 </article>
                 <article class="payment-card">
                 <h2>Bagasi Tambahan</h2>
-                <p class="form-description">Tambahkan bagasi jika barang bawaan melebihi kapasitas yang tersedia.</p>
+                <p class="form-description">Tambahkan bagasi jika barang bawaan melebihi kapasitas yang tersedia (maksimal 7g kg).</p>
                 <div class="baggage-payment-option">
                     <label for="payment-baggage-kg">Jumlah bagasi tambahan</label>
                     <div class="baggage-input">
@@ -94,6 +94,57 @@
                                 </span>
                             </label>
                         </div>
+                        <div id="payment-details" class="payment-details" hidden>
+                            <div id="transfer-details" class="payment-method-detail" hidden>
+                                <label for="bank-select">Pilih Bank</label>
+                                <select id="bank-select">
+                                    <option value="">-- Pilih Bank --</option>
+                                    <option value="BCA">BCA</option>
+                                    <option value="BRI">BRI</option>
+                                    <option value="BNI">BNI</option>
+                                    <option value="Mandiri">Mandiri</option>
+                                </select>
+                                <div class="payment-info">
+                                    <span>Virtual Account</span>
+                                    <strong id="virtual-account">-</strong>
+                                </div>
+                                <div class="payment-info">
+                                    <span>Total Pembayaran</span>
+                                    <strong id="transfer-amount">Rp0</strong>
+                                </div>
+                            </div>
+                            <div id="ewallet-details" class="payment-method-detail" hidden>
+                                <label for="ewallet-select">Pilih E-Wallet</label>
+                                <select id="ewallet-select">
+                                    <option value="">-- Pilih E-Wallet --</option>
+                                    <option value="GoPay">GoPay</option>
+                                    <option value="OVO">OVO</option>
+                                    <option value="DANA">DANA</option>
+                                    <option value="ShopeePay">ShopeePay</option>
+                                </select>
+                                <div class="payment-info">
+                                    <span>Kode Pembayaran</span>
+                                    <strong id="ewallet-code">-</strong>
+                                </div>
+                                <div class="payment-info">
+                                    <span>Total Pembayaran</span>
+                                    <strong id="ewallet-amount">Rp0</strong>
+                                </div>
+                            </div>
+                            <div id="qris-details" class="payment-method-detail" hidden>
+                                <div class="qris-container">
+                                    <img id="qris-image" src="../../assets/images/booking-defrigo/qris.jpeg" alt="QRIS Code">
+                                    <div class="qris-info">
+                                        <strong>TERBANGIN</strong>
+                                    </div>
+                                    <p>Scan QR untuk melakukan pembayaran</p>
+                                    <div class="payment-info">
+                                        <span>Total Pembayaran</span>
+                                        <strong id="qris-amount">Rp0</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <button type="submit" class="payment-button">Konfirmasi Pembayaran</button>
                     </form>
                 </article>
@@ -121,7 +172,6 @@
                         <span>Total pembayaran</span>
                         <strong id="payment-total">Rp1.250.000</strong>
                     </div>
-                    <p class="price-note">Harga di atas merupakan harga contoh untuk keperluan proyek.</p>
                 </article>
             </aside>
         </div>

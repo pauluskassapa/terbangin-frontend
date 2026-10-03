@@ -63,16 +63,147 @@ const paymentForm = document.getElementById("payment-form");
 
 const confirmation = document.getElementById("payment-confirmation");
 
+const baggagePrice = 200000;
+
+const paymentDetails = document.getElementById("payment-details");
+const transferDetails = document.getElementById("transfer-details");
+const ewalletDetails = document.getElementById("ewallet-details");
+const qrisDetails = document.getElementById("qris-details");
+
+const bankSelect = document.getElementById("bank-select");
+const ewalletSelect = document.getElementById("ewallet-select");
+
+const virtualAccount = document.getElementById("virtual-account");
+const ewalletCode = document.getElementById("ewallet-code");
+
+const transferAmount = document.getElementById("transfer-amount");
+const ewalletAmount = document.getElementById("ewallet-amount");
+const qrisAmount = document.getElementById("qris-amount");
+
+const dummyVirtualAccounts = {
+    BCA: "8808123456789012",
+    BRI: "8808123456789013",
+    BNI: "8808123456789014",
+    Mandiri: "8808123456789015"
+};
+
+const dummyEwalletCodes = {
+    GoPay: "GP-DFR-812345",
+    OVO: "OV-DFR-812346",
+    DANA: "DN-DFR-812347",
+    ShopeePay: "SP-DFR-812348"
+};
+
+function updatePaymentTotal() {
+    baggageTotal = baggageKg * baggagePrice;
+    paymentTotal = ticketTotal + baggageTotal;
+    const baggageTotalElement = document.getElementById("payment-baggage-total");
+
+    if (baggageTotalElement) {
+        baggageTotalElement.textContent = formatRupiah(baggageTotal);
+    }
+
+    document.getElementById("payment-total").textContent = formatRupiah(paymentTotal);
+
+    updatePaymentDetails();
+}
+
+function hidePaymentDetails() {
+    paymentDetails.hidden = true;
+    transferDetails.hidden = true;
+    ewalletDetails.hidden = true;
+    qrisDetails.hidden = true;
+}
+
+function updatePaymentDetails() {
+    const selectedMethod = document.querySelector('input[name="payment-method"]:checked');
+
+    if (!selectedMethod) {
+        hidePaymentDetails();
+        return;
+    }
+
+    paymentDetails.hidden = false;
+    transferDetails.hidden = true;
+    ewalletDetails.hidden = true;
+    qrisDetails.hidden = true;
+
+    if (selectedMethod.value === "Transfer Bank") {
+        transferDetails.hidden = false;
+
+        transferAmount.textContent = formatRupiah(paymentTotal);
+
+        if (bankSelect.value) {
+            virtualAccount.textContent = dummyVirtualAccounts[bankSelect.value];
+        } 
+        else {
+            virtualAccount.textContent = "-";
+        }
+    }
+
+    if (selectedMethod.value === "E-Wallet") {
+        ewalletDetails.hidden = false;
+
+        ewalletAmount.textContent = formatRupiah(paymentTotal);
+
+        if (ewalletSelect.value) {
+            ewalletCode.textContent = dummyEwalletCodes[ewalletSelect.value];
+        } 
+        else {
+            ewalletCode.textContent = "-";
+        }
+    }
+
+    if (selectedMethod.value === "QRIS") {
+        qrisDetails.hidden = false;
+        qrisAmount.textContent = formatRupiah(paymentTotal);
+    }
+}
+
+if (baggageInput) {
+    baggageInput.value = baggageKg;
+
+    baggageInput.addEventListener("input", function () {
+        baggageKg = Math.max(0,Math.min(20, Number(this.value) || 0));
+        this.value = baggageKg;
+        updatePaymentTotal();
+    });
+}
+
+document
+    .querySelectorAll('input[name="payment-method"]')
+    .forEach(function (radio) {
+        radio.addEventListener("change",updatePaymentDetails);
+    });
+
+if (bankSelect) {
+    bankSelect.addEventListener("change",updatePaymentDetails);
+}
+
+if (ewalletSelect) {
+    ewalletSelect.addEventListener("change",updatePaymentDetails);
+}
+
+updatePaymentTotal();
 
 paymentForm.addEventListener("submit", function (event) {
     event.preventDefault();
     const selectedMethod = document.querySelector('input[name="payment-method"]:checked');
 
+    if (selectedMethod.value === "Transfer Bank" && !bankSelect.value) {
+    alert("Silakan pilih bank terlebih dahulu.");
+    return;
+    }
+
+    if (selectedMethod.value === "E-Wallet" && !ewalletSelect.value) {
+        alert("Silakan pilih E-Wallet terlebih dahulu.");
+        return;
+    }
+
     if (!selectedMethod) {
         alert("Silakan pilih metode pembayaran terlebih dahulu.");
         return;
     }
-
 
     const paymentParams = new URLSearchParams({airline: airline,flight: flightNumber,from: fromCode,to: toCode,date: travelDate,price: String(price),count: String(count),baggageKg: String(baggageKg),baggageTotal: String(baggageTotal),method: selectedMethod.value,total: String(paymentTotal)});
     window.location.href = `payment-success.html?${paymentParams.toString()}`;
