@@ -618,17 +618,17 @@ footer {
     color: #667085;
 }
 
-.dummy-qris {
-    position: relative;
+.qris-container img {
     width: 180px;
     height: 180px;
-    margin: 0 auto 15px;
-    border: 8px solid #111827;
-    background:
-        repeating-conic-gradient(
-            #111827 0 25%,
-            #ffffff 0 50%
-        ) 50% / 14px 14px;
+}
+
+.qris-info {
+    margin-top: 12px;
+    padding: 12px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 8px;
 }
 
 .qris-corner {
