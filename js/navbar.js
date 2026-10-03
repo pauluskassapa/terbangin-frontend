@@ -1,3 +1,4 @@
+
 const navbarHost = document.querySelector("#site-header");
 
 if (navbarHost) {
@@ -5,7 +6,11 @@ if (navbarHost) {
     <header class="site-header">
       <div class="site-header-inner">
         <a class="site-brand" href="../flight-paul/home.html">
-          <img class="brand-symbol" src="../../assets/brand/terbangin-symbol.png" alt="">
+          <img
+            class="brand-symbol"
+            src="../../assets/brand/terbangin-symbol.png"
+            alt=""
+          >
           <span class="brand-wordmark">TERBANGIN</span>
         </a>
 
@@ -14,7 +19,8 @@ if (navbarHost) {
           <a href="../flight-paul/search-flight.html">Cari Penerbangan</a>
           <a href="../Page-Daniel/Bali.html">Destinasi</a>
           <a href="../Page-Daniel/FAQ.html">Bantuan</a>
-          <a href="../perjalanan-alex/my-booking.html">My-Ticket</a>
+          <a href="../perjalanan-alex/my-booking.html">My Booking</a>
+          <a href="../perjalanan-alex/booking-history.html">Booking History</a>
           <a href="../account-joan/login.html">Akun</a>
         </nav>
 
