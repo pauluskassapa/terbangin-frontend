@@ -4,273 +4,184 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TERBANGIN — Booking History</title>
+
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
   <link rel="stylesheet" href="../../css/flight.css">
-  <link rel="stylesheet" href="../../css/journey.css">
+  <link rel="stylesheet" href="../../css/perjalanan.css">
+  <link rel="stylesheet" href="../../css/navbar.css">
 
-  <style>
-    .history-container {
-      max-width: 1100px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+  <script src="../../js/navbar.js" defer></script>
 
-    .history-title {
-      color: #7A1020;
-      margin-bottom: 8px;
-    }
-
-    .history-description {
-      color: #666;
-      margin-bottom: 25px;
-    }
-
-    .history-filter {
-      margin-bottom: 25px;
-    }
-
-    .history-filter select {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      min-width: 200px;
-    }
-
-    .booking-card {
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 22px;
-      margin-bottom: 18px;
-      background: white;
-    }
-
-    .booking-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-
-    .booking-code {
-      font-weight: bold;
-      color: #7A1020;
-    }
-
-    .booking-status {
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-size: 13px;
-      background: #eee;
-    }
-
-    .status-selesai {
-      color: #176b36;
-      background: #e0f5e7;
-    }
-
-    .status-menunggu {
-      color: #8a5a00;
-      background: #fff0c2;
-    }
-
-    .status-dibatalkan {
-      color: #a32121;
-      background: #ffe1e1;
-    }
-
-    .booking-route {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-bottom: 18px;
-    }
-
-    .booking-city {
-      font-size: 20px;
-      font-weight: bold;
-    }
-
-    .booking-arrow {
-      color: #7A1020;
-      font-size: 24px;
-    }
-
-    .booking-info {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      flex-wrap: wrap;
-      border-top: 1px solid #eee;
-      padding-top: 15px;
-    }
-
-    .booking-label {
-      color: #777;
-      font-size: 13px;
-      margin-bottom: 5px;
-    }
-
-    .booking-value {
-      font-weight: bold;
-    }
-
-    .empty-history {
-      display: none;
-      text-align: center;
-      padding: 30px;
-      color: #777;
-    }
-
-    @media (max-width: 600px) {
-      .booking-card {
-        padding: 16px;
-      }
-
-      .booking-route {
-        gap: 10px;
-      }
-
-      .booking-city {
-        font-size: 17px;
-      }
-    }
-  </style>
+  <title>TERBANGIN — Booking History</title>
 </head>
 
 <body>
-  <header>
-    <nav>
-      <a href="../flight-paul/home.html">Home</a>
-      <a href="../flight-paul/search-flight.html">Cari Penerbangan</a>
-      <a href="my-booking.html">My Booking</a>
-      <a href="booking-history.html">Booking History</a>
-      <a href="online-checkin.html">Online Check-in</a>
-      <a href="../account-joan/login.html">Login</a>
-    </nav>
-  </header>
+  <div id="site-header"></div>
 
-  <main class="history-container">
-    <h1 class="history-title">Booking History</h1>
-    <p class="history-description">
-      Lihat riwayat pemesanan tiket penerbangan Anda.
-    </p>
+  <main>
+    <section class="journey-hero">
+      <p>Perjalananmu</p>
 
-    <div class="history-filter">
-      <label for="statusFilter">Filter status: </label>
-      <select id="statusFilter">
-        <option value="semua">Semua Status</option>
-        <option value="selesai">Selesai</option>
-        <option value="menunggu">Menunggu Pembayaran</option>
-        <option value="dibatalkan">Dibatalkan</option>
-      </select>
-    </div>
+      <h1>Riwayat perjalananmu.</h1>
 
-    <section id="bookingList">
-      <article class="booking-card" data-status="selesai">
-        <div class="booking-top">
-          <span class="booking-code">Kode Booking: TRB123</span>
-          <span class="booking-status status-selesai">Selesai</span>
-        </div>
-
-        <div class="booking-route">
-          <div>
-            <div class="booking-city">Jakarta (CGK)</div>
-            <div>Bandara Soekarno-Hatta</div>
-          </div>
-          <span class="booking-arrow">→</span>
-          <div>
-            <div class="booking-city">Bali (DPS)</div>
-            <div>Bandara Ngurah Rai</div>
-          </div>
-        </div>
-
-        <div class="booking-info">
-          <div>
-            <div class="booking-label">Tanggal Penerbangan</div>
-            <div class="booking-value">28 September 2026</div>
-          </div>
-          <div>
-            <div class="booking-label">Total Harga</div>
-            <div class="booking-value">Rp1.250.000</div>
-          </div>
-        </div>
-      </article>
-
-      <article class="booking-card" data-status="menunggu">
-        <div class="booking-top">
-          <span class="booking-code">Kode Booking: TRB124</span>
-          <span class="booking-status status-menunggu">
-            Menunggu Pembayaran
-          </span>
-        </div>
-
-        <div class="booking-route">
-          <div>
-            <div class="booking-city">Jakarta (CGK)</div>
-            <div>Bandara Soekarno-Hatta</div>
-          </div>
-          <span class="booking-arrow">→</span>
-          <div>
-            <div class="booking-city">Yogyakarta (YIA)</div>
-            <div>Yogyakarta International Airport</div>
-          </div>
-        </div>
-
-        <div class="booking-info">
-          <div>
-            <div class="booking-label">Tanggal Penerbangan</div>
-            <div class="booking-value">15 Oktober 2026</div>
-          </div>
-          <div>
-            <div class="booking-label">Total Harga</div>
-            <div class="booking-value">Rp850.000</div>
-          </div>
-        </div>
-      </article>
-
-      <article class="booking-card" data-status="dibatalkan">
-        <div class="booking-top">
-          <span class="booking-code">Kode Booking: TRB125</span>
-          <span class="booking-status status-dibatalkan">Dibatalkan</span>
-        </div>
-
-        <div class="booking-route">
-          <div>
-            <div class="booking-city">Jakarta (CGK)</div>
-            <div>Bandara Soekarno-Hatta</div>
-          </div>
-          <span class="booking-arrow">→</span>
-          <div>
-            <div class="booking-city">Surabaya (SUB)</div>
-            <div>Bandara Juanda</div>
-          </div>
-        </div>
-
-        <div class="booking-info">
-          <div>
-            <div class="booking-label">Tanggal Penerbangan</div>
-            <div class="booking-value">10 Agustus 2026</div>
-          </div>
-          <div>
-            <div class="booking-label">Total Harga</div>
-            <div class="booking-value">Rp700.000</div>
-          </div>
-        </div>
-      </article>
+      <p>
+        Lihat riwayat pemesanan tiket, status pembayaran,
+        dan detail perjalananmu sebelumnya.
+      </p>
     </section>
 
-    <p id="emptyHistory" class="empty-history">
-      Tidak ada riwayat pemesanan untuk status tersebut.
-    </p>
+    <section class="journey-section">
+      <div class="section-heading">
+        <p>Booking History</p>
+        <h2>Riwayat pemesanan</h2>
+        <span>
+          Periksa status dan informasi dari pemesanan tiketmu.
+        </span>
+      </div>
+
+      <div class="history-filter">
+        <label for="statusFilter">Filter status</label>
+
+        <select id="statusFilter">
+          <option value="semua">Semua Status</option>
+          <option value="selesai">Selesai</option>
+          <option value="menunggu">Menunggu Pembayaran</option>
+          <option value="dibatalkan">Dibatalkan</option>
+        </select>
+      </div>
+
+      <section id="bookingList" class="history-list">
+        <article class="history-card" data-status="selesai">
+          <div class="history-card-top">
+            <div>
+              <span class="history-label">Kode Booking</span>
+              <h3>TRB123</h3>
+            </div>
+
+            <span class="history-status status-selesai">
+              Selesai
+            </span>
+          </div>
+
+          <div class="history-route">
+            <div class="history-city">
+              <strong>Jakarta (CGK)</strong>
+              <span>Bandara Soekarno-Hatta</span>
+            </div>
+
+            <span class="history-arrow">→</span>
+
+            <div class="history-city">
+              <strong>Bali (DPS)</strong>
+              <span>Bandara Ngurah Rai</span>
+            </div>
+          </div>
+
+          <div class="history-info">
+            <div>
+              <span>Tanggal Penerbangan</span>
+              <strong>28 September 2026</strong>
+            </div>
+
+            <div>
+              <span>Total Harga</span>
+              <strong>Rp1.250.000</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="history-card" data-status="menunggu">
+          <div class="history-card-top">
+            <div>
+              <span class="history-label">Kode Booking</span>
+              <h3>TRB124</h3>
+            </div>
+
+            <span class="history-status status-menunggu">
+              Menunggu Pembayaran
+            </span>
+          </div>
+
+          <div class="history-route">
+            <div class="history-city">
+              <strong>Jakarta (CGK)</strong>
+              <span>Bandara Soekarno-Hatta</span>
+            </div>
+
+            <span class="history-arrow">→</span>
+
+            <div class="history-city">
+              <strong>Yogyakarta (YIA)</strong>
+              <span>Yogyakarta International Airport</span>
+            </div>
+          </div>
+
+          <div class="history-info">
+            <div>
+              <span>Tanggal Penerbangan</span>
+              <strong>15 Oktober 2026</strong>
+            </div>
+
+            <div>
+              <span>Total Harga</span>
+              <strong>Rp850.000</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="history-card" data-status="dibatalkan">
+          <div class="history-card-top">
+            <div>
+              <span class="history-label">Kode Booking</span>
+              <h3>TRB125</h3>
+            </div>
+
+            <span class="history-status status-dibatalkan">
+              Dibatalkan
+            </span>
+          </div>
+
+          <div class="history-route">
+            <div class="history-city">
+              <strong>Jakarta (CGK)</strong>
+              <span>Bandara Soekarno-Hatta</span>
+            </div>
+
+            <span class="history-arrow">→</span>
+
+            <div class="history-city">
+              <strong>Surabaya (SUB)</strong>
+              <span>Bandara Juanda</span>
+            </div>
+          </div>
+
+          <div class="history-info">
+            <div>
+              <span>Tanggal Penerbangan</span>
+              <strong>10 Agustus 2026</strong>
+            </div>
+
+            <div>
+              <span>Total Harga</span>
+              <strong>Rp700.000</strong>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <p id="emptyHistory" class="empty-history" hidden>
+        Tidak ada riwayat pemesanan untuk status tersebut.
+      </p>
+    </section>
   </main>
+
+  <footer>
+    <p>© 2026 TERBANGIN. Mau ke mana? TERBANGIN aja.</p>
+  </footer>
 
   <script>
     const statusFilter = document.getElementById("statusFilter");
-    const bookingCards = document.querySelectorAll(".booking-card");
+    const bookingCards = document.querySelectorAll(".history-card");
     const emptyHistory = document.getElementById("emptyHistory");
 
     statusFilter.addEventListener("change", function () {
@@ -282,15 +193,14 @@
           selectedStatus === "semua" ||
           card.dataset.status === selectedStatus
         ) {
-          card.style.display = "block";
+          card.hidden = false;
           visibleCount++;
         } else {
-          card.style.display = "none";
+          card.hidden = true;
         }
       });
 
-      emptyHistory.style.display =
-        visibleCount === 0 ? "block" : "none";
+      emptyHistory.hidden = visibleCount !== 0;
     });
   </script>
 </body>
