@@ -158,7 +158,7 @@ bookingForm.addEventListener("submit", function (event) {
         count: String(count)
     });
 
-    document.querySelector("#payment-link").href = `../payment-defrigo/payment.html?${paymentParams.toString()}`;
+    document.querySelector("#payment-link").href = `../booking-defrigo/payment.html?${paymentParams.toString()}`;
 
     confirmation.hidden = false;
     confirmation.scrollIntoView({
