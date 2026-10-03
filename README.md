@@ -16,11 +16,15 @@ Frontend UTS Project
 
 ## Project Structure
 
-- `pages/flight` — Flight pages
-- `pages/account` — User account pages
-- `pages/booking` — Booking pages
-- `pages/journey` — Journey pages
-- `pages/explore` — Explore pages
+- `pages/flight-paul` — Flight pages
+- `pages/account-joan` — User account pages
+- `pages/booking-defrigo` — Booking and payment pages
+- `pages/perjalanan-alex` — My Ticket, check-in, and baggage pages
+- `pages/Page-Daniel` — Destination and help pages
 - `css` — Stylesheets
 - `js` — JavaScript
-- `assets` — Images, icons, and fonts
+- `assets/brand` — Shared TERBANGIN brand images
+- `assets/images/flight-paul` — Flight search destination cards
+- `assets/images/Page-Daniel` — Destination page photos
+- `assets/videos/Page-Daniel` — Destination page videos
+- `favicon.ico` — Browser tab icon

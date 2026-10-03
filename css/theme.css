@@ -1,0 +1,179 @@
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --teal: #46c2cc;
+  --teal-dark: #2cabb6;
+  --navy: #edf4f8;
+  --muted: #adbdc8;
+  --page: #111a22;
+  --line: #344550;
+  --white: #1b2832;
+  --text: #edf4f8;
+  --primary-color: #e8f1f7;
+  --primary-dark: #c6d9e5;
+  --text-dark: #e8f1f7;
+  --text-muted: #aebdc7;
+  --bg-light: #1b2832;
+  --shadow: 0 14px 34px rgb(0 0 0 / 24%);
+}
+
+html[data-theme="dark"] body {
+  background: var(--page);
+  color: var(--navy);
+}
+
+html[data-theme="dark"] #site-header .site-header {
+  border-color: var(--line);
+  background: rgb(20 31 40 / 96%);
+  box-shadow: 0 4px 18px rgb(0 0 0 / 24%);
+}
+
+html[data-theme="dark"] .site-brand,
+html[data-theme="dark"] .brand-wordmark {
+  color: #f0f6fa;
+}
+
+html[data-theme="dark"] .site-nav a {
+  color: #bac8d1;
+}
+
+html[data-theme="dark"] .site-nav a:hover,
+html[data-theme="dark"] .site-nav a[aria-current="page"] {
+  color: #67d6dc;
+}
+
+html[data-theme="dark"] .site-login {
+  border-color: #46c2cc;
+  color: #75dce0;
+}
+
+html[data-theme="dark"] .site-login:hover {
+  background: #087f8c;
+  color: #fff;
+}
+
+html[data-theme="dark"] :is(
+  .account-card,
+  .account-note,
+  .account-prototype-note,
+  .booking-card,
+  .confirmation-card,
+  .payment-card,
+  .journey-section,
+  .booking-result,
+  .checkin-result,
+  .journey-card,
+  .step-card,
+  .baggage-card,
+  .history-card,
+  .history-list,
+  .empty-history,
+  .search-panel,
+  .filter-panel,
+  .flight-card,
+  .detail-card,
+  .destination-card-body,
+  .culture-box,
+  .search-section,
+  .result-container,
+  .dest-card,
+  .faq-item,
+  .faq-answer,
+  .boarding-note,
+  .tips-list > div,
+  .baggage-price-info,
+  .baggage-total-info
+) {
+  border-color: var(--line);
+  background-color: var(--white);
+  color: var(--navy);
+  box-shadow: var(--shadow);
+}
+
+html[data-theme="dark"] :is(
+  .account-card,
+  .booking-card,
+  .payment-card,
+  .journey-section,
+  .booking-result,
+  .checkin-result,
+  .journey-card,
+  .step-card,
+  .baggage-card,
+  .history-card,
+  .search-panel,
+  .filter-panel,
+  .flight-card,
+  .detail-card,
+  .confirmation-card,
+  .destination-card,
+  .culture-box,
+  .search-section,
+  .faq-item
+) :is(p, span, small, li, label, summary) {
+  color: var(--muted);
+}
+
+/* Keep the white text readable on the photo overlays used by Home. */
+html[data-theme="dark"] .destination-card :is(h3, h3 a, p) {
+  color: #fff;
+}
+
+html[data-theme="dark"] :is(.journey-hero, .booking-hero, .payment-hero) {
+  border-color: var(--line);
+  background: linear-gradient(120deg, #18353b, #202f45);
+  color: var(--navy);
+}
+
+html[data-theme="dark"] :is(.journey-hero, .booking-hero, .payment-hero) :is(p, span) {
+  color: #c0d0d8;
+}
+
+html[data-theme="dark"] main > section:first-child:not(.journey-hero):not(.booking-hero):not(.payment-hero) {
+  background: linear-gradient(120deg, #18353b, #202f45);
+}
+
+html[data-theme="dark"] main > section:first-child:not(.search-hero) :is(h1, h2) {
+  color: #edf4f8;
+}
+
+html[data-theme="dark"] main > section:first-child:not(.search-hero) > p:first-child {
+  color: #67d6dc;
+}
+
+html[data-theme="dark"] :is(input, select, textarea) {
+  border-color: #435866;
+  background-color: #101820;
+  color: #edf4f8;
+}
+
+html[data-theme="dark"] :is(input, select, textarea)::placeholder {
+  color: #8fa2af;
+}
+
+html[data-theme="dark"] option {
+  background: #17232d;
+  color: #edf4f8;
+}
+
+html[data-theme="dark"] hr {
+  border-color: var(--line);
+}
+
+html[data-theme="dark"] footer {
+  border-color: var(--line);
+  color: var(--muted);
+}
+
+html[data-theme="dark"] .journey-icon,
+html[data-theme="dark"] .baggage-icon {
+  background: #243c47;
+}
+
+html[data-theme="dark"] .airport-icon {
+  background: #dce2e6;
+  color: #3d4850;
+}
