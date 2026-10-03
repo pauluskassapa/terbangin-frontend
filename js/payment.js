@@ -190,11 +190,20 @@ paymentForm.addEventListener("submit", function (event) {
     event.preventDefault();
     const selectedMethod = document.querySelector('input[name="payment-method"]:checked');
 
+    if (selectedMethod.value === "Transfer Bank" && !bankSelect.value) {
+    alert("Silakan pilih bank terlebih dahulu.");
+    return;
+    }
+
+    if (selectedMethod.value === "E-Wallet" && !ewalletSelect.value) {
+        alert("Silakan pilih E-Wallet terlebih dahulu.");
+        return;
+    }
+
     if (!selectedMethod) {
         alert("Silakan pilih metode pembayaran terlebih dahulu.");
         return;
     }
-
 
     const paymentParams = new URLSearchParams({airline: airline,flight: flightNumber,from: fromCode,to: toCode,date: travelDate,price: String(price),count: String(count),baggageKg: String(baggageKg),baggageTotal: String(baggageTotal),method: selectedMethod.value,total: String(paymentTotal)});
     window.location.href = `payment-success.html?${paymentParams.toString()}`;
