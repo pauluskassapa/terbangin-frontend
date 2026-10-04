@@ -9,40 +9,35 @@
   <link rel="stylesheet" href="../../css/flight.css">
   <link rel="stylesheet" href="../../css/perjalanan.css">
   <link rel="stylesheet" href="../../css/navbar.css">
-  <script src="../../js/navbar.js" defer></script>
-  <title>TERBANGIN — Online Check-in</title>
   <link rel="stylesheet" href="../../css/theme.css">
   <link rel="stylesheet" href="../../css/responsive.css">
+
+  <script src="../../js/navbar.js" defer></script>
+
+  <title>TERBANGIN — Online Check-in</title>
 </head>
 <body>
 
   <div id="site-header"></div>
 
   <main>
-
     <section class="journey-hero">
       <p>Online Check-in</p>
-
       <h1>Check-in sebelum berangkat.</h1>
-
       <p>
-        Hemat waktu di bandara dengan melakukan check-in
-        secara online sebelum penerbangan.
+        Pilih kursi favoritmu dan persiapkan perjalanan
+        sebelum tiba di bandara.
       </p>
     </section>
 
     <section class="journey-section">
-
       <div class="section-heading">
         <p>Check-in</p>
         <h2>Masukkan data penerbangan</h2>
-        <span>
-          Gunakan kode booking dan nama belakang penumpang.
-        </span>
+        <span>Gunakan kode booking dan nama belakang penumpang.</span>
       </div>
 
       <form id="checkinForm" class="journey-form">
-
         <label for="checkinCode">
           Kode Booking
           <input
@@ -58,104 +53,115 @@
           <input
             id="lastName"
             type="text"
-            placeholder="Contoh: Situmorang"
+            placeholder="Nama belakang penumpang"
             required
           >
         </label>
 
-        <button type="submit">Mulai Check-in</button>
-
+        <button type="submit">Cari Booking</button>
       </form>
 
       <p id="checkinMessage" class="form-message"></p>
 
-      <article id="checkinResult" class="checkin-result hidden">
+      <section id="seatSection" class="seat-section hidden">
+        <div class="section-heading">
+          <p>Pilih tempat duduk</p>
+          <h2>Pilih kursi pesawatmu</h2>
+          <span>Klik kursi yang tersedia untuk memilih tempat duduk.</span>
+        </div>
 
+        <div class="seat-legend">
+          <span><i class="seat-dot available"></i> Tersedia</span>
+          <span><i class="seat-dot selected"></i> Dipilih</span>
+          <span><i class="seat-dot occupied"></i> Terisi</span>
+        </div>
+
+        <div class="aircraft">
+          <div class="cockpit">✈ BAGIAN DEPAN PESAWAT</div>
+          <div class="seat-column-labels">
+            <span>A</span><span>B</span><span>C</span>
+            <span class="aisle-label"></span>
+            <span>D</span><span>E</span><span>F</span>
+          </div>
+          <div id="seatMap" class="seat-map"></div>
+          <div class="aircraft-tail">BAGIAN BELAKANG</div>
+        </div>
+
+        <div class="seat-summary">
+          <div>
+            <span>Kursi pilihanmu</span>
+            <strong id="selectedSeatLabel">Belum dipilih</strong>
+          </div>
+          <button type="button" id="confirmSeat" disabled>
+            Konfirmasi Kursi
+          </button>
+        </div>
+
+        <p id="seatMessage" class="form-message"></p>
+      </section>
+
+      <article id="checkinResult" class="checkin-result hidden">
         <div class="checkin-success">
           <span>✓</span>
-
           <div>
-            <h3>Check-in berhasil</h3>
-            <p>
-              Kamu sudah melakukan check-in untuk penerbangan ini.
-            </p>
+            <h3>Check-in berhasil!</h3>
+            <p>Kursi dan data penerbangan berhasil disimpan.</p>
           </div>
         </div>
 
         <div class="checkin-info">
-
           <div>
             <span>Kode Booking</span>
-            <strong id="checkinResultCode">TRB123</strong>
+            <strong id="checkinResultCode">-</strong>
           </div>
-
           <div>
             <span>Penumpang</span>
             <strong id="checkinResultName">-</strong>
           </div>
-
           <div>
             <span>Rute</span>
-            <strong>Jakarta → Bali</strong>
+            <strong id="checkinResultRoute">-</strong>
           </div>
-
           <div>
-            <span>Waktu Berangkat</span>
-            <strong>08.00 WIB</strong>
+            <span>Nomor Kursi</span>
+            <strong id="checkinResultSeat">-</strong>
           </div>
-
         </div>
 
         <div class="boarding-note">
           <strong>Jangan lupa</strong>
-
           <p>
-            Datang lebih awal ke bandara dan siapkan identitas
-            serta boarding pass saat diperlukan.
+            Simpan informasi check-in ini. Datang lebih awal ke bandara
+            dan siapkan identitas serta boarding pass saat diperlukan.
           </p>
         </div>
-
       </article>
-
     </section>
 
     <section class="journey-section">
-
       <div class="section-heading">
         <p>Langkah Check-in</p>
         <h2>Yang perlu disiapkan</h2>
       </div>
 
       <div class="steps-grid">
-
         <article class="step-card">
           <span>01</span>
           <h3>Masukkan data</h3>
-          <p>
-            Isi kode booking dan nama belakang sesuai pemesanan.
-          </p>
+          <p>Isi kode booking dan nama belakang sesuai pemesanan.</p>
         </article>
-
         <article class="step-card">
           <span>02</span>
-          <h3>Konfirmasi</h3>
-          <p>
-            Periksa kembali data penerbangan sebelum melakukan check-in.
-          </p>
+          <h3>Pilih kursi</h3>
+          <p>Pilih kursi yang masih tersedia pada peta pesawat.</p>
         </article>
-
         <article class="step-card">
           <span>03</span>
-          <h3>Siap berangkat</h3>
-          <p>
-            Simpan informasi check-in dan lanjutkan perjalananmu.
-          </p>
+          <h3>Konfirmasi</h3>
+          <p>Simpan kursi pilihan dan periksa kembali data check-in.</p>
         </article>
-
       </div>
-
     </section>
-
   </main>
 
   <footer>

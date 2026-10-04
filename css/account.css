@@ -15,6 +15,21 @@
   box-shadow: var(--shadow);
 }
 
+/* Override selector hero umum dari flight.css untuk halaman akun. */
+main.account-page > section.account-card {
+  min-height: 0;
+  padding: 36px;
+  display: block;
+  overflow: visible;
+  border-radius: 22px;
+  background: var(--white);
+}
+
+main.account-page > section.account-card::after {
+  content: none;
+  pointer-events: none;
+}
+
 .account-card[hidden],
 .account-card [hidden] {
   display: none !important;
@@ -341,6 +356,10 @@
   }
 
   .account-card {
+    padding: 26px 20px;
+  }
+
+  main.account-page > section.account-card {
     padding: 26px 20px;
   }
 

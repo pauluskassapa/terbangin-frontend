@@ -12,14 +12,26 @@ const method = params.get("method") || "-";
 const total = Math.max(0, Number(params.get("total")) || 0);
 
 function formatRupiah(amount) {
-    return new Intl.NumberFormat("id-ID", {style: "currency",currency: "IDR",maximumFractionDigits: 0}).format(amount);
+    return new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR",
+        maximumFractionDigits: 0
+    }).format(amount);
 }
 
 function formatDate(date) {
     const dateObject = new Date(`${date}T00:00:00`);
 
-    if (Number.isNaN(dateObject.getTime())) {return date;}
-    return new Intl.DateTimeFormat("id-ID", {weekday: "long",day: "numeric",month: "long",year: "numeric"}).format(dateObject);
+    if (Number.isNaN(dateObject.getTime())) {
+        return date;
+    }
+
+    return new Intl.DateTimeFormat("id-ID", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+    }).format(dateObject);
 }
 
 const airportNames = {
@@ -36,10 +48,23 @@ const airportNames = {
 };
 
 document.getElementById("success-airline").textContent = airline;
-document.getElementById("success-flight").textContent = flightNumber + " · Ekonomi";
-document.getElementById("success-route").textContent = `${airportNames[fromCode] || fromCode} → ${airportNames[toCode] || toCode}`;
+document.getElementById("success-flight").textContent =
+    flightNumber + " · Ekonomi";
+
+document.getElementById("success-route").textContent =
+    `${airportNames[fromCode] || fromCode} → ${airportNames[toCode] || toCode}`;
+
 document.getElementById("success-date").textContent = formatDate(travelDate);
 document.getElementById("success-passengers").textContent = count + " orang";
-document.getElementById("success-baggage").textContent = baggageKg + " kg · " + formatRupiah(baggageTotal);
+document.getElementById("success-baggage").textContent =
+    baggageKg + " kg · " + formatRupiah(baggageTotal);
+
 document.getElementById("success-method").textContent = method;
 document.getElementById("success-total").textContent = formatRupiah(total);
+
+const bookingCode = params.get("bookingCode") || "";
+const bookingCodeElement = document.getElementById("success-booking-code");
+
+if (bookingCodeElement) {
+    bookingCodeElement.textContent = bookingCode || "Tidak tersedia";
+}
