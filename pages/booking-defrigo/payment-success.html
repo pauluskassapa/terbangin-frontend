@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="../../js/theme.js"></script>
-  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <script src="../../js/theme.js"></script>
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
     <title>Pembayaran Berhasil — TERBANGIN</title>
+
     <link rel="stylesheet" href="../../css/payment.css">
     <link rel="stylesheet" href="../../css/navbar.css">
+    <link rel="stylesheet" href="../../css/theme.css">
+
     <script src="../../js/navbar.js" defer></script>
-  <link rel="stylesheet" href="../../css/theme.css">
 </head>
 <body>
     <div id="site-header"></div>
+
     <main>
         <section class="payment-hero">
             <p class="eyebrow">Pembayaran selesai</p>
@@ -23,49 +26,78 @@
 
         <section class="payment-card payment-success-card">
             <div class="payment-success-icon">✓</div>
+
             <h2>Terima kasih telah menggunakan TERBANGIN</h2>
-            <p class="payment-success-text">Berikut adalah rincian pembayaran kamu.</p>
+            <p class="payment-success-text">
+                Berikut adalah rincian pembayaran kamu.
+            </p>
+
+            <div class="confirmation-row success-booking-code">
+                <span>Kode Booking</span>
+                <strong id="success-booking-code">-</strong>
+            </div>
+
+            <p>
+                Simpan kode booking ini. Gunakan kode booking dan email
+                penumpang pertama untuk membuka My Booking.
+            </p>
+
             <div id="payment-success-details" class="success-details">
                 <div class="confirmation-row">
                     <span>Maskapai</span>
                     <strong id="success-airline">-</strong>
                 </div>
+
                 <div class="confirmation-row">
                     <span>Penerbangan</span>
                     <strong id="success-flight">-</strong>
                 </div>
+
                 <div class="confirmation-row">
                     <span>Rute</span>
                     <strong id="success-route">-</strong>
                 </div>
+
                 <div class="confirmation-row">
                     <span>Tanggal</span>
                     <strong id="success-date">-</strong>
                 </div>
+
                 <div class="confirmation-row">
                     <span>Jumlah penumpang</span>
                     <strong id="success-passengers">-</strong>
                 </div>
+
                 <div class="confirmation-row">
                     <span>Bagasi tambahan</span>
                     <strong id="success-baggage">-</strong>
                 </div>
+
                 <div class="confirmation-row">
                     <span>Metode pembayaran</span>
                     <strong id="success-method">-</strong>
                 </div>
+
                 <div class="confirmation-row">
                     <span>Status</span>
                     <strong>Pembayaran Berhasil</strong>
                 </div>
+
                 <div class="confirmation-row success-total">
                     <span>Total pembayaran</span>
                     <strong id="success-total">-</strong>
                 </div>
             </div>
+
             <div class="success-actions">
-                <a href="../flight-paul/home.html" class="back-button">Kembali ke Home</a>
-                <a href="../perjalanan-alex/my-booking.html" class="success-secondary-button">Lihat My-Ticket</a>
+                <a href="../flight-paul/home.html" class="back-button">
+                    Kembali ke Home
+                </a>
+
+                <a href="../perjalanan-alex/my-booking.html"
+                   class="success-secondary-button">
+                    Lihat My-Ticket
+                </a>
             </div>
         </section>
     </main>
@@ -73,7 +105,7 @@
     <footer>
         <p>© 2026 TERBANGIN. Mau ke mana? TERBANGIN aja.</p>
     </footer>
-    
+
     <script src="../../js/payment-success.js"></script>
 </body>
 </html>

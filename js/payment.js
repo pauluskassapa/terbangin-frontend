@@ -8,63 +8,117 @@ const travelDate = params.get("date") || "2026-10-12";
 
 const price = Number(params.get("price")) || 1250000;
 const count = Math.max(1, Number(params.get("count")) || 1);
-
 const baggageKgFromUrl = Number(params.get("baggageKg")) || 0;
 
 const ticketTotal = price * count;
 
 let baggageKg = Math.max(0, baggageKgFromUrl);
 let baggageTotal = baggageKg * 200000;
-
 let paymentTotal = ticketTotal + baggageTotal;
 
+const airportNames = {
+    CGK: "Jakarta",
+    BDO: "Bandung",
+    SUB: "Surabaya",
+    DPS: "Bali",
+    YIA: "Yogyakarta",
+    KNO: "Medan",
+    LBJ: "Labuan Bajo",
+    LOP: "Lombok",
+    SOQ: "Sorong / Raja Ampat",
+    BPN: "Balikpapan"
+};
+
 function formatRupiah(amount) {
-    return new Intl.NumberFormat("id-ID", {style: "currency",currency: "IDR",maximumFractionDigits: 0}).format(amount);
+    return new Intl.NumberFormat("id-ID", {
+        style: "currency",
+        currency: "IDR",
+        maximumFractionDigits: 0
+    }).format(amount);
 }
 
 function formatDate(date) {
     const dateObject = new Date(`${date}T00:00:00`);
-    if (Number.isNaN(dateObject.getTime())) {return date;}
-    return new Intl.DateTimeFormat("id-ID", {weekday: "long",day: "numeric",month: "long",year: "numeric"}).format(dateObject);
+
+    if (Number.isNaN(dateObject.getTime())) {
+        return date;
+    }
+
+    return new Intl.DateTimeFormat("id-ID", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+    }).format(dateObject);
 }
 
-document.getElementById("payment-airline").textContent = airline;
-document.getElementById("payment-flight").textContent = flightNumber + " · Ekonomi";
-document.getElementById("payment-from").textContent = fromCode;
-document.getElementById("payment-to").textContent = toCode;
-document.getElementById("payment-date").textContent = formatDate(travelDate);
-document.getElementById("payment-passengers").textContent = count + " orang";
-document.getElementById("payment-ticket-price").textContent = formatRupiah(price);
-document.getElementById("payment-price-passengers").textContent = count + " orang";
-document.getElementById("payment-ticket-total").textContent = formatRupiah(ticketTotal);
+// Informasi penerbangan
+const paymentAirline = document.getElementById("payment-airline");
+const paymentFlight = document.getElementById("payment-flight");
+const paymentFrom = document.getElementById("payment-from");
+const paymentTo = document.getElementById("payment-to");
+const paymentFromName = document.getElementById("payment-from-name");
+const paymentToName = document.getElementById("payment-to-name");
+const paymentDate = document.getElementById("payment-date");
+
+if (paymentAirline) {
+    paymentAirline.textContent = airline;
+}
+
+if (paymentFlight) {
+    paymentFlight.textContent = flightNumber + " · Ekonomi";
+}
+
+if (paymentFrom) {
+    paymentFrom.textContent = fromCode;
+}
+
+if (paymentTo) {
+    paymentTo.textContent = toCode;
+}
+
+if (paymentFromName) {
+    paymentFromName.textContent = airportNames[fromCode] || fromCode;
+}
+
+if (paymentToName) {
+    paymentToName.textContent = airportNames[toCode] || toCode;
+}
+
+if (paymentDate) {
+    paymentDate.textContent = formatDate(travelDate);
+}
+
+const paymentPassengers = document.getElementById("payment-passengers");
+const paymentTicketPrice = document.getElementById("payment-ticket-price");
+const paymentPricePassengers = document.getElementById(
+    "payment-price-passengers"
+);
+const paymentTicketTotal = document.getElementById("payment-ticket-total");
+
+if (paymentPassengers) {
+    paymentPassengers.textContent = count + " orang";
+}
+
+if (paymentTicketPrice) {
+    paymentTicketPrice.textContent = formatRupiah(price);
+}
+
+if (paymentPricePassengers) {
+    paymentPricePassengers.textContent = count + " orang";
+}
+
+if (paymentTicketTotal) {
+    paymentTicketTotal.textContent = formatRupiah(ticketTotal);
+}
 
 const baggageInput = document.getElementById("payment-baggage-kg");
 const baggageTotalText = document.getElementById("payment-baggage-total");
 const baggagePriceText = document.getElementById("payment-baggage-price");
-
-function updateBaggage() {
-    baggageKg = Number(baggageInput.value);
-    if (isNaN(baggageKg) || baggageKg < 0) {baggageKg = 0;}
-
-    if (baggageKg > 20) {baggageKg = 20;}
-    baggageInput.value = baggageKg;
-    baggageTotal = baggageKg * 200000;
-    paymentTotal = ticketTotal + baggageTotal;
-
-    baggageTotalText.textContent = formatRupiah(baggageTotal);
-    baggagePriceText.textContent = formatRupiah(baggageTotal);
-    document.getElementById("payment-total").textContent = formatRupiah(paymentTotal);
-}
-
-baggageInput.addEventListener("input", updateBaggage);
-updateBaggage();
-
-const paymentForm = document.getElementById("payment-form");
-
-const confirmation = document.getElementById("payment-confirmation");
-
 const baggagePrice = 200000;
 
+
+const paymentForm = document.getElementById("payment-form");
 const paymentDetails = document.getElementById("payment-details");
 const transferDetails = document.getElementById("transfer-details");
 const ewalletDetails = document.getElementById("ewallet-details");
@@ -94,77 +148,91 @@ const dummyEwalletCodes = {
     ShopeePay: "SP-DFR-812348"
 };
 
-function updatePaymentTotal() {
-    baggageTotal = baggageKg * baggagePrice;
-    paymentTotal = ticketTotal + baggageTotal;
-    const baggageTotalElement = document.getElementById("payment-baggage-total");
-
-    if (baggageTotalElement) {
-        baggageTotalElement.textContent = formatRupiah(baggageTotal);
-    }
-
-    document.getElementById("payment-total").textContent = formatRupiah(paymentTotal);
-
-    updatePaymentDetails();
-}
-
 function hidePaymentDetails() {
-    paymentDetails.hidden = true;
-    transferDetails.hidden = true;
-    ewalletDetails.hidden = true;
-    qrisDetails.hidden = true;
+    if (paymentDetails) paymentDetails.hidden = true;
+    if (transferDetails) transferDetails.hidden = true;
+    if (ewalletDetails) ewalletDetails.hidden = true;
+    if (qrisDetails) qrisDetails.hidden = true;
 }
 
 function updatePaymentDetails() {
-    const selectedMethod = document.querySelector('input[name="payment-method"]:checked');
+    const selectedMethod = document.querySelector(
+        'input[name="payment-method"]:checked'
+    );
 
     if (!selectedMethod) {
         hidePaymentDetails();
         return;
     }
 
-    paymentDetails.hidden = false;
-    transferDetails.hidden = true;
-    ewalletDetails.hidden = true;
-    qrisDetails.hidden = true;
+    if (paymentDetails) paymentDetails.hidden = false;
+    if (transferDetails) transferDetails.hidden = true;
+    if (ewalletDetails) ewalletDetails.hidden = true;
+    if (qrisDetails) qrisDetails.hidden = true;
 
     if (selectedMethod.value === "Transfer Bank") {
-        transferDetails.hidden = false;
+        if (transferDetails) transferDetails.hidden = false;
 
-        transferAmount.textContent = formatRupiah(paymentTotal);
+        if (transferAmount) {
+            transferAmount.textContent = formatRupiah(paymentTotal);
+        }
 
-        if (bankSelect.value) {
-            virtualAccount.textContent = dummyVirtualAccounts[bankSelect.value];
-        } 
-        else {
-            virtualAccount.textContent = "-";
+        if (virtualAccount) {
+            virtualAccount.textContent = bankSelect && bankSelect.value
+                ? dummyVirtualAccounts[bankSelect.value] || "-"
+                : "-";
         }
     }
 
     if (selectedMethod.value === "E-Wallet") {
-        ewalletDetails.hidden = false;
+        if (ewalletDetails) ewalletDetails.hidden = false;
 
-        ewalletAmount.textContent = formatRupiah(paymentTotal);
+        if (ewalletAmount) {
+            ewalletAmount.textContent = formatRupiah(paymentTotal);
+        }
 
-        if (ewalletSelect.value) {
-            ewalletCode.textContent = dummyEwalletCodes[ewalletSelect.value];
-        } 
-        else {
-            ewalletCode.textContent = "-";
+        if (ewalletCode) {
+            ewalletCode.textContent = ewalletSelect && ewalletSelect.value
+                ? dummyEwalletCodes[ewalletSelect.value] || "-"
+                : "-";
         }
     }
 
     if (selectedMethod.value === "QRIS") {
-        qrisDetails.hidden = false;
-        qrisAmount.textContent = formatRupiah(paymentTotal);
+        if (qrisDetails) qrisDetails.hidden = false;
+
+        if (qrisAmount) {
+            qrisAmount.textContent = formatRupiah(paymentTotal);
+        }
     }
+}
+
+function updatePaymentTotal() {
+    baggageTotal = baggageKg * baggagePrice;
+    paymentTotal = ticketTotal + baggageTotal;
+
+    if (baggageTotalText) {
+        baggageTotalText.textContent = formatRupiah(baggageTotal);
+    }
+
+    if (baggagePriceText) {
+        baggagePriceText.textContent = formatRupiah(baggageTotal);
+    }
+
+    const paymentTotalElement = document.getElementById("payment-total");
+
+    if (paymentTotalElement) {
+        paymentTotalElement.textContent = formatRupiah(paymentTotal);
+    }
+
+    updatePaymentDetails();
 }
 
 if (baggageInput) {
     baggageInput.value = baggageKg;
 
     baggageInput.addEventListener("input", function () {
-        baggageKg = Math.max(0,Math.min(20, Number(this.value) || 0));
+        baggageKg = Math.max(0, Math.min(20, Number(this.value) || 0));
         this.value = baggageKg;
         updatePaymentTotal();
     });
@@ -173,38 +241,129 @@ if (baggageInput) {
 document
     .querySelectorAll('input[name="payment-method"]')
     .forEach(function (radio) {
-        radio.addEventListener("change",updatePaymentDetails);
+        radio.addEventListener("change", updatePaymentDetails);
     });
 
 if (bankSelect) {
-    bankSelect.addEventListener("change",updatePaymentDetails);
+    bankSelect.addEventListener("change", updatePaymentDetails);
 }
 
 if (ewalletSelect) {
-    ewalletSelect.addEventListener("change",updatePaymentDetails);
+    ewalletSelect.addEventListener("change", updatePaymentDetails);
 }
 
 updatePaymentTotal();
 
-paymentForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-    const selectedMethod = document.querySelector('input[name="payment-method"]:checked');
+if (paymentForm) {
+    paymentForm.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-    if (selectedMethod.value === "Transfer Bank" && !bankSelect.value) {
-    alert("Silakan pilih bank terlebih dahulu.");
-    return;
-    }
+        const selectedMethod = document.querySelector(
+            'input[name="payment-method"]:checked'
+        );
 
-    if (selectedMethod.value === "E-Wallet" && !ewalletSelect.value) {
-        alert("Silakan pilih E-Wallet terlebih dahulu.");
-        return;
-    }
+        if (!selectedMethod) {
+            alert("Silakan pilih metode pembayaran terlebih dahulu.");
+            return;
+        }
 
-    if (!selectedMethod) {
-        alert("Silakan pilih metode pembayaran terlebih dahulu.");
-        return;
-    }
+        if (
+            selectedMethod.value === "Transfer Bank" &&
+            (!bankSelect || !bankSelect.value)
+        ) {
+            alert("Silakan pilih bank terlebih dahulu.");
+            return;
+        }
 
-    const paymentParams = new URLSearchParams({airline: airline,flight: flightNumber,from: fromCode,to: toCode,date: travelDate,price: String(price),count: String(count),baggageKg: String(baggageKg),baggageTotal: String(baggageTotal),method: selectedMethod.value,total: String(paymentTotal)});
-    window.location.href = `payment-success.html?${paymentParams.toString()}`;
-});
+        if (
+            selectedMethod.value === "E-Wallet" &&
+            (!ewalletSelect || !ewalletSelect.value)
+        ) {
+            alert("Silakan pilih E-Wallet terlebih dahulu.");
+            return;
+        }
+
+        let bookingDraft;
+
+        try {
+            bookingDraft = JSON.parse(
+                localStorage.getItem("terbanginBookingDraft") || "null"
+            );
+        } catch (error) {
+            bookingDraft = null;
+        }
+
+        if (
+            !bookingDraft ||
+            !Array.isArray(bookingDraft.passengers) ||
+            bookingDraft.passengers.length === 0
+        ) {
+            alert("Data penumpang tidak ditemukan. Silakan ulangi pemesanan.");
+            return;
+        }
+
+        const bookingCode =
+            "TRB" + Math.random().toString(36).slice(2, 8).toUpperCase();
+
+        const booking = {
+            ...bookingDraft,
+            airline,
+            flight: flightNumber,
+            from: fromCode,
+            to: toCode,
+            date: travelDate,
+            price,
+            count,
+            code: bookingCode,
+            email: bookingDraft.passengers[0].email,
+            baggageKg,
+            baggageTotal,
+            method: selectedMethod.value,
+            total: paymentTotal,
+            status: "Pembayaran Berhasil",
+            checkedIn: false,
+            paidAt: new Date().toISOString()
+        };
+
+        let bookings = [];
+
+        try {
+            bookings = JSON.parse(
+                localStorage.getItem("terbanginBookings") || "[]"
+            );
+
+            if (!Array.isArray(bookings)) {
+                bookings = [];
+            }
+        } catch (error) {
+            bookings = [];
+        }
+
+        bookings.push(booking);
+
+        localStorage.setItem(
+            "terbanginBookings",
+            JSON.stringify(bookings)
+        );
+
+        localStorage.removeItem("terbanginBookingDraft");
+
+        const paymentParams = new URLSearchParams({
+            airline,
+            flight: flightNumber,
+            from: fromCode,
+            to: toCode,
+            date: travelDate,
+            price: String(price),
+            count: String(count),
+            baggageKg: String(baggageKg),
+            baggageTotal: String(baggageTotal),
+            method: selectedMethod.value,
+            total: String(paymentTotal),
+            bookingCode
+        });
+
+        window.location.href =
+            `payment-success.html?${paymentParams.toString()}`;
+    });
+}
