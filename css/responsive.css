@@ -1,0 +1,315 @@
+/* Shared responsive layout rules for all TERBANGIN pages. */
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+html,
+body {
+  width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+}
+
+main,
+.destination-container,
+.search-page {
+  min-width: 0;
+}
+
+@media (max-width: 1100px) {
+  .site-header {
+    padding-inline: 20px;
+  }
+
+  .site-header-inner {
+    min-height: 70px;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    padding-block: 10px;
+  }
+
+  .site-nav {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+    gap: clamp(16px, 3vw, 28px);
+  }
+
+  .site-actions {
+    margin-left: auto;
+  }
+
+  main,
+  .search-page,
+  .destination-container {
+    width: min(100% - 40px, 900px);
+  }
+
+  .popular-section {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .popular-info {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .popular-cards-scroll {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .booking-layout,
+  .payment-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .price-section {
+    position: static;
+  }
+
+  .flight-card {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) minmax(125px, .8fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .site-header {
+    padding-inline: 16px;
+  }
+
+  .site-header-inner {
+    gap: 8px 10px;
+  }
+
+  .site-brand {
+    gap: 7px;
+  }
+
+  .brand-wordmark {
+    font-size: 16px;
+    letter-spacing: .07em;
+  }
+
+  .brand-symbol {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+  }
+
+  .site-nav {
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 2px 0 5px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: thin;
+  }
+
+  .site-nav a {
+    flex: 0 0 auto;
+    font-size: 13px;
+  }
+
+  .theme-toggle {
+    min-height: 36px;
+    padding: 7px 9px;
+  }
+
+  .site-login {
+    padding: 8px 11px;
+  }
+
+  main,
+  .search-page,
+  .destination-container {
+    width: calc(100% - 32px);
+  }
+
+  .destination-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .destination-grid > * {
+    width: auto;
+    max-width: none;
+    min-width: 0;
+  }
+
+  .video-header,
+  .video-banner,
+  .hero-banner {
+    height: clamp(220px, 48vw, 320px);
+    min-height: 0;
+  }
+
+  .header-content h1 {
+    font-size: clamp(1.7rem, 5vw, 2.25rem);
+  }
+
+  .header-content p {
+    font-size: clamp(.95rem, 2.7vw, 1.1rem);
+  }
+
+  .journey-section,
+  .account-card,
+  .booking-card,
+  .payment-card,
+  .confirmation-card,
+  .detail-card,
+  .search-panel {
+    padding: 20px;
+  }
+
+  .journey-hero,
+  .booking-hero,
+  .payment-hero,
+  main > section:first-child:not(.search-hero) {
+    min-height: 0;
+    padding: clamp(24px, 6vw, 40px);
+  }
+
+  .journey-hero::after,
+  main > section:first-child:not(.search-hero)::after {
+    width: 190px;
+    height: 190px;
+    right: -20px;
+    bottom: -140px;
+  }
+
+  .flight-card {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .account-profile-heading {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    padding-inline: 12px;
+  }
+
+  .site-header-inner {
+    column-gap: 6px;
+  }
+
+  .brand-symbol {
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+  }
+
+  .brand-wordmark {
+    font-size: 14px;
+    letter-spacing: .045em;
+  }
+
+  .site-actions {
+    gap: 6px;
+  }
+
+  .theme-toggle {
+    width: 36px;
+    min-width: 36px;
+    padding: 7px;
+  }
+
+  .theme-toggle-label {
+    display: none;
+  }
+
+  .site-login {
+    padding: 7px 9px;
+    font-size: 12px;
+  }
+
+  main,
+  .search-page,
+  .destination-container {
+    width: calc(100% - 24px);
+  }
+
+  .destination-grid,
+  .account-profile-fields,
+  .journey-grid,
+  .steps-grid,
+  .tips-list,
+  .booking-info,
+  .checkin-info {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .destination-card {
+    min-height: 190px;
+  }
+
+  .destination-card img {
+    height: 180px;
+  }
+
+  .popular-cards-scroll {
+    gap: 12px;
+  }
+
+  .dest-card {
+    flex-basis: min(78vw, 260px);
+  }
+
+  .journey-section,
+  .account-card,
+  .booking-card,
+  .payment-card,
+  .confirmation-card,
+  .detail-card,
+  .search-panel {
+    padding: 16px;
+  }
+
+  .booking-route,
+  .history-route {
+    grid-template-columns: minmax(0, 1fr);
+    text-align: left;
+  }
+
+  .history-city:last-child {
+    text-align: left;
+  }
+
+  .history-arrow {
+    transform: rotate(90deg);
+    text-align: left;
+  }
+
+  .flight-schedule {
+    grid-template-columns: minmax(0, 1fr) minmax(48px, .7fr) minmax(0, 1fr);
+  }
+
+  .flight-schedule div > strong {
+    font-size: 15px;
+  }
+
+  .flight-price strong {
+    white-space: normal;
+    text-align: right;
+  }
+
+  .success-actions,
+  .booking-actions,
+  .account-profile-actions {
+    flex-direction: column;
+  }
+
+  .success-actions > *,
+  .booking-actions > *,
+  .account-profile-actions > * {
+    width: 100%;
+    text-align: center;
+  }
+}

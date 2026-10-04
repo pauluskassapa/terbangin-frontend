@@ -3,11 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="../../js/theme.js"></script>
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
   <title>Masuk — TERBANGIN</title>
   <link rel="stylesheet" href="../../css/flight.css">
   <link rel="stylesheet" href="../../css/account.css">
   <link rel="stylesheet" href="../../css/navbar.css">
   <script src="../../js/navbar.js" defer></script>
+  <link rel="stylesheet" href="../../css/theme.css">
+  <link rel="stylesheet" href="../../css/responsive.css">
 </head>
 <body>
   <div id="site-header"></div>
@@ -22,13 +27,13 @@
         <span class="google-mark" aria-hidden="true">G</span>
         Lanjutkan dengan Google
       </button>
-      <p class="account-note" id="google-status">Masuk dengan Google akan tersedia pada tahap berikutnya.</p>
+      <p class="account-note" id="google-status">Masuk Google memerlukan konfigurasi OAuth dan belum diaktifkan di demo lokal.</p>
 
       <div class="account-divider" aria-hidden="true"><span>atau masuk dengan email</span></div>
 
-      <form class="account-form" action="#" method="post">
-        <label for="email">Alamat email
-          <input id="email" name="email" type="email" placeholder="nama@email.com" autocomplete="email" required>
+      <form class="account-form" id="login-form" novalidate>
+        <label for="login-identifier">Email atau username
+          <input id="login-identifier" name="identifier" type="text" placeholder="nama@email.com atau username" autocomplete="username" required>
         </label>
 
         <label for="password">Kata sandi
@@ -37,21 +42,24 @@
 
         <div class="account-options">
           <label class="remember-option" for="remember-me">
-            <input id="remember-me" name="remember-me" type="checkbox">
+            <input id="remember-me" name="rememberMe" type="checkbox">
             Ingat saya
           </label>
           <a href="forgot-password.html">Lupa kata sandi?</a>
         </div>
 
         <button type="submit">Masuk</button>
+        <p class="account-status" id="login-status" role="status" aria-live="polite"></p>
       </form>
 
-      <p class="account-signup">Belum punya akun? <a href="register.html">Daftar sekarang</a></p>
+      <p class="account-signup">Belum punya akun?</p>
+      <a class="account-register-link" href="./register.html">Daftar Sekarang</a>
     </section>
   </main>
 
   <footer>
     <p>© 2026 TERBANGIN. Mau ke mana? TERBANGIN aja.</p>
   </footer>
+  <script src="../../js/account.js"></script>
 </body>
 </html>

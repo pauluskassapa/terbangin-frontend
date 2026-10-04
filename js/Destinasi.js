@@ -67,19 +67,22 @@ document.addEventListener('DOMContentLoaded', function () {
       const date = document.getElementById('departureDate').value;
       const passengers = Number(document.getElementById('passengers').value);
       const pageTitle = document.title.toLowerCase();
-      const destinationName = document.body.dataset.destinationName ||
-        (pageTitle.includes('labuan bajo') ? 'Labuan Bajo' : pageTitle.includes('yogyakarta') ? 'Yogyakarta' : 'Bali');
-      const airportCode = document.body.dataset.airportCode ||
-        (pageTitle.includes('labuan bajo') ? 'LBJ' : pageTitle.includes('yogyakarta') ? 'YIA' : 'DPS');
-      let basePrice = Number(document.body.dataset.basePrice) || 950000;
+      let destinationName = 'Bali (DPS)';
+      let basePrice = 800000;
 
-      if (document.body.dataset.basePrice) {
-        if (origin.includes('Surabaya')) basePrice *= 0.88;
-        else if (origin.includes('Bali')) basePrice *= 0.78;
-      } else if (destinationName === 'Labuan Bajo') {
-        basePrice = origin.includes('Jakarta') ? 1750000 : origin.includes('Surabaya') ? 1400000 : origin.includes('Bali') ? 850000 : 1200000;
-      } else if (destinationName === 'Yogyakarta') {
-        basePrice = origin.includes('Jakarta') ? 750000 : origin.includes('Surabaya') ? 600000 : 950000;
+      // Logika harga otomatis menyesuaikan halaman
+      if (pageTitle.includes('labuan bajo')) {
+        destinationName = 'Labuan Bajo (LBJ)';
+        basePrice = 1200000;
+        if (origin.includes('Jakarta')) basePrice = 1750000;
+        else if (origin.includes('Surabaya')) basePrice = 1400000;
+        else if (origin.includes('Bali')) basePrice = 850000;
+      } else if (pageTitle.includes('yogyakarta')) {
+        destinationName = 'Yogyakarta (YIA)';
+        basePrice = 650000;
+        if (origin.includes('Jakarta')) basePrice = 550000;
+        else if (origin.includes('Surabaya')) basePrice = 500000;
+        else if (origin.includes('Bali')) basePrice = 900000;
       } else {
         basePrice = origin.includes('Jakarta') ? 950000 : origin.includes('Surabaya') ? 650000 : origin.includes('Medan') ? 1600000 : 800000;
       }
@@ -103,12 +106,5 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function goToSearchFlight() {
-  const body = document.body;
-  const origin = document.getElementById('origin')?.value.match(/\(([A-Z]{3})\)/)?.[1] || 'CGK';
-  const date = document.getElementById('departureDate')?.value || '';
-  const pageTitle = document.title.toLowerCase();
-  const destination = body.dataset.airportCode ||
-    (pageTitle.includes('labuan bajo') ? 'LBJ' : pageTitle.includes('yogyakarta') ? 'YIA' : 'DPS');
-  const query = new URLSearchParams({ from: origin, to: destination, date });
-  window.location.href = `../flight-paul/search-flight.html?${query.toString()}`;
+  window.location.href = '../flight-paul/search-flight.html';
 }

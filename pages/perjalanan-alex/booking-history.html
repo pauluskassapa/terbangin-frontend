@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="../../js/theme.js"></script>
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <title>TERBANGIN — Booking History</title>
+
+  <link rel="stylesheet" href="../../css/flight.css">
+  <link rel="stylesheet" href="../../css/perjalanan.css">
+  <link rel="stylesheet" href="../../css/navbar.css">
+  <link rel="stylesheet" href="../../css/theme.css">
+  <link rel="stylesheet" href="../../css/responsive.css">
+
+  <script src="../../js/navbar.js" defer></script>
+</head>
+
+<body>
+  <div id="site-header"></div>
+
+  <main class="journey-container">
+    <section class="journey-header">
+      <h1>Booking History</h1>
+      <p>Lihat semua riwayat pemesanan tiket pesawat kamu.</p>
+    </section>
+
+    <section class="history-filter">
+      <label for="statusFilter">Filter Status Pemesanan</label>
+
+      <select id="statusFilter">
+        <option value="semua">Semua Pemesanan</option>
+        <option value="selesai">Pembayaran Berhasil</option>
+        <option value="menunggu">Menunggu Pembayaran</option>
+        <option value="dibatalkan">Dibatalkan</option>
+      </select>
+    </section>
+
+    <section
+      id="bookingList"
+      class="history-list"
+      aria-live="polite"
+    ></section>
+
+    <p id="emptyHistory" class="empty-history" hidden>
+      Tidak ada riwayat pemesanan untuk status tersebut.
+    </p>
+  </main>
+
+  <script src="../../js/perjalanan.js"></script>
+</body>
+</html>
