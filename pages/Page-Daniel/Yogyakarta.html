@@ -20,7 +20,6 @@
   <div id="site-header"></div>
 
 
-</div>
 <div class="video-banner">
     <video autoplay muted loop playsinline class="bg-video">
       <source src="../../assets/videos/Page-Daniel/Jogja.mp4" type="video/mp4">
@@ -38,14 +37,14 @@
   <div class="container destination-container">
 
     <!-- Section Destinasi Populer (Side-by-Side Horizontal Scroll) -->
-    <section class="popular-section">
-      <div class="popular-info">
+    <section class="popular-section destination-showcase destination-showcase--split destination-showcase--yogyakarta" style="--destination-bg-image: url('../../assets/images/Destinasi-foto-video/Jogja.jpg');">
+      <div class="destination-showcase__header">
         <span class="badge-tag">Destinasi Pilihan</span>
-        <h2>Destinasi Populer</h2>
-        <p>Jelajahi keindahan alam, tempat ikonik, dan pesona wisata terbaik yang wajib kamu kunjungi saat berada di Yogyakarta.</p>
+        <h2 class="destination-showcase__title">Destinasi Populer</h2>
+        <p class="destination-showcase__description">Jelajahi keindahan alam, tempat ikonik, dan pesona wisata terbaik yang wajib kamu kunjungi saat berada di Yogyakarta.</p>
       </div>
 
-      <div class="popular-cards-scroll">
+      <div class="destination-showcase__track" aria-label="Daftar destinasi populer Yogyakarta">
         <div class="destination-card">
           <img src="../../assets/images/Page-Daniel/CandiPrambanan.jpg" alt="Candi Prambanan">
           <div class="destination-card-body">
@@ -73,17 +72,42 @@
     </section>
 
     <!-- Kuliner & Aktivitas Khas -->
-    <section class="culture-box">
-      <h2>Kuliner & Budaya Khas</h2>
-      <ul>
-        <li><strong>Gudeg Jogja:</strong> Makanan khas berbahan nangka muda yang dimasak dengan santan dan rempah tradisional.</li>
-        <li><strong>Bakpia Pathok:</strong> Oleh-oleh olahan kacang hijau manis yang dibungkus kulit renyah khas Jogja.</li>
-        <li><strong>Kopi Joss:</strong> Pengalaman menikmati kopi unik yang disajikan langsung dengan arang membara.</li>
-      </ul>
+    <section class="culture-box culinary-showcase culinary-showcase--split" style="--culinary-bg-image: url('../../assets/images/Destinasi-foto-video/Jogja.jpg');">
+      <div class="culinary-header">
+        <span class="culture-eyebrow">Rasa Istimewa Jogja</span>
+        <h2>Kuliner & Budaya Khas</h2>
+        <p class="culture-description">Jelajahi pilihan rasa yang akrab dengan suasana hangat dan tradisi Yogyakarta.</p>
+      </div>
+      <div class="culture-grid culinary-track" aria-label="Kuliner khas Yogyakarta">
+        <article class="culture-card">
+          <span class="culture-icon" aria-hidden="true">🍛</span>
+          <span class="culture-category">Masakan rumahan</span>
+          <h3>Gudeg Jogja</h3>
+          <p>Nangka muda yang dimasak perlahan dengan santan dan bumbu tradisional.</p>
+        </article>
+        <article class="culture-card">
+          <span class="culture-icon" aria-hidden="true">🥮</span>
+          <span class="culture-category">Oleh-oleh</span>
+          <h3>Bakpia Pathok</h3>
+          <p>Kue mungil berisi kacang hijau manis yang jadi buah tangan favorit.</p>
+        </article>
+        <article class="culture-card">
+          <span class="culture-icon" aria-hidden="true">☕</span>
+          <span class="culture-category">Pengalaman lokal</span>
+          <h3>Kopi Joss</h3>
+          <p>Kopi khas angkringan yang disajikan dengan arang membara.</p>
+        </article>
+        <article class="culture-card">
+          <span class="culture-icon" aria-hidden="true">🍢</span>
+          <span class="culture-category">Kuliner malam</span>
+          <h3>Sate Klathak</h3>
+          <p>Sate kambing sederhana berbumbu gurih yang populer di kawasan Bantul.</p>
+        </article>
+      </div>
     </section>
 
     <!-- Form Cek Harga Tiket -->
-    <section class="search-section">
+    <section class="search-section search-section--centered">
       <h2 class="form-title-center">Cek Harga Tiket Pesawat ke Yogyakarta (YIA)</h2>
       
       <form id="flightForm">

@@ -197,6 +197,7 @@ html[data-theme="dark"] .theme-toggle-sun { display: block; }
     padding: 8px 12px;
     font-size: 13px;
   }
+
 }
 
 @media (max-width: 390px) {
