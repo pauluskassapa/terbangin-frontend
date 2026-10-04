@@ -71,6 +71,64 @@
   color: #087f8c;
 }
 
+.site-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 8px 11px;
+  border: 1px solid #d8e3e9;
+  border-radius: 10px;
+  background: transparent;
+  color: #52697a;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color 160ms ease, color 160ms ease, background 160ms ease;
+}
+
+.theme-toggle:hover {
+  border-color: #087f8c;
+  color: #087f8c;
+  background: #effafb;
+}
+
+.theme-toggle-icon {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
+}
+
+.theme-toggle-sun { display: none; }
+
+html[data-theme="dark"] .theme-toggle {
+  border-color: #435866;
+  color: #d5e1e8;
+}
+
+html[data-theme="dark"] .theme-toggle:hover {
+  border-color: #46c2cc;
+  color: #75dce0;
+  background: #20343e;
+}
+
+html[data-theme="dark"] .theme-toggle-moon { display: none; }
+html[data-theme="dark"] .theme-toggle-sun { display: block; }
+
 .site-login {
   flex: 0 0 auto;
   padding: 10px 17px;
@@ -124,10 +182,24 @@
     font-size: 13px;
   }
 
-  .site-login {
+  .site-actions {
     margin-left: auto;
+    gap: 7px;
+  }
+
+  .theme-toggle {
+    min-height: 36px;
+    padding: 7px 9px;
+    font-size: 12px;
+  }
+
+  .site-login {
     padding: 8px 12px;
     font-size: 13px;
   }
 
+}
+
+@media (max-width: 390px) {
+  .theme-toggle-label { display: none; }
 }

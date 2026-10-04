@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="../../js/theme.js"></script>
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <title>Profil Akun — TERBANGIN</title>
+  <link rel="stylesheet" href="../../css/flight.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../css/navbar.css">
+  <script src="../../js/navbar.js" defer></script>
+  <link rel="stylesheet" href="../../css/theme.css">
+  <link rel="stylesheet" href="../../css/responsive.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="account-page">
+    <section class="account-card account-profile-card" aria-labelledby="profile-title">
+      <div class="account-profile-heading">
+        <div>
+          <p class="account-eyebrow">Area akun</p>
+          <h1 id="profile-title">Profil Saya</h1>
+          <p class="account-intro">Kelola informasi kontak yang digunakan untuk akun TERBANGIN.</p>
+        </div>
+        <a class="account-logout" href="login.html" id="logout-link">Keluar</a>
+      </div>
+
+      <p class="account-prototype-note">Mode demo lokal: profil dan sesi hanya berlaku di browser/perangkat ini. Jangan gunakan data atau kata sandi asli.</p>
+
+      <div class="account-empty-state" id="profile-empty" hidden>
+        <h2>Profil belum tersedia</h2>
+        <p>Masuk atau daftar terlebih dahulu untuk mengelola profil.</p>
+        <a href="login.html">Masuk</a> · <a href="register.html">Buat akun</a>
+      </div>
+
+      <form class="account-form" id="profile-form" hidden novalidate>
+        <div class="account-profile-fields">
+          <label for="profile-username">Username
+            <input id="profile-username" name="username" type="text" autocomplete="username" required minlength="3" maxlength="20" pattern="[A-Za-z0-9._-]{3,20}" readonly>
+          </label>
+          <label for="profile-name">Nama lengkap
+            <input id="profile-name" name="fullName" type="text" autocomplete="name" required minlength="2" readonly>
+          </label>
+          <label for="profile-email">Alamat email
+            <input id="profile-email" name="email" type="email" autocomplete="email" required readonly>
+          </label>
+          <label for="profile-phone">Nomor telepon
+            <input id="profile-phone" name="phone" type="tel" autocomplete="tel" required pattern="[0-9+() -]{8,20}" readonly>
+          </label>
+        </div>
+
+        <p class="account-status" id="profile-status" role="status" aria-live="polite"></p>
+        <div class="account-profile-actions">
+          <button type="button" class="account-secondary-button" id="edit-profile-button">Ubah profil</button>
+          <button type="submit" id="save-profile-button" hidden>Simpan perubahan</button>
+          <button type="button" class="account-cancel-button" id="cancel-profile-button" hidden>Batalkan</button>
+        </div>
+      </form>
+
+      <section class="account-security" id="security-panel" aria-labelledby="security-title" hidden>
+        <h2 id="security-title">Keamanan akun</h2>
+        <p>Ubah kata sandi demo lokal. Perubahan hanya berlaku di browser ini.</p>
+        <form class="account-form" id="password-form" novalidate>
+          <label for="current-password">Kata sandi saat ini
+            <input id="current-password" name="currentPassword" type="password" autocomplete="current-password" required>
+          </label>
+          <label for="new-password">Kata sandi baru
+            <input id="new-password" name="newPassword" type="password" autocomplete="new-password" required minlength="8" aria-describedby="new-password-hint">
+          </label>
+          <p class="account-note" id="new-password-hint">Gunakan sedikitnya 8 karakter.</p>
+          <label for="confirm-new-password">Konfirmasi kata sandi baru
+            <input id="confirm-new-password" name="confirmNewPassword" type="password" autocomplete="new-password" required minlength="8">
+          </label>
+          <p class="account-status" id="password-status" role="status" aria-live="polite"></p>
+          <button type="submit">Ubah Kata Sandi</button>
+        </form>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 TERBANGIN. Mau ke mana? TERBANGIN aja.</p>
+  </footer>
+  <script src="../../js/account.js"></script>
+</body>
+</html>

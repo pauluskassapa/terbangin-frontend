@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="../../js/theme.js"></script>
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <title>Buat Akun — TERBANGIN</title>
+  <link rel="stylesheet" href="../../css/flight.css">
+  <link rel="stylesheet" href="../../css/account.css">
+  <link rel="stylesheet" href="../../css/navbar.css">
+  <script src="../../js/navbar.js" defer></script>
+  <link rel="stylesheet" href="../../css/theme.css">
+  <link rel="stylesheet" href="../../css/responsive.css">
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="account-page">
+    <section class="account-card" aria-labelledby="register-title">
+      <p class="account-eyebrow">Mulai perjalananmu</p>
+      <h1 class="account-title-wide" id="register-title">Buat akun TERBANGIN</h1>
+      <p class="account-intro">Isi data berikut untuk menyiapkan akun perjalananmu.</p>
+      <p class="account-note account-storage-note">Demo lokal: profil dan hash kata sandi disimpan di browser ini. Ini bukan sistem akun online; username/email hanya unik di perangkat ini. Jangan gunakan kata sandi asli.</p>
+
+      <form class="account-form" id="register-form" novalidate>
+        <label for="username">Username
+          <input id="username" name="username" type="text" placeholder="Contoh: joan_terbang" autocomplete="username" required minlength="3" maxlength="20" pattern="[A-Za-z0-9._-]{3,20}" aria-describedby="username-hint" title="3–20 karakter: huruf, angka, titik, garis bawah, atau tanda hubung.">
+        </label>
+        <p class="account-note" id="username-hint">3–20 karakter; gunakan huruf, angka, titik, garis bawah, atau tanda hubung.</p>
+
+        <label for="full-name">Nama lengkap
+          <input id="full-name" name="fullName" type="text" placeholder="Nama sesuai identitas" autocomplete="name" required minlength="2">
+        </label>
+
+        <label for="register-email">Alamat email
+          <input id="register-email" name="email" type="email" placeholder="nama@email.com" autocomplete="email" required>
+        </label>
+
+        <label for="phone">Nomor telepon
+          <input id="phone" name="phone" type="tel" placeholder="08xxxxxxxxxx" autocomplete="tel" required pattern="[0-9+() -]{8,20}">
+        </label>
+
+        <label for="register-password">Kata sandi
+          <input id="register-password" name="password" type="password" placeholder="Minimal 8 karakter" autocomplete="new-password" required minlength="8" aria-describedby="password-hint">
+        </label>
+        <p class="account-note" id="password-hint">Gunakan sedikitnya 8 karakter.</p>
+
+        <label for="confirm-password">Konfirmasi kata sandi
+          <input id="confirm-password" name="confirmPassword" type="password" placeholder="Ulangi kata sandi" autocomplete="new-password" required minlength="8">
+        </label>
+
+        <label class="terms-option" for="agree-terms">
+          <input id="agree-terms" name="agreeTerms" type="checkbox" required>
+          <span>Saya menyetujui syarat penggunaan dan kebijakan privasi TERBANGIN.</span>
+        </label>
+
+        <p class="account-status" id="register-status" role="status" aria-live="polite"></p>
+        <button type="submit">Buat Akun</button>
+      </form>
+
+      <p class="account-signup">Sudah punya akun? <a href="login.html">Masuk</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 TERBANGIN. Mau ke mana? TERBANGIN aja.</p>
+  </footer>
+  <script src="../../js/account.js"></script>
+</body>
+</html>

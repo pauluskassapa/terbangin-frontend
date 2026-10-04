@@ -3,21 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yogyakarta - Terbangin</title>
 
+  <script src="../../js/theme.js"></script>
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <title>Destinasi: Yogyakarta - Terbangin</title>
+  
+  <!-- Memanggil CSS Utama & CSS Destinasi -->
   <link rel="stylesheet" href="../../css/flight.css">
   <link rel="stylesheet" href="../../css/Destinasi.css">
   <link rel="stylesheet" href="../../css/navbar.css">
   <script src="../../js/navbar.js" defer></script>
+  <link rel="stylesheet" href="../../css/theme.css">
+  <link rel="stylesheet" href="../../css/responsive.css">
 </head>
-<body class="destination-page">
-
+<body>
   <div id="site-header"></div>
+
 
 <div class="video-banner">
     <video autoplay muted loop playsinline class="bg-video">
-      <source src="../../assets/images/Destinasi-foto-video/Jogja.mp4" type="video/mp4">
-      ERROR
+      <source src="../../assets/videos/Page-Daniel/Jogja.mp4" type="video/mp4">
     </video>
 
     <div class="video-overlay"></div>
@@ -28,8 +33,10 @@
     </div>
   </div>
 
+  <!-- Container Utama Konten -->
   <div class="container destination-container">
 
+    <!-- Section Destinasi Populer (Side-by-Side Horizontal Scroll) -->
     <section class="popular-section destination-showcase destination-showcase--split destination-showcase--yogyakarta" style="--destination-bg-image: url('../../assets/images/Destinasi-foto-video/Jogja.jpg');">
       <div class="destination-showcase__header">
         <span class="badge-tag">Destinasi Pilihan</span>
@@ -39,37 +46,32 @@
 
       <div class="destination-showcase__track" aria-label="Daftar destinasi populer Yogyakarta">
         <div class="destination-card">
-          <div class="card-image-wrapper"><img src="../../assets/images/Destinasi-foto-video/CandiPrambanan.jpg" alt="Candi Prambanan"></div>
-          <h3>Candi Prambanan</h3>
-          <p>Menara candi abad ke-9 menjulang anggun di tengah kompleks bersejarah; jelajahi relief dan halaman candinya.</p>
+          <img src="../../assets/images/Page-Daniel/CandiPrambanan.jpg" alt="Candi Prambanan">
+          <div class="destination-card-body">
+            <h3>Candi Prambanan</h3>
+            <p>Candi Hindu megah abad ke-9 yang menawarkan arsitektur indah dan seni sejarah.</p>
+          </div>
         </div>
 
         <div class="destination-card">
-          <div class="card-image-wrapper"><img src="../../assets/images/Destinasi-foto-video/Malioboro.jpg" alt="Jalan Malioboro"></div>
-          <h3>Jalan Malioboro</h3>
-          <p>Jalan ikonik yang hidup hingga malam dengan toko dan jajanan lokal; nikmati suasananya dengan berjalan kaki menyusuri Malioboro.</p>
+          <img src="../../assets/images/Page-Daniel/Malioboro.jpg" alt="Jalan Malioboro">
+          <div class="destination-card-body">
+            <h3>Jalan Malioboro</h3>
+            <p>Pusat perbelanjaan, oleh-oleh, dan suasana malam khas Yogyakarta yang legendaris.</p>
+          </div>
         </div>
 
         <div class="destination-card">
-          <div class="card-image-wrapper"><img src="../../assets/images/Destinasi-foto-video/Keraton.jpg" alt="Keraton Yogyakarta"></div>
-          <h3>Keraton Yogyakarta</h3>
-          <p>Kompleks istana yang merawat tradisi Jawa dan kisah kesultanan; ikuti tur untuk mengenal ruang-ruang keraton.</p>
-        </div>
-
-        <div class="destination-card">
-          <div class="card-image-wrapper"><img src="../../assets/images/destination-yogyakarta.jpg" alt="Candi Borobudur" loading="lazy"></div>
-          <h3>Candi Borobudur</h3>
-          <p>Mahakarya batu dengan relief yang kaya cerita; telusuri tingkat-tingkat candi untuk mengamati detailnya.</p>
-        </div>
-
-        <div class="destination-card">
-          <div class="card-image-wrapper"><img src="../../assets/images/Destinasi-foto-video/Jogja.jpg" alt="Tugu Yogyakarta saat senja" loading="lazy"></div>
-          <h3>Tugu Yogyakarta</h3>
-          <p>Monumen bersejarah yang menjadi penanda pusat kota; berhenti sejenak untuk berfoto di kawasan Tugu.</p>
+          <img src="../../assets/images/Page-Daniel/Keraton.jpg" alt="Keraton Yogyakarta">
+          <div class="destination-card-body">
+            <h3>Keraton Yogyakarta</h3>
+            <p>Istana resmi Kesultanan Ngayogyakarta Hadiningrat yang kaya akan tradisi Jawa.</p>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- Kuliner & Aktivitas Khas -->
     <section class="culture-box culinary-showcase culinary-showcase--split" style="--culinary-bg-image: url('../../assets/images/Destinasi-foto-video/Jogja.jpg');">
       <div class="culinary-header">
         <span class="culture-eyebrow">Rasa Istimewa Jogja</span>
@@ -103,7 +105,8 @@
         </article>
       </div>
     </section>
-    
+
+    <!-- Form Cek Harga Tiket -->
     <section class="search-section search-section--centered">
       <h2 class="form-title-center">Cek Harga Tiket Pesawat ke Yogyakarta (YIA)</h2>
       
