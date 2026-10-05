@@ -372,6 +372,11 @@ button:hover {
   box-shadow: 0 16px 32px rgb(24 50 75 / 13%);
 }
 
+.destination-card:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 3px;
+}
+
 /* Search Flight: judul dan panel pencarian */
 .search-page {
   width: min(1280px, calc(100% - 64px));
