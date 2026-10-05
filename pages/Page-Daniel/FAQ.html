@@ -15,10 +15,9 @@
   <link rel="stylesheet" href="../../css/theme.css">
   <link rel="stylesheet" href="../../css/responsive.css">
 </head>
-<body>
+<body class="destination-page">
   <div id="site-header"></div>
 
-  <!-- Banner Header Sederhana -->
   <div class="destination-header hero-banner" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); padding: 60px 20px; min-height: 250px; text-align: center;">
     <div class="header-content" style="position: relative; top: auto; transform: none; padding: 20px 0;">
       <h1 style="color: #ffffff; font-size: 2.2rem; margin-bottom: 10px;">Pusat Bantuan & FAQ</h1>
@@ -26,10 +25,8 @@
     </div>
   </div>
 
-  <!-- Container Utama -->
   <div class="container destination-container" style="margin-top: 40px; margin-bottom: 40px;">
     
-    <!-- Section FAQ (Pertanyaan yang Sering Diajukan) -->
     <section class="faq-section">
       <div style="text-align: center; margin-bottom: 30px;">
         <span class="badge-tag">FAQ</span>
@@ -37,7 +34,6 @@
       </div>
 
       <div class="faq-container">
-        <!-- Item FAQ 1 -->
         <details class="faq-item">
           <summary>Bagaimana cara memesan tiket di Terbangin?</summary>
           <div class="faq-answer">
@@ -45,7 +41,6 @@
           </div>
         </details>
 
-        <!-- Item FAQ 2 -->
         <details class="faq-item">
           <summary>Metode pembayaran apa saja yang tersedia?</summary>
           <div class="faq-answer">
@@ -53,7 +48,6 @@
           </div>
         </details>
 
-        <!-- Item FAQ 3 -->
         <details class="faq-item">
           <summary>Bagaimana cara melakukan *refund* atau ubah jadwal penerbangan?</summary>
           <div class="faq-answer">
@@ -61,8 +55,7 @@
           </div>
         </details>
 
-        <!-- Item FAQ 4 -->
-        <details class="faq-item">
+            <details class="faq-item">
           <summary>Kapan e-tiket akan dikirimkan?</summary>
           <div class="faq-answer">
             <p>E-tiket akan otomatis dikirimkan ke alamat email yang Anda daftarkan maksimal 15 menit setelah pembayaran terverifikasi oleh sistem kami.</p>
@@ -73,28 +66,31 @@
 
     <hr style="margin: 50px 0; border: none; border-top: 1px solid #ddd;">
 
-    <!-- Section Kontak / Help -->
     <section class="contact-section" style="text-align: center;">
       <h2>Masih Butuh Bantuan?</h2>
       <p style="color: #666; margin-bottom: 30px;">Tim Customer Service kami siap membantu Anda 24/7.</p>
       
-      <div class="contact-grid" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-        <!-- Card Email -->
-        <div class="destination-card" style="flex: 0 0 250px; text-align: center; padding: 30px 15px;">
+      <style>
+  .contact-grid .destination-card::after { content: none !important; }
+  .contact-grid .destination-card h3, .contact-grid .destination-card a { color: var(--primary-color) !important; }
+  .contact-grid .destination-card p { color: var(--text-dark) !important; }
+  html[data-theme="dark"] .contact-grid .destination-card { background-color: var(--white); border: 1px solid var(--line); }
+</style>
+        <div class="contact-grid" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+
+        <div class="destination-card" style="flex: 0 0 250px; text-align: center; padding: 30px 15px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
           <h3 style="color: #1e3c72; margin-bottom: 10px;">📧 Email</h3>
           <p>Kirimkan pertanyaan Anda ke:</p>
           <p style="color: #2a5298; font-weight: bold; text-decoration: none;">Terbanginaja@gmail.comg</p>
         </div>
-
-        <!-- Card WhatsApp -->
-        <div class="destination-card" style="flex: 0 0 250px; text-align: center; padding: 30px 15px;">
+ 
+        <div class="destination-card" style="flex: 0 0 250px; text-align: center; padding: 30px 15px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
           <h3 style="color: #1e3c72; margin-bottom: 10px;">💬 WhatsApp</h3>
           <p>Chat dengan agen kami:</p>
           <a href="#" style="color: #2a5298; font-weight: bold; text-decoration: none;">+62 812 3456 7890</a>
         </div>
 
-        <!-- Card Telepon -->
-        <div class="destination-card" style="flex: 0 0 250px; text-align: center; padding: 30px 15px;">
+        <div class="destination-card" style="flex: 0 0 250px; text-align: center; padding: 30px 15px; display: flex; flex-direction: column; justify-content: center; align-items: center;">
           <h3 style="color: #1e3c72; margin-bottom: 10px;">📞 Telepon</h3>
           <p>Hubungi call center:</p>
           <a href="#" style="color: #2a5298; font-weight: bold; text-decoration: none;">021 - 8888 9999</a>
@@ -107,3 +103,7 @@
   <script src="../../js/Destinasi.js"></script>
 </body>
 </html>
+
+
+
+
